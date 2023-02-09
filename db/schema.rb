@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_09_121609) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_09_125146) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +31,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_121609) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wards", force: :cascade do |t|
+    t.string "name"
+    t.text "summary"
+    t.string "flag"
+    t.integer "one_ldk_avg_rent"
+    t.integer "two_ldk_avg_rent"
+    t.integer "three_ldk_avg_rent"
+    t.string "safety"
+    t.integer "school_ratings"
+    t.integer "population"
+    t.integer "population_density"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
