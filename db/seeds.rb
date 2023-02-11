@@ -38,3 +38,18 @@ wards.each do |ward|
 end
 
 p "Seeding complete!"
+
+max_ward = Ward.create(name: "Max",
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae maximus sem. Integer quam turpis, pulvinar sit amet gravida at, consequat eu urna. Duis in mauris in risus commodo commodo a sed lacus. Maecenas lacinia congue gravida. Quisque enim nisi, fringilla in eleifend sed, euismod ut justo. Integer tellus nibh, volutpat a lorem faucibus, faucibus mattis magna. Sed turpis orci, elementum eget aliquet ac, vestibulum id nibh. Donec mattis leo in ornare vulputate. Sed venenatis metus diam, at ultrices nunc venenatis sed. Integer at elit nec odio feugiat egestas at sit amet turpis. Sed ex quam, lobortis in velit id, bibendum rutrum turpis. Ut porttitor ligula lorem, nec imperdiet dolor semper quis.",
+            flag: "doggo",
+            one_ldk_avg_rent: 1,
+            two_ldk_avg_rent: 2,
+            three_ldk_avg_rent: 3,
+            safety: "This place is pretty safe for all doggos",
+            school_ratings: 10,
+            population: 10000,
+            population_density: 1234)
+
+max_ward.save!
+
+p "Max seeded"

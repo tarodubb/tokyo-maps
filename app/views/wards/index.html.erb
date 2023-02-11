@@ -1,0 +1,3 @@
+<% @wards.each do |ward| %>
+  <p><%= link_to ward[:name], ward_path(ward) %></p>
+<% end %>
