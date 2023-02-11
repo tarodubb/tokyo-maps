@@ -1,3 +1,4 @@
 class UserWard < ApplicationRecord
-  belongs_to :user, :ward
+  belongs_to :user
+  belongs_to :ward
 end
