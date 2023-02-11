@@ -1,3 +1,4 @@
+require "json"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -5,8 +6,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# Ward.destroy_all
+# p "Destroyed all wards"
 Ward.destroy_all
-p "Destroyed all wards"
+
+file_path = File.join(File.dirname(__FILE__), "./tokyo.geojson")
+parsed_geo_json = JSON.parse(File.read(file_path))
+p parsed_geo_json["features"][0]["properties"]
+# p parsed_geo_json["features"][0]["geometry"]["coordinates"]
 wards = {
   "chiyoda ku" => "千代田区",
   "chuo ku" => "中央区",
@@ -33,8 +40,13 @@ wards = {
   "edogawa ku" => "江戸川区"
 }
 
-wards.each do |ward|
-  Ward.create(name: ward)
+wards.each do |en_name, jp_name|
+  temp_ward = Ward.new(name: en_name)
+  parsed_geo_json["features"].each do |feature|
+    if feature["properties"]["ward_en"]&.downcase == en_name
+      temp_ward.geojson = feature["geometry"].to_json
+    end
+  end
+  temp_ward.save
 end
-
-p "Seeding complete!"
+# p "Seeding complete!"
