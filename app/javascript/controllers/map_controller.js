@@ -19,18 +19,40 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
     this.map.on('load', () => {
-      this.areasValue.forEach((area)=> {
+      this.areasValue.forEach((area) => {
 
-        const geojson ={
+        const geojson = {
           'type': 'geojson',
           'data': {
-              'type': 'Feature',
-              'geometry': area.geojson
+            'type': 'Feature',
+            'geometry': area.geojson
           }
         }
         console.log(geojson, area.name)
         this.map.addSource(area.name, geojson)
+        this.map.addLayer({
+          'id': area.name,
+          'type': 'fill',
+          'source': area.name, // reference the data source
+          'layout': {},
+          'paint': {
+            'fill-color': '#0080ff', // blue color fill
+            'fill-opacity': 0.5
+          }
+        });
+        // Add a black outline around the polygon.
+        this.map.addLayer({
+          'id': `${area.name}-outline`,
+          'type': 'line',
+          'source': area.name,
+          'layout': {},
+          'paint': {
+            'line-color': '#000',
+            'line-width': 3
+          }
+        });
       });
+
     })
   }
 }

@@ -18,7 +18,7 @@ wards = {
   "chiyoda ku" => "千代田区",
   "chuo ku" => "中央区",
   "minato ku" => "港区",
-  "shinju ku" => "新宿区",
+  "shinjuku ku" => "新宿区",
   "bunkyo ku" => "文京区",
   "taito ku" => "台東区",
   "sumida ku" => "墨田区",
@@ -43,12 +43,8 @@ wards = {
 wards.each do |en_name, jp_name|
   temp_ward = Ward.new(name: en_name)
   parsed_geo_json["features"].each do |feature|
-    p feature
-    # if feature["properties"]["ward_en"]&.downcase == en_name
-    #   feature.each do |coordinates|
-    #     p coordinates
-    #   end
-      # temp_ward.geojson = feature["geometry"].to_json
+    if feature["properties"]["ward_en"]&.downcase == en_name
+      temp_ward.geojson = feature["geometry"].to_json
     end
   end
   temp_ward.save
