@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import WardActionController from "./ward_action_controller"
+application.register("ward-action", WardActionController)
