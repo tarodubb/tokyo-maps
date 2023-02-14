@@ -1,14 +1,28 @@
 <div>
-  <div class = "img-wrapper" ></div>
+  <div id = "map" class = "img-wrapper" ></div>
   <section>
-    <h2> The map will change into smalll when scrolling</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Mauris lobortis ex sed pulvinar rutrum. Ut commodo porta tincidunt. Vestibulum condimentum sodales nunc, laoreet eleifend neque consequat ut. Aliquam eget lectus at tellus suscipit vestibulum nec ut justo. Phasellus porttitor nisl id maximus sodales. Fusce et ex felis. Phasellus sit amet maximus risus. Aliquam pulvinar sapien sed sem auctor, ac semper augue iaculis. Vivamus sodales, justo dapibus aliquet egestas, est est dignissim augue, vel commodo tortor nunc id quam. Nullam faucibus hendrerit malesuada.
-      Vivamus aliquam ante congue pharetra imperdiet. Nulla eget lacus in mi posuere venenatis. Curabitur imperdiet vehicula nunc, eu tempus nulla. Mauris lacinia turpis in neque cursus, in finibus neque tristique. Aliquam porta ante nec sem lacinia, vel facilisis libero feugiat. Cras volutpat sapien consequat, fringilla ante at, elementum turpis. Mauris in finibus nisl. Pellentesque quis lorem suscipit quam ultricies vestibulum. Curabitur nec massa pellentesque dolor finibus eleifend. Praesent in condimentum leo.</p>
+    <div class="dropdown">
+  <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+    <div class="dropdown-content">
+      <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Safety Info", "#philosophy_design", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
+    </div>
+  </div>
+    <h2> <%= @ward.name %></h2>
+    <div width = "100"><%= image_tag 'shibuyaflag.jpg' %></div>
+    <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
+    <h3 id = "summary">Summary</h3>
+    <p><%= @ward.summary%></p>
+    <img src="" alt="">
+    <h3 id = "rent">Rent Prices</h3>
+    <p>Average rent prices for....</p>
+    <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
+    <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
+    <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
+    <h3 id = "safety">Safety Info</h3>
+    <p> <%=@ward.safety%></p>
   </section>
 </div>
-<%# <button class="btn btn-primary btn-lg"
-        data-controller="ward-action"
-        data-action="click->ward-action#zoom">
-  Click me!
-</button> %>
