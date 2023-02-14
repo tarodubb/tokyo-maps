@@ -1,8 +1,18 @@
 <div>
   <div id = "map" class = "img-wrapper" ></div>
   <section>
-
+    <div class="dropdown">
+  <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+    <div class="dropdown-content">
+      <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Safety Info", "#philosophy_design", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
+    </div>
+  </div>
     <h2> <%= @ward.name %></h2>
+    <img src="images/shibuyaflag.jpg" alt="">
     <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
     <h3 id = "summary">Summary</h3>
     <p><%= @ward.summary%></p>
@@ -15,14 +25,4 @@
     <h3 id = "safety">Safety Info</h3>
     <p> <%=@ward.safety%></p>
   </section>
-</div>
-<div class="dropdown">
-  <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-  <div class="dropdown-content">
-    <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
-    <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
-      <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
-      <li><%= link_to "Safety Info", "#philosophy_design", data: {controller: "scroll-to"}  %></li>
-      <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
-  </div>
 </div>
