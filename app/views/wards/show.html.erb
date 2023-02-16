@@ -14,8 +14,8 @@
     </div>
   </div>
     <h2> <%= @ward.name %></h2>
-    <div width = "100"><%= image_tag 'shibuyaflag.jpg' %></div>
     <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
+    <%= image_tag("shibuyaflag.jpg", width: '400px') %>
     <h3 id = "summary">Summary</h3>
     <p><%= @ward.summary%></p>
     <h3 id = "history">History</h3>
