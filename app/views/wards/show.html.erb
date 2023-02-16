@@ -1,6 +1,6 @@
-<div>
+<div class>
   <div id = "map" class = "img-wrapper" ></div>
-  <section>
+  <section class = "container">
     <div class="dropdown">
   <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
     <div class="dropdown-content">
@@ -13,9 +13,14 @@
       <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
     </div>
   </div>
-    <h2> <%= @ward.name %></h2>
-    <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
-    <%= image_tag("shibuyaflag.jpg", width: '400px') %>
+  <div class="ward-title-wrapper d-flex align-items-center justify-content-around">
+    <div class="ward-np" width = "50%">
+      <h1> <%= @ward.name %></h1>
+      <h3>Population: <%=@ward.population %></h3>
+      <h3>Population Density: <%=@ward.population_density %></h3>
+    </div>
+    <%= image_tag("shibuyaflag.jpg", width: '50%') %>
+  </div>
     <h3 id = "summary">Summary</h3>
     <p><%= @ward.summary%></p>
     <h3 id = "history">History</h3>
