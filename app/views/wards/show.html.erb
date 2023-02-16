@@ -1,3 +1,4 @@
+
 <div>
   <div id = "map" class = "img-wrapper" ></div>
   <section>
@@ -16,6 +17,23 @@
     <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
     <h3 id = "summary">Summary</h3>
     <p><%= @ward.summary%></p>
+
+<%# Places of interest cards  %>
+      <div class="container">
+        <div class="row">
+            <%  @ward.points_of_interest.each do |point|  %>
+              <div class="col-4 mb-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%= point %></h5>
+                </div>
+              </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
+
     <img src="" alt="">
     <h3 id = "rent">Rent Prices</h3>
     <p>Average rent prices for....</p>
