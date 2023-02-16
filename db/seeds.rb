@@ -53,34 +53,18 @@ wards.each do |en_name, jp_name|
   wards_parsed_json["tokyo_wards"].each do |parsed_ward|
    if parsed_ward["name"].downcase == en_name
     temp_ward.population = parsed_ward["population"].to_i
-    p temp_ward.population
+    temp_ward.population_density = parsed_ward["population_density"].to_i
+    temp_ward.one_ldk_avg_rent = parsed_ward["one_ldk_avg_rent"]
+    temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
+    temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
+    temp_ward.summary = parsed_ward["summary"]
+    temp_ward.points_of_interest = parsed_ward["points_of_interest"]
+    temp_ward.historical_significance = parsed_ward["historical_significance"]
+    temp_ward.flag = parsed_ward["flag"]
    end
   end
   temp_ward.save
 end
 # json parsing for ward infos
 
-
-
-
-
 p "Seeding complete!"
-
-max_ward = Ward.create(name: "Shibuya",
-            summary: "Shibuya is a bustling ward located in the southwestern part of Tokyo, Japan. It is known as a major entertainment and commercial hub, offering a mix of traditional and modern attractions that draw visitors from all over the world. The ward is particularly famous for its trendy fashion stores, shopping centers, restaurants, and nightlife, making it a popular destination for young people and fashion enthusiasts.
-            One of the most iconic features of Shibuya is the Shibuya Crossing, a busy intersection that is said to be the busiest in the world. This intersection is surrounded by neon lights and huge billboards, making it a popular spot for photographers and tourists. Other popular attractions in Shibuya include the Meiji Shrine, a Shinto shrine dedicated to Emperor Meiji and Empress Shoken; the Cat Street, a fashionable street with designer shops, cafes, and galleries; and the Harajuku neighborhood, a center for youth culture and fashion.
-            Despite its lively atmosphere, Shibuya is also home to many parks and green spaces, such as Yoyogi Park, a popular spot for picnics and outdoor events. The ward also boasts a high quality of life, with excellent public transportation and easy access to other parts of Tokyo.
-            Shibuya has a relatively low crime rate, but some areas near nightlife spots can be crowded and prone to pickpocketing, so visitors should take appropriate precautions. The average rent price in Shibuya is relatively high, at around 200,000 yen per month, reflecting the area’s popularity and desirability.
-            Overall, Shibuya offers a unique blend of modern and traditional Japanese culture, making it a must-visit destination for anyone visiting Tokyo.",
-            flag: "shibuya flag",
-            one_ldk_avg_rent: 1,
-            two_ldk_avg_rent: 2,
-            three_ldk_avg_rent: 3,
-            safety: "Shibuya is a relatively safe area, but some areas near nightlife spots can be crowded and prone to pickpocketing.",
-            school_ratings: 10,
-            population: 227850,
-            population_density: 15000)
-
-max_ward.save!
-
-p "Max seeded"
