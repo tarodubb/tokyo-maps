@@ -6,8 +6,10 @@
     <div class="dropdown-content">
       <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
       <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Historical Significance", "#history", data: {controller: "scroll-to"}  %></li>
       <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
       <li><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Points of Interest", "#poi", data: {controller: "scroll-to"}  %></li>
       <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
     </div>
   </div>
@@ -16,6 +18,8 @@
     <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
     <h3 id = "summary">Summary</h3>
     <p><%= @ward.summary%></p>
+    <h3 id = "history">History</h3>
+    <p><%= @ward.historical_significance%></p>
     <img src="" alt="">
     <h3 id = "rent">Rent Prices</h3>
     <p>Average rent prices for....</p>
