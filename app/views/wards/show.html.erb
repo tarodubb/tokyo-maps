@@ -23,7 +23,7 @@
         <div class="row">
             <%  @ward.points_of_interest.each do |point|  %>
               <div class="col-4 mb-3">
-              <div class="card" style="width: 18rem;">
+              <div class="card points">
               <% options = {} %>
                <% options[:searchType] = "image" %>
               <% link = GoogleCustomSearchApi.search(point, options).items[0].link %>
