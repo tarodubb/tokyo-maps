@@ -24,7 +24,10 @@
             <%  @ward.points_of_interest.each do |point|  %>
               <div class="col-4 mb-3">
               <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+              <% options = {} %>
+               <% options[:searchType] = "image" %>
+              <% link = GoogleCustomSearchApi.search(point, options).items[0].link %>
+                <img class="card-img-top" src="<%= link %>" alt="<%= point %>">
                 <div class="card-body">
                   <h5 class="card-title"><%= point %></h5>
                 </div>
