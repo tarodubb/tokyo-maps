@@ -1,6 +1,10 @@
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-areas-value="<%= @areas.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  <p>s</p>
+<div id="container" data-controller="map" data-map-areas-value="<%= @areas.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <button id="fly-to-tokyo" data-action="click->map#flyTokyo">Fly to Tokyo</button>
+  <button id="reset-view"data-action="click->map#reset">Reset</button>
+
+  <div style="width: 100%; height: 600px;"
+    data-map-target="globus"
+    >
   </div>
+</div>
