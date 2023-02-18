@@ -1,7 +1,7 @@
 
 <div>
   <div id = "map" class = "img-wrapper" ></div>
-  <section>
+  <div class="container">
     <div class="dropdown">
   <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
     <div class="dropdown-content">
@@ -12,15 +12,23 @@
       <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
     </div>
   </div>
-    <h2> <%= @ward.name %></h2>
-    <div width = "100"><%= image_tag 'shibuyaflag.jpg' %></div>
+    <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
     <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
-    <h3 id = "summary">Summary</h3>
-    <p><%= @ward.summary%></p>
+    <div class = "row" id = "summary">
+    <div class="col-6 my-4">
+      <%= image_tag("shibuyaflag.jpg", width: 500) %>
+    </div>
+    <div class="col-6 my-4">
+      <div class="ward-text">
+      <h4><%= @ward.summary%></h4>
+      <h4><%= @ward.historical_significance%></h4>
+      </div>
+    </div>
 
+    </div>
 <%# Places of interest cards  %>
 <h3 id = "poi">Points of interests in </h3>
-      <div class="container">
+
         <div class="row">
               <div class="col-4 my-4">
                 <div class="card points">
@@ -47,7 +55,7 @@
                 </div>
               </div>
         </div>
-      </div>
+
 
     <img src="" alt="">
     <h3 id = "rent">Rent Prices</h3>
@@ -90,5 +98,5 @@
           </div>
           </div>
       </div>
-  </section>
+  </div>
 </div>
