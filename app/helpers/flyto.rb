@@ -5,9 +5,6 @@
 </div>
 </body>
 
-
-
-
 # //fly to Tokyo/add after the map loads
 document.querySelector('#fly-to-tokyo').addEventListener('click', () => {
   this.map.flyTo({
