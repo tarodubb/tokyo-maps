@@ -45,7 +45,7 @@ wards_parsed_json = JSON.parse(wards_info)
 wards.each do |en_name, jp_name|
   temp_ward = Ward.new(name: en_name)
   parsed_geo_json["features"].each do |feature|
-    if feature["properties"]["ward_en"]&.downcase == en_name
+    if feature["properties"]["ward_en"]&.downcase == "#{en_name} ku"
       temp_ward.geojson = feature["geometry"].to_json
     end
   end
