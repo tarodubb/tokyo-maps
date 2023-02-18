@@ -115,42 +115,41 @@ export default class extends Controller {
             "line-width": 3,
             "line-opacity": 0.7,
           },
-        });
-
-        let hoveredStateId = null;
-
-        this.map.on("mousemove", `${area.name}-fill`, (e) => {
-          console.log(e.features[0],hoveredStateId, area.name);
-          if (e.features.length > 0) {
-            if (hoveredStateId !== null) {
-              this.map.setFeatureState(
-                { source: area.name, id: hoveredStateId },
-                { hover: false }
-              );
-            }
-            hoveredStateId =`${e.features[0].layer.id}`;
-            this.map.setFeatureState(
-              { source: area.name, id: hoveredStateId },
-              { hover: true }
-            );
-          }
-        });
-
-        this.map.on("mouseleave", `${area.name}-fill`, () => {
-          if (hoveredStateId !== null) {
-            this.map.setFeatureState(
-              { source: area.name, id: hoveredStateId },
-              { hover: false }
-            );
-          }
-          hoveredStateId = null;
-        });
-
+        })
         this.map.on('click', (e) => {
-
           console.log(e);
-          window.location.href = `${area.path}/${area.id}`;
+          // window.location.href = `${area.path}/${area.id}`;
         });
+
+        // let hoveredStateId = null;
+
+        // this.map.on("mousemove", `${area.name}-fill`, (e) => {
+        //   console.log(e.features[0],hoveredStateId, area.name);
+        //   if (e.features.length > 0) {
+        //     if (hoveredStateId !== null) {
+        //       this.map.setFeatureState(
+        //         { source: area.name, id: hoveredStateId },
+        //         { hover: false }
+        //       );
+        //     }
+        //     hoveredStateId =`${e.features[0].layer.id}`;
+        //     this.map.setFeatureState(
+        //       { source: area.name, id: hoveredStateId },
+        //       { hover: true }
+        //     );
+        //   }
+        // });
+
+        // this.map.on("mouseleave", `${area.name}-fill`, () => {
+        //   if (hoveredStateId !== null) {
+        //     this.map.setFeatureState(
+        //       { source: area.name, id: hoveredStateId },
+        //       { hover: false }
+        //     );
+        //   }
+        //   hoveredStateId = null;
+        // });
+
       });
     });
   }
