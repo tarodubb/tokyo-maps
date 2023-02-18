@@ -17,7 +17,5 @@ class PagesController < ApplicationController
         code: ward.ward_code
       }
     end
-    p Rails.env.development?
-    p "HERE I AM"
   end
 end

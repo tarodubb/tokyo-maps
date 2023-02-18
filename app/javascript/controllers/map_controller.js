@@ -146,7 +146,8 @@ export default class extends Controller {
           hoveredStateId = null;
         });
 
-        this.map.on("click", `${area.name}-fill`, (e) => {
+        this.map.on('click', (e) => {
+
           console.log(e);
           window.location.href = `${area.path}/${area.id}`;
         });

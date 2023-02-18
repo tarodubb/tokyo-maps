@@ -74,6 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_235139) do
     t.integer "ward_code"
     t.text "points_of_interest", array: true
     t.string "historical_significance"
+    t.integer "ward_code"
   end
 
   add_foreign_key "reviews", "users"
