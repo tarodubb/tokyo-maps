@@ -51,7 +51,7 @@ export default class extends Controller {
             'line-width': 3
           }
         });
-        this.map.on('click', `${area.name}`, (e) => {
+        this.map.on('click', (e) => {
           console.log(e);
           window.location.href = `${area.path}/${area.id}`;
         });

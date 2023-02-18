@@ -16,7 +16,5 @@ class PagesController < ApplicationController
         path:
       }
     end
-    p Rails.env.development?
-    p "HERE I AM"
   end
 end
