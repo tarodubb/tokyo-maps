@@ -13,7 +13,8 @@ class PagesController < ApplicationController
         geojson: JSON.parse(ward.geojson),
         name: ward.name,
         id: ward.id,
-        path:
+        path:,
+        code: ward.ward_code
       }
     end
     p Rails.env.development?
