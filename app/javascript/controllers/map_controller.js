@@ -15,7 +15,7 @@ export default class extends Controller {
     // fetch("../../assets/geocode/tokyo.geojson").then(res => console.log(res))
     this.map = new mapboxgl.Map({
       container: this.globusTarget,
-      style: "mapbox://styles/mapbox/streets-v10",
+      style: "mapbox://styles/ebisu583/cle9igsn2000401rxe0kldfcx",
       zoom: 1,
       center: [139.697888, 35.685098],
       projection: "globe",
@@ -99,10 +99,10 @@ export default class extends Controller {
               "case",
               ["boolean", ["feature-state", "hover"], false],
               1,
-              0,
+              0.7,
             ],
           },
-        });
+        })
 
         // Add a black outline around the polygon.
         this.map.addLayer({
@@ -146,7 +146,7 @@ export default class extends Controller {
           hoveredStateId = null;
         });
 
-        this.map.on("click", `${area.name}-fill`, (e) => {
+        this.map.on("click", (e) => {
           console.log(e);
           window.location.href = `${area.path}/${area.id}`;
         });
@@ -154,7 +154,7 @@ export default class extends Controller {
     });
   }
   flyTokyo() {
-    console.log("hello");
+
     this.map.flyTo({
       center: [139.697888, 35.685098],
       zoom: 10,
