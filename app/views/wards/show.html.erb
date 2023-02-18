@@ -21,19 +21,30 @@
 <%# Places of interest cards  %>
       <div class="container">
         <div class="row">
-            <%  @ward.points_of_interest.each do |point|  %>
-              <div class="col-4 mb-3">
-              <div class="card points">
-              <% options = {} %>
-               <% options[:searchType] = "image" %>
-              <% link = GoogleCustomSearchApi.search(point, options).items[0].link %>
-                <img class="card-img-top" src="<%= link %>" alt="<%= point %>">
-                <div class="card-body">
-                  <h5 class="card-title"><%= point %></h5>
+              <div class="col-4 my-4">
+                <div class="card points">
+                  <img class="card-img-top" src="https://images.unsplash.com/photo-1609942225969-3f3109a13eb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80" alt="<%= @ward.points_of_interest[0] %>">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
+                  </div>
                 </div>
               </div>
+              <div class="col-4 my-4">
+                <div class="card points">
+                  <img class="card-img-top" src="https://lp-cms-production.imgix.net/2019-06/6ea751421aeff7758f6bcdac0216043a-hachiko-statue.jpg" alt="<%= @ward.points_of_interest[1] %>">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= @ward.points_of_interest[1] %></h5>
+                  </div>
+                </div>
               </div>
-            <% end %>
+              <div class="col-4 my-4">
+                <div class="card points">
+                  <img class="card-img-top" src="https://jw-webmagazine.com/wp-content/uploads/2017/03/4743931_s.jpg" alt="<%= @ward.points_of_interest[2] %>">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= @ward.points_of_interest[2] %></h5>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
 
