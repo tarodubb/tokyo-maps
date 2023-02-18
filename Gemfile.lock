@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: 159b70aea62443aeb0e32382de3095bcb571ee0e
+  revision: 0ef4a58daae41ab091d25ac1dc3fb4ede35743b1
   specs:
     simple_form (5.2.0)
       actionpack (>= 5.2)
@@ -99,7 +99,7 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     declarative (0.0.20)
-    devise (4.8.1)
+    devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -111,10 +111,12 @@ GEM
       railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.8.1)
-    ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
-    faker (3.1.0)
+    faker (3.1.1)
       i18n (>= 1.8.11, < 2)
+    faraday (2.7.4)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
     ffi (1.15.5)
     font-awesome-sass (6.3.0)
       sassc (~> 2.0)
@@ -193,11 +195,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.14.1-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.14.1-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.14.1-x86_64-linux)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     os (1.1.4)
@@ -236,7 +234,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    regexp_parser (2.6.2)
+    regexp_parser (2.7.0)
     reline (0.3.2)
       io-console (~> 0.5)
     representable (3.2.0)
@@ -258,7 +256,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.8.0)
+    selenium-webdriver (4.8.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -277,8 +275,8 @@ GEM
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.1)
-    tilt (2.0.11)
-    timeout (0.3.1)
+    tilt (2.1.0)
+    timeout (0.3.2)
     trailblazer-option (0.1.2)
     turbo-rails (1.3.3)
       actionpack (>= 6.0.0)
@@ -305,12 +303,10 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.6)
+    zeitwerk (2.6.7)
 
 PLATFORMS
-  arm64-darwin-21
   x86_64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
