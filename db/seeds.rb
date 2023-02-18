@@ -88,7 +88,8 @@ end
     email: email,
     password: password,
     username: username,
-    address: address
+    address: address,
+    avatar: "/app/assets/images/dog-costume-banana-slug-kitai.jpg"
   )
   p user
 end
