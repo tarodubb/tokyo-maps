@@ -1,41 +1,46 @@
 require "json"
 require "faker"
 require 'securerandom'
-# I18n.reload!
 p "Destroying Wards"
 Ward.destroy_all
+
 p "Destroying Users"
 User.destroy_all
+
+wards = {
+  "chiyoda" => "千代田区",
+  "chuo" => "中央区",
+  "minato" => "港区",
+  "shinj" => "新宿区",
+  "bunkyo" => "文京区",
+  "taito" => "台東区",
+  "sumida" => "墨田区",
+  "koto" => "江東区",
+  "shinagawa" => "品川区",
+  "meguro" => "目黒区",
+  "ota" => "大田区",
+  "setagaya" => "世田谷区",
+  "shibuya" => "渋谷区",
+  "nakano" => "中野区",
+  "suginami" => "杉並区",
+  "toshima" => "豊島区",
+  "kita" => "北区",
+  "arakawa" => "荒川区",
+  "itabashi" => "板橋区",
+  "nerima" => "練馬区",
+  "adachi" => "足立区",
+  "katsushika" => "葛飾区",
+  "edogawa" => "江戸川区"
+}
+
 
 file_path = File.join(File.dirname(__FILE__), "./tokyo.geojson")
 parsed_geo_json = JSON.parse(File.read(file_path))
 p parsed_geo_json["features"][0]["properties"]
 # p parsed_geo_json["features"][0]["geometry"]["coordinates"]
-wards = {
-  "chiyoda ku" => "千代田区",
-  "chuo ku" => "中央区",
-  "minato ku" => "港区",
-  "shinjuku ku" => "新宿区",
-  "bunkyo ku" => "文京区",
-  "taito ku" => "台東区",
-  "sumida ku" => "墨田区",
-  "koto ku" => "江東区",
-  "shinagawa ku" => "品川区",
-  "meguro ku" => "目黒区",
-  "ota ku" => "大田区",
-  "setagaya ku" => "世田谷区",
-  "shibuya ku" => "渋谷区",
-  "nakano ku" => "中野区",
-  "suginami ku" => "杉並区",
-  "toshima ku" => "豊島区",
-  "kita ku" => "北区",
-  "arakawa ku" => "荒川区",
-  "itabashi ku" => "板橋区",
-  "nerima ku" => "練馬区",
-  "adachi ku" => "足立区",
-  "katsushika ku" => "葛飾区",
-  "edogawa ku" => "江戸川区"
-}
+wards_file_path = File.join(File.dirname(__FILE__), "./wards.json")
+wards_info = File.read(wards_file_path)
+wards_parsed_json = JSON.parse(wards_info)
 
 wards.each do |en_name, jp_name|
   temp_ward = Ward.new(name: en_name)
@@ -44,10 +49,25 @@ wards.each do |en_name, jp_name|
       temp_ward.geojson = feature["geometry"].to_json
     end
   end
+  wards_parsed_json["tokyo_wards"].each do |parsed_ward|
+   if parsed_ward["name"].downcase == en_name
+    temp_ward.population = parsed_ward["population"].to_i
+    temp_ward.population_density = parsed_ward["population_density"].to_i
+    temp_ward.one_ldk_avg_rent = parsed_ward["one_ldk_avg_rent"]
+    temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
+    temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
+    temp_ward.summary = parsed_ward["summary"]
+    temp_ward.points_of_interest = parsed_ward["points_of_interest"]
+    temp_ward.historical_significance = parsed_ward["historical_significance"]
+    temp_ward.flag = parsed_ward["flag"]
+   end
+  end
   temp_ward.save
 end
+# json parsing for ward infos
 
 p "Seeding complete!"
+
 
 max_ward = Ward.create(name: "Shibuya",
             summary: "Shibuya is a bustling ward located in the southwestern part of Tokyo, Japan. It is known as a major entertainment and commercial hub, offering a mix of traditional and modern attractions that draw visitors from all over the world. The ward is particularly famous for its trendy fashion stores, shopping centers, restaurants, and nightlife, making it a popular destination for young people and fashion enthusiasts.
