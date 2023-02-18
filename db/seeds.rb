@@ -1,14 +1,12 @@
 require "json"
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-# Ward.destroy_all
-# p "Destroyed all wards"
+require "faker"
+require 'securerandom'
+p "Destroying Wards"
 Ward.destroy_all
+
+p "Destroying Users"
+User.destroy_all
+
 wards = {
   "chiyoda" => "千代田区",
   "chuo" => "中央区",
@@ -34,6 +32,7 @@ wards = {
   "katsushika" => "葛飾区",
   "edogawa" => "江戸川区"
 }
+
 
 file_path = File.join(File.dirname(__FILE__), "./tokyo.geojson")
 parsed_geo_json = JSON.parse(File.read(file_path))
@@ -68,3 +67,49 @@ end
 # json parsing for ward infos
 
 p "Seeding complete!"
+
+
+max_ward = Ward.create(name: "Shibuya",
+            summary: "Shibuya is a bustling ward located in the southwestern part of Tokyo, Japan. It is known as a major entertainment and commercial hub, offering a mix of traditional and modern attractions that draw visitors from all over the world. The ward is particularly famous for its trendy fashion stores, shopping centers, restaurants, and nightlife, making it a popular destination for young people and fashion enthusiasts.
+            One of the most iconic features of Shibuya is the Shibuya Crossing, a busy intersection that is said to be the busiest in the world. This intersection is surrounded by neon lights and huge billboards, making it a popular spot for photographers and tourists. Other popular attractions in Shibuya include the Meiji Shrine, a Shinto shrine dedicated to Emperor Meiji and Empress Shoken; the Cat Street, a fashionable street with designer shops, cafes, and galleries; and the Harajuku neighborhood, a center for youth culture and fashion.
+            Despite its lively atmosphere, Shibuya is also home to many parks and green spaces, such as Yoyogi Park, a popular spot for picnics and outdoor events. The ward also boasts a high quality of life, with excellent public transportation and easy access to other parts of Tokyo.
+            Shibuya has a relatively low crime rate, but some areas near nightlife spots can be crowded and prone to pickpocketing, so visitors should take appropriate precautions. The average rent price in Shibuya is relatively high, at around 200,000 yen per month, reflecting the area’s popularity and desirability.
+            Overall, Shibuya offers a unique blend of modern and traditional Japanese culture, making it a must-visit destination for anyone visiting Tokyo.",
+            flag: "shibuya flag",
+            one_ldk_avg_rent: 1,
+            two_ldk_avg_rent: 2,
+            three_ldk_avg_rent: 3,
+            safety: "Shibuya is a relatively safe area, but some areas near nightlife spots can be crowded and prone to pickpocketing.",
+            school_ratings: 10,
+            population: 227850,
+            population_density: 15000)
+
+max_ward.save!
+p "Max seeded"
+
+# User seeding
+p "Seeding users"
+# Function to generate a random string of lowercase letters and digits
+def generate_password
+  SecureRandom.alphanumeric(8)
+end
+# Generate 100 users
+10.times do
+  first_name = Faker::Name.unique.first_name
+  last_name = Faker::Name.last_name
+  email = "#{first_name.downcase}.#{last_name.downcase}@yahoo.com"
+  password = generate_password
+  username = "#{first_name.downcase}.#{last_name.downcase}"
+  ward = "Shibuya"
+  address = "#{ward}, Tokyo"
+  user = User.create(
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+    password: password,
+    username: username,
+    address: address,
+    avatar: "/app/assets/images/dog-costume-banana-slug-kitai.jpg"
+  )
+  p user
+end
