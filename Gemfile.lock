@@ -111,10 +111,10 @@ GEM
       railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.8.1)
-    faraday (2.7.4)
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
+    ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    faker (3.1.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     font-awesome-sass (6.3.0)
       sassc (~> 2.0)
@@ -319,6 +319,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  faker
   font-awesome-sass (~> 6.1)
   google-api-client
   google_custom_search_api
