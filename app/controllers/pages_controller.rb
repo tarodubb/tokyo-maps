@@ -7,7 +7,7 @@ class PagesController < ApplicationController
       if Rails.env.development?
         path = 'http://localhost:3000/wards'
       else
-        path = 'Whatever our heroku will be'
+        path = 'https://tokyo-maps.herokuapp.com/'
       end
       {
         geojson: JSON.parse(ward.geojson),
