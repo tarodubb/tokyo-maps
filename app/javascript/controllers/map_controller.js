@@ -6,6 +6,8 @@ export default class extends Controller {
     areas: Array,
   };
   static targets = ["globus"];
+  map = null;
+  hoveredStateId = null;
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue;
@@ -16,7 +18,8 @@ export default class extends Controller {
       center: [139.697888, 35.685098],
       projection: "globe",
     });
-    let hoveredStateId = null;
+    this.hoveredStateId = null;
+
     this.map.on("load", () => {
       this.map.addSource('wards', {
         type: 'geojson',
@@ -31,12 +34,12 @@ export default class extends Controller {
           'layout': {},
           'paint': {
             'fill-color': '#f08',
-            "fill-opacity": [
-              "case",
-              ["boolean", ["feature-state", "hover"], false],
+            'fill-opacity': [
+              'case',
+              ['boolean', ['feature-state', 'hover'], false],
               1,
-              0.4,
-            ],
+              0.4
+            ]
           }
         });
       this.map.addLayer({
@@ -50,49 +53,43 @@ export default class extends Controller {
           "line-opacity": 0.7,
         },
       });
-    });
+      this.map.on("click", "wards-fill", (e) => {
+        let ward_name = e.features[0].properties.ward_en;
+        areasValue.forEach((area) => {
+          if (ward_name.toLowerCase() === area.name) {
+            window.location.href = `http://localhost:3000/wards/${area.id}`;
+          }
+        });
+      });
 
-    this.map.on("click", "wards-fill", (e) => {
-      let ward_name = e.features[0].properties.ward_en;
-      this.areasValue.forEach((area) => {
-        console.log(area.path)
-        if (ward_name.toLowerCase() === area.name) {
-          console.log(area.path);
-          window.location.href = `http://localhost:3000/wards/${area.id}`;
+      this.map.on("mousemove", "wards-fill", (e) => {
+        if (e.features.length > 0) {
+          if (this.hoveredStateId !== null) {
+            this.map.setFeatureState(
+              { source: "wards", id: this.hoveredStateId },
+              { hover: false }
+            );
+          }
+          this.hoveredStateId = e.features[0].id;
+          this.map.setFeatureState(
+            { source: "wards", id: this.hoveredStateId },
+            { hover: true }
+          );
         }
       });
-    });
-    //
 
-    this.map.on("mousemove", "wards-fill", (e) => {
-      console.log(e.features[0],hoveredStateId, e.features[0].properties.ward_en);
-      if (e.features.length > 0) {
-        if (hoveredStateId !== null) {
+      this.map.on("mouseleave", "wards-fill", () => {
+        if (this.hoveredStateId !== null) {
           this.map.setFeatureState(
-            { source: "wards", id: hoveredStateId },
+            { source: "wards", id: this.hoveredStateId },
             { hover: false }
           );
         }
-        hoveredStateId =`${e.features[0].layer.id}`;
-        this.map.setFeatureState(
-          { source: "wards", id: hoveredStateId },
-          { hover: true }
-        );
-      }
-    });
+        this.hoveredStateId = null;
+      });
 
-    this.map.on("mouseleave", "wards-fill", () => {
-      if (hoveredStateId !== null) {
-        this.map.setFeatureState(
-          { source: "wards", id: hoveredStateId },
-          { hover: false }
-        );
-      }
-      hoveredStateId = null;
     });
   }
-
-
   flyTokyo() {
     console.log("hello");
     this.map.flyTo({
