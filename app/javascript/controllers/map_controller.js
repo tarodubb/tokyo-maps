@@ -25,7 +25,7 @@ export default class extends Controller {
         type: 'geojson',
         data: 'tokyo.geojson',
       });
-      console.log('success')
+      //Fill each ward with color
       this.map.addLayer(
         {
           'id': 'wards-fill',
@@ -33,7 +33,7 @@ export default class extends Controller {
           'source': 'wards',
           'layout': {},
           'paint': {
-            'fill-color': '#f08',
+            'fill-color': '#FF99AF',
             'fill-opacity': [
               'case',
               ['boolean', ['feature-state', 'hover'], false],
@@ -42,6 +42,7 @@ export default class extends Controller {
             ]
           }
         });
+      //Set the border
       this.map.addLayer({
         id: "wards-outline",
         type: "line",
@@ -53,15 +54,48 @@ export default class extends Controller {
           "line-opacity": 0.7,
         },
       });
+      //Extrusion when ward is hovered on
+      // this.map.addLayer({
+      //   'id': 'ward-extrusion',
+      //   'type': 'fill-extrusion',
+      //   'source': 'wards',
+      //   'paint': {
+      //     // Get the `fill-extrusion-color` from the source `color` property.
+      //     'fill-extrusion-color': [
+      //       'case',
+      //       ['boolean', ['feature-state', 'hover'], false],
+      //       '#FF99AF',
+      //       '#FFD6DF'
+      //     ],
+
+      //     'fill-extrusion-height': [
+      //       'case',
+      //       ['boolean', ['feature-state', 'hover'], false],
+      //       1000,
+      //       1
+      //     ],
+
+      //     'fill-extrusion-base': 0,
+      //     // "fill-extrusion-vertical-gradient": true,
+      //     // Make extrusions slightly opaque to see through indoor walls.
+      //     'fill-extrusion-opacity': [
+      //       'case',
+      //       ['boolean', ['feature-state', 'hover'], false],
+      //       1,
+      //       0.2
+      //     ]
+      //   }
+      // });
+      //Listener for ward click to go to the show page
       this.map.on("click", "wards-fill", (e) => {
         let ward_name = e.features[0].properties.ward_en;
-        areasValue.forEach((area) => {
+        this.areasValue.forEach((area) => {
           if (ward_name.toLowerCase() === area.name) {
             window.location.href = `http://localhost:3000/wards/${area.id}`;
           }
         });
       });
-
+      //When hovered on ward opacity will change
       this.map.on("mousemove", "wards-fill", (e) => {
         if (e.features.length > 0) {
           if (this.hoveredStateId !== null) {
@@ -77,7 +111,7 @@ export default class extends Controller {
           );
         }
       });
-
+      //When not hovered opacity returns to normal
       this.map.on("mouseleave", "wards-fill", () => {
         if (this.hoveredStateId !== null) {
           this.map.setFeatureState(
@@ -86,6 +120,14 @@ export default class extends Controller {
           );
         }
         this.hoveredStateId = null;
+      });
+      //Set space and globe fog colors
+      this.map.setFog({
+        color: 'rgb(186, 210, 235)', // Lower atmosphere
+        'high-color': 'rgb(36, 92, 223)', // Upper atmosphere
+        'horizon-blend': 0.02, // Atmosphere thickness (default 0.2 at low zooms)
+        'space-color': 'rgb(11, 11, 25)', // Background color
+        'star-intensity': 0.6 // Background star brightness (default 0.35 at low zoooms )
       });
 
     });
