@@ -80,8 +80,14 @@ wards.each do |en_name, jp_name|
       feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
       feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
       feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
-      p temp_ward.name
-      p feature["properties"]["one_ldk_sort_height"]
+    end
+  end
+  p "Setting lat and long values for ward"
+  # Set lat and long for each ward
+  labels_parsed_geojson["features"].each do |feature|
+    if feature["properties"]["ward_en"].downcase + " ku" == temp_ward.name
+      temp_ward.longitude = feature["geometry"]["coordinates"][0]
+      temp_ward.latitude = feature["geometry"]["coordinates"][1]
     end
   end
   temp_ward.save
