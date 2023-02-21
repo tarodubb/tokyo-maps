@@ -70,6 +70,7 @@ wards.each do |en_name, jp_name|
       temp_ward.flag = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_#{parsed_ward["name"]}a%2C_Tokyo.svg/1200px-Flag_of_Edogawa%2C_Tokyo.svg.png"
     end
   end
+
   wards_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"]&.downcase == temp_ward.name
       feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
