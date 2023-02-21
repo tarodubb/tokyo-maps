@@ -5,6 +5,6 @@ class WardsController < ApplicationController
 
   def show
     @ward = Ward.find(params[:id])
-    @reviews = Review.where(ward: @ward)
+    @review = Review.new
   end
 end
