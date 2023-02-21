@@ -1,62 +1,57 @@
-
 <div>
   <div id = "map" class = "img-wrapper" ></div>
   <div class="container">
     <div class="dropdown">
-  <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-    <div class="dropdown-content">
-      <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
-      <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
-      <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
-      <li><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></li>
-      <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
+      <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+      <div class="dropdown-content">
+        <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
+        <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
+        <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
+        <li><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></li>
+        <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
+      </div>
     </div>
-  </div>
     <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
     <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
     <div class = "row" id = "summary">
-    <div class="col-6 my-4">
-      <%= image_tag("shibuyaflag.jpg", width: 500) %>
-    </div>
-    <div class="col-6 my-4">
-      <div class="ward-text">
-      <h4><%= @ward.summary%></h4>
-      <h4><%= @ward.historical_significance%></h4>
+      <div class="col-6 my-4">
+        <%= image_tag("shibuyaflag.jpg", width: 500) %>
+      </div>
+      <div class="col-6 my-4">
+        <div class="ward-text">
+          <h4><%= @ward.summary%></h4>
+          <h4><%= @ward.historical_significance%></h4>
+        </div>
       </div>
     </div>
-
-    </div>
-<%# Places of interest cards  %>
-<h3 id = "poi">Points of interests in </h3>
-
-        <div class="row">
-              <div class="col-4 my-4">
-                <div class="card points">
-                  <a href="https://en.japantravel.com/tokyo/shibuya-crossing/3016"><img class="card-img-top" src="https://images.unsplash.com/photo-1609942225969-3f3109a13eb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80" alt="<%= @ward.points_of_interest[0] %>"></a>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 my-4">
-                <div class="card points">
-                  <a href="https://en.japantravel.com/tokyo/hachiko-statue-in-shibuya/44644"><img class="card-img-top" src="https://lp-cms-production.imgix.net/2019-06/6ea751421aeff7758f6bcdac0216043a-hachiko-statue.jpg" alt="<%= @ward.points_of_interest[1] %>"></a>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @ward.points_of_interest[1] %></h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 my-4">
-                <div class="card points">
-                  <a href="https://en.japantravel.com/places/tokyo/yoyogi-park/18"><img class="card-img-top" src="https://jw-webmagazine.com/wp-content/uploads/2017/03/4743931_s.jpg" alt="<%= @ward.points_of_interest[2] %>"></a>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @ward.points_of_interest[2] %></h5>
-                  </div>
-                </div>
-              </div>
+    <%# Places of interest cards  %>
+    <h3 id = "poi">Points of interests in </h3>
+    <div class="row">
+      <div class="col-4 my-4">
+        <div class="card points">
+          <a href="https://en.japantravel.com/tokyo/shibuya-crossing/3016"><img class="card-img-top" src="https://images.unsplash.com/photo-1609942225969-3f3109a13eb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80" alt="<%= @ward.points_of_interest[0] %>"></a>
+          <div class="card-body">
+            <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
+          </div>
         </div>
-
-
+      </div>
+      <div class="col-4 my-4">
+        <div class="card points">
+          <a href="https://en.japantravel.com/tokyo/hachiko-statue-in-shibuya/44644"><img class="card-img-top" src="https://lp-cms-production.imgix.net/2019-06/6ea751421aeff7758f6bcdac0216043a-hachiko-statue.jpg" alt="<%= @ward.points_of_interest[1] %>"></a>
+          <div class="card-body">
+            <h5 class="card-title"><%= @ward.points_of_interest[1] %></h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 my-4">
+        <div class="card points">
+          <a href="https://en.japantravel.com/places/tokyo/yoyogi-park/18"><img class="card-img-top" src="https://jw-webmagazine.com/wp-content/uploads/2017/03/4743931_s.jpg" alt="<%= @ward.points_of_interest[2] %>"></a>
+          <div class="card-body">
+            <h5 class="card-title"><%= @ward.points_of_interest[2] %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
     <img src="" alt="">
     <h3 id = "rent">Rent Prices</h3>
     <p>Average rent prices for....</p>
@@ -65,12 +60,11 @@
     <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
     <h3 id = "safety">Safety Info</h3>
     <p> <%=@ward.safety%></p>
-
     <%# Reviews  %>
     <div class="container m-5">
-    <h1 class="m-4">Reviews of <%= @ward.name.capitalize %></h1>
+      <h1 class="m-4">Reviews of <%= @ward.name.capitalize %></h1>
       <div class="row">
-      <div class="col-6">
+        <div class="col-6">
           <div class="card-review m-4">
             <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
             <div class="card-product-infos">
@@ -78,17 +72,17 @@
               <p>"Living in Shibuya is an amazing experience! The energy of the city is palpable, and there is always something to do or see. I love being able to walk to all of the trendy shops, cafes, and bars. The only downside is that it can be a bit crowded and noisy at times, but the excitement of the area more than makes up for it."</p>
             </div>
           </div>
-          </div>
-          <div class="col-6">
+        </div>
+        <div class="col-6">
           <div class="card-review m-4">
             <img src="https://png.pngtree.com/element_our/20190529/ourlarge/pngtree-user-cartoon-girl-avatar-image_1200112.jpg" />
             <div class="card-product-infos">
               <h2>Paulina ⭐⭐⭐⭐⭐</h2>
               <p>"Shibuya is the perfect place to live if you want to experience the best of Tokyo. The ward is home to some of the most popular attractions in the city, including the famous Shibuya crossing and the Hachiko statue. There are also tons of great restaurants and shopping options in the area. I feel lucky to call Shibuya my home!"</p>
             </div>
-            </div>
           </div>
-          <div class="col-6">
+        </div>
+        <div class="col-6">
           <div class="card-review m-4">
             <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-vector-stock-91602499.jpg" />
             <div class="card-product-infos">
@@ -96,7 +90,7 @@
               <p>"While Shibuya is undoubtedly one of the most exciting areas in Tokyo, it's not for everyone. The crowds can be overwhelming, and it can be difficult to find peace and quiet in the midst of all the hustle and bustle. Additionally, the cost of living in Shibuya is quite high, which can be a real challenge for many people. If you're looking for a more laid-back lifestyle, Shibuya may not be the best fit for you."</p>
             </div>
           </div>
-          </div>
+        </div>
       </div>
+    </div>
   </div>
-</div>

@@ -1,6 +1,8 @@
 require "json"
 require "faker"
-require 'securerandom'
+require "securerandom"
+require "open-uri"
+
 p "Destroying Wards"
 Ward.destroy_all
 
@@ -30,7 +32,7 @@ wards = {
   "nerima ku" => "練馬区",
   "adachi ku" => "足立区",
   "katsushika ku" => "葛飾区",
-  "edogawa ku" => "江戸川区"
+  "edogawa ku" => "江戸川区",
 }
 
 wards_file_path = File.join(File.dirname(__FILE__), "./wards.json")
@@ -44,6 +46,7 @@ wards.each do |en_name, jp_name|
   temp_ward = Ward.new(name: en_name)
 
   wards_parsed_json["tokyo_wards"].each do |parsed_ward|
+
    if parsed_ward["name"].downcase + " ku" == en_name
     temp_ward.population = parsed_ward["population"].to_i
     temp_ward.population_density = parsed_ward["population_density"].to_i
@@ -52,9 +55,18 @@ wards.each do |en_name, jp_name|
     temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
     temp_ward.summary = parsed_ward["summary"]
     temp_ward.points_of_interest = parsed_ward["points_of_interest"]
-    temp_ward.historical_significance = parsed_ward["historical_significance"]
-    temp_ward.flag = parsed_ward["flag"]
-   end
+    # adding photos from google search results to each point of interest
+      options = {}
+      options[:searchType] = "image"
+      temp_wards.points_of_interest.each do |point|
+        link = GoogleCustomSearchApi.search(point, options).items[0].link
+        file = URI.open(link)
+        temp_ward.photo.attach(io: file, filename: "#{point[0, 5]}.jpg", content_type: "image/jpg")
+      end
+      temp_ward.historical_significance = parsed_ward["historical_significance"]
+      temp_ward.flag = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_#{parsed_ward['name']}a%2C_Tokyo.svg/1200px-Flag_of_Edogawa%2C_Tokyo.svg.png"
+    end
+
   end
   wards_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"]&.downcase == temp_ward.name
@@ -68,15 +80,14 @@ wards.each do |en_name, jp_name|
   temp_ward.save
 end
 
-p "Seeding complete!"
-
 # User seeding
-p "Seeding users"
+p "Seeding users now..."
 # Function to generate a random string of lowercase letters and digits
 def generate_password
   SecureRandom.alphanumeric(8)
 end
-# Generate 100 users
+
+# Generate 10 users
 10.times do
   first_name = Faker::Name.unique.first_name
   last_name = Faker::Name.last_name
@@ -92,7 +103,9 @@ end
     password: password,
     username: username,
     address: address,
-    avatar: "/app/assets/images/dog-costume-banana-slug-kitai.jpg"
+    avatar: "/app/assets/images/dog-costume-banana-slug-kitai.jpg",
   )
   p user
 end
+
+p "Seeding of the users has been successfully completed"
