@@ -39,7 +39,7 @@ wards_file_path = File.join(File.dirname(__FILE__), "./wards.json")
 wards_info = File.read(wards_file_path)
 wards_parsed_json = JSON.parse(wards_info)
 
-wards_geojson = File.read("/Users/timchap96/code/timchap96/tokyo-maps/public/tokyo.geojson")
+wards_geojson = File.read("public/tokyo.geojson")
 wards_parsed_geojson = JSON.parse(wards_geojson)
 
 wards.each do |en_name, jp_name|
@@ -50,7 +50,7 @@ wards.each do |en_name, jp_name|
    if parsed_ward["name"].downcase + " ku" == en_name
     temp_ward.population = parsed_ward["population"].to_i
     temp_ward.population_density = parsed_ward["population_density"].to_i
-    temp_ward.one_ldk_avg_rent = rand(500..2000)
+    temp_ward.one_ldk_avg_rent = parsed_ward["one_ldk_avg_rent"]
     temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
     temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
     temp_ward.summary = parsed_ward["summary"]
