@@ -37,15 +37,17 @@ wards_file_path = File.join(File.dirname(__FILE__), "./wards.json")
 wards_info = File.read(wards_file_path)
 wards_parsed_json = JSON.parse(wards_info)
 
+wards_geojson = File.read("/Users/timchap96/code/timchap96/tokyo-maps/public/tokyo.geojson")
+wards_parsed_geojson = JSON.parse(wards_geojson)
+
 wards.each do |en_name, jp_name|
   temp_ward = Ward.new(name: en_name)
 
   wards_parsed_json["tokyo_wards"].each do |parsed_ward|
    if parsed_ward["name"].downcase + " ku" == en_name
-    p "Hello"
-    p temp_ward.population = parsed_ward["population"].to_i
+    temp_ward.population = parsed_ward["population"].to_i
     temp_ward.population_density = parsed_ward["population_density"].to_i
-    temp_ward.one_ldk_avg_rent = parsed_ward["one_ldk_avg_rent"]
+    temp_ward.one_ldk_avg_rent = rand(500..2000)
     temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
     temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
     temp_ward.summary = parsed_ward["summary"]
@@ -54,9 +56,17 @@ wards.each do |en_name, jp_name|
     temp_ward.flag = parsed_ward["flag"]
    end
   end
+  wards_parsed_geojson["features"].each do |feature|
+    if feature["properties"]["ward_en"]&.downcase == temp_ward.name
+      feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
+      feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
+      feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
+      p temp_ward.name
+      p feature["properties"]["one_ldk_sort_height"]
+    end
+  end
   temp_ward.save
 end
-# json parsing for ward infos
 
 p "Seeding complete!"
 

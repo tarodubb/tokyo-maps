@@ -8,7 +8,10 @@
         "ward_en": "Adachi Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "id": 131211
+        "id": 131211,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -5246,7 +5249,10 @@
         "ward_en": "Bunkyo Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131059
+        "code": 131059,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -8872,7 +8878,10 @@
         "ward_en": "Chiyoda Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131016
+        "code": 131016,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -11146,7 +11155,10 @@
         "ward_en": "Taito Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131067
+        "code": 131067,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -13552,7 +13564,10 @@
         "ward_en": "Shinagawa Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131091
+        "code": 131091,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -17900,7 +17915,10 @@
         "ward_en": "Edogawa Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131237
+        "code": 131237,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -21608,7 +21626,10 @@
         "ward_en": "Shinjuku Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131041
+        "code": 131041,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -26942,7 +26963,10 @@
         "ward_en": "Shibuya Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131130
+        "code": 131130,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -31204,7 +31228,10 @@
         "ward_en": "Kita Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131172
+        "code": 131172,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -35678,7 +35705,10 @@
         "ward_en": "Toshima Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131164
+        "code": 131164,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -41200,7 +41230,10 @@
         "ward_en": "Chuo Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131024
+        "code": 131024,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -42078,7 +42111,10 @@
         "ward_en": "Suginami Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131156
+        "code": 131156,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -48016,7 +48052,10 @@
         "ward_en": "Itabashi Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131199
+        "code": 131199,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -53118,7 +53157,10 @@
         "ward_en": "Setagaya Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131121
+        "code": 131121,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -63048,7 +63090,10 @@
         "ward_en": "Sumida Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131075
+        "code": 131075,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -64490,7 +64535,10 @@
         "ward_en": "Nakano Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131148
+        "code": 131148,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -70152,7 +70200,10 @@
         "ward_en": "Nerima Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131202
+        "code": 131202,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -77634,7 +77685,10 @@
         "ward_en": "Koto Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131083
+        "code": 131083,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -79978,7 +80032,10 @@
         "ward_en": "Meguro Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131105
+        "code": 131105,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -85660,7 +85717,10 @@
         "ward_en": "Katsushika Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131229
+        "code": 131229,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -90118,7 +90178,10 @@
         "ward_en": "Minato Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131032
+        "code": 131032,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -93922,7 +93985,10 @@
         "ward_en": "Ota Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131113
+        "code": 131113,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -101930,7 +101996,10 @@
         "ward_en": "Arakawa Ku",
         "area_ja": "都区部",
         "area_en": "Tokubu",
-        "code": 131181
+        "code": 131181,
+        "one_ldk_sort_height": 0,
+        "two_ldk_sort_height": 0,
+        "three_ldk_sort_height": 0
       },
       "geometry": {
         "type": "Polygon",
