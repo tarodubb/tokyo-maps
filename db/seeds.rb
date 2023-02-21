@@ -35,32 +35,27 @@ wards = {
   "edogawa ku" => "江戸川区",
 }
 
-file_path = File.join(File.dirname(__FILE__), "./tokyo.geojson")
-parsed_geo_json = JSON.parse(File.read(file_path))
-p parsed_geo_json["features"][0]["properties"]
-# p parsed_geo_json["features"][0]["geometry"]["coordinates"]
 wards_file_path = File.join(File.dirname(__FILE__), "./wards.json")
 wards_info = File.read(wards_file_path)
 wards_parsed_json = JSON.parse(wards_info)
 
+wards_geojson = File.read("/Users/timchap96/code/timchap96/tokyo-maps/public/tokyo.geojson")
+wards_parsed_geojson = JSON.parse(wards_geojson)
+
 wards.each do |en_name, jp_name|
   temp_ward = Ward.new(name: en_name)
-  parsed_geo_json["features"].each do |feature|
-    temp_ward.ward_code = feature["properties"]["code"]
-    if feature["properties"]["ward_en"]&.downcase == "#{en_name} ku"
-      temp_ward.geojson = feature["geometry"].to_json
-    end
-  end
+
   wards_parsed_json["tokyo_wards"].each do |parsed_ward|
-    if parsed_ward["name"].downcase == en_name
-      temp_ward.population = parsed_ward["population"].to_i
-      temp_ward.population_density = parsed_ward["population_density"].to_i
-      temp_ward.one_ldk_avg_rent = parsed_ward["one_ldk_avg_rent"]
-      temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
-      temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
-      temp_ward.summary = parsed_ward["summary"]
-      temp_ward.points_of_interest = parsed_ward["points_of_interest"]
-      # adding photos from google search results to each point of interest
+
+   if parsed_ward["name"].downcase + " ku" == en_name
+    temp_ward.population = parsed_ward["population"].to_i
+    temp_ward.population_density = parsed_ward["population_density"].to_i
+    temp_ward.one_ldk_avg_rent = rand(500..2000)
+    temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
+    temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
+    temp_ward.summary = parsed_ward["summary"]
+    temp_ward.points_of_interest = parsed_ward["points_of_interest"]
+    # adding photos from google search results to each point of interest
       options = {}
       options[:searchType] = "image"
       temp_wards.points_of_interest.each do |point|
@@ -71,11 +66,19 @@ wards.each do |en_name, jp_name|
       temp_ward.historical_significance = parsed_ward["historical_significance"]
       temp_ward.flag = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_#{parsed_ward['name']}a%2C_Tokyo.svg/1200px-Flag_of_Edogawa%2C_Tokyo.svg.png"
     end
+
+  end
+  wards_parsed_geojson["features"].each do |feature|
+    if feature["properties"]["ward_en"]&.downcase == temp_ward.name
+      feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
+      feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
+      feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
+      p temp_ward.name
+      p feature["properties"]["one_ldk_sort_height"]
+    end
   end
   temp_ward.save
 end
-
-p "Seeding of the wards is complete!"
 
 # User seeding
 p "Seeding users now..."

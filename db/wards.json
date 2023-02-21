@@ -8,8 +8,14 @@
       "one_ldk_avg_rent": 191300 ,
       "two_ldk_avg_rent": 326100,
       "three_ldk_avg_rent": 687300,
+
       "summary": "Chiyoda is located at the very center of Tokyo and is home to many important government and business buildings. It is also known for its many parks and shrines, including the Imperial Palace and Yasukuni Shrine.",
-      "points_of_interest": ["Imperial Palace", "Yasukuni Shrine", "Nippon Budokan", "Tokyo International Forum"],
+      "points_of_interest": [
+        "Imperial Palace",
+        "Yasukuni Shrine",
+        "Nippon Budokan",
+        "Tokyo International Forum"
+      ],
       "historical_significance": "Chiyoda has been the center of political power in Japan for centuries and was the site of many important events in Japanese history, including the Meiji Restoration and the signing of the Treaty of San Francisco.",
       "flag": ""
     },
@@ -18,11 +24,17 @@
       "population": 147620,
       "population_density": 14460,
       "international_schools": 8,
+
       "one_ldk_avg_rent": 180500 ,
       "two_ldk_avg_rent": 231800,
       "three_ldk_avg_rent": 328800,
       "summary": "Chūō is a bustling commercial district with many shopping and entertainment options. It is also home to several famous seafood markets, including the Tsukiji Market.",
-      "points_of_interest": ["Ginza", "Tsukiji Market", "Kabukiza Theater", "Tokyo Station"],
+      "points_of_interest": [
+        "Ginza",
+        "Tsukiji Market",
+        "Kabukiza Theater",
+        "Tokyo Station"
+      ],
       "historical_significance": "Chūō has a long history as a center of commerce and trade in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": ""
     },
@@ -35,7 +47,12 @@
       "two_ldk_avg_rent": 468600,
       "three_ldk_avg_rent": 866200,
       "summary": "Minato is a major business district and home to several important embassies. It is also known for its many parks and museums, including the Tokyo Tower and Zojoji Temple.",
-      "points_of_interest": ["Tokyo Tower", "Zojoji Temple", "Roppongi Hills", "Mori Art Museum"],
+      "points_of_interest": [
+        "Tokyo Tower",
+        "Zojoji Temple",
+        "Roppongi Hills",
+        "Mori Art Museum"
+      ],
       "historical_significance": "Minato has a long history as a center of international trade and diplomacy. It was heavily bombed during World War II, but has since been rebuilt and modernized.",
       "flag": ""
     },
@@ -48,7 +65,12 @@
       "two_ldk_avg_rent": 210100,
       "three_ldk_avg_rent": 268000,
       "summary": "Shinjuku is a bustling entertainment district with many shopping, dining, and nightlife options. It is also home to several large parks, including Shinjuku Gyoen.",
-      "points_of_interest": ["Shinjuku Gyoen", "Golden Gai", "Kabukicho", "Samurai Museum"],
+      "points_of_interest": [
+        "Shinjuku Gyoen",
+        "Golden Gai",
+        "Kabukicho",
+        "Samurai Museum"
+      ],
       "historical_significance": "Shinjuku was originally a small rural village, but rapidly grew into a major transportation hub during the Meiji period. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": ""
     },
@@ -61,7 +83,12 @@
       "two_ldk_avg_rent": 202900,
       "three_ldk_avg_rent": 269100,
       "summary": "Bunkyō is a residential area known for its many universities and cultural institutions. It is also home to several large parks, including Ueno Park and Koishikawa Korakuen Garden.",
-      "points_of_interest": ["University of Tokyo", "Ueno Park", "Koishikawa Korakuen Garden", "Tokyo Dome"],
+      "points_of_interest": [
+        "University of Tokyo",
+        "Ueno Park",
+        "Koishikawa Korakuen Garden",
+        "Tokyo Dome"
+      ],
       "historical_significance": "Bunkyō has a long history as a center of learning and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": ""
       },
@@ -74,7 +101,12 @@
       "two_ldk_avg_rent": 170900,
       "three_ldk_avg_rent": 209300,
       "summary": "Taitō is a historic area known for its many temples and shrines, including Sensō-ji and Ueno Tōshō-gū. It is also home to several museums and a large public park.",
-      "points_of_interest": ["Sensō-ji", "Ueno Tōshō-gū", "National Museum of Western Art", "Ueno Park"],
+      "points_of_interest": [
+        "Sensō-ji",
+        "Ueno Tōshō-gū",
+        "National Museum of Western Art",
+        "Ueno Park"
+      ],
       "historical_significance": "Taitō has a long history as a center of religion and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and preserved.",
       "flag": ""
       },
@@ -87,11 +119,16 @@
       "two_ldk_avg_rent": 130700,
       "three_ldk_avg_rent": 182500,
       "summary": "Sumida is a residential and industrial area known for its many parks and cultural institutions. It is also home to the Tokyo Skytree, one of the tallest structures in the world.",
-      "points_of_interest": ["Tokyo Skytree", "Sumida Park", "Asahi Beer Hall", "Edo-Tokyo Museum"],
+      "points_of_interest": [
+        "Tokyo Skytree",
+        "Sumida Park",
+        "Asahi Beer Hall",
+        "Edo-Tokyo Museum"
+      ],
       "historical_significance": "Sumida has a long history as a center of industry and trade in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": ""
-      },
-      {
+    },
+    {
       "name": "Koto",
       "population": 508661,
       "population_density": 12510,
@@ -100,7 +137,12 @@
       "two_ldk_avg_rent": 169200,
       "three_ldk_avg_rent": 195500,
       "summary": "Kōtō is a residential and industrial area known for its many parks and waterfront areas. It is also home to several museums, including the Tokyo Museum of Contemporary Art.",
-      "points_of_interest": ["Tokyo Museum of Contemporary Art", "Kiba Park", "Fukagawa Edo Museum", "Tokyo Big Sight"],
+      "points_of_interest": [
+        "Tokyo Museum of Contemporary Art",
+        "Kiba Park",
+        "Fukagawa Edo Museum",
+        "Tokyo Big Sight"
+      ],
       "historical_significance": "Kōtō has a long history as a center of industry and transportation in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": ""
       },
@@ -261,4 +303,4 @@
           "flag": ""
         }
   ]
-  }
+}
