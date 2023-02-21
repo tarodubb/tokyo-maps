@@ -25,3 +25,6 @@ module TokyoMaps
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+# adding fonts folder to the Assests pipeline
+config.assets.paths << Rails.root.join("app", "assets", "fonts")
