@@ -21,10 +21,16 @@ export default class extends Controller {
     this.hoveredStateId = null;
 
     this.map.on("load", () => {
+      //Add source for ward shapes
       this.map.addSource('wards', {
         type: 'geojson',
-        data: 'tokyo.geojson',
+        data: 'tokyo.geojson'
       });
+      //Add source for ward labels
+      this.map.addSource('ward-labels', {
+        type: 'geojson',
+        data: 'labels.geojson'
+      })
       //Fill each ward with color
       this.map.addLayer(
         {
@@ -55,37 +61,38 @@ export default class extends Controller {
         },
       });
       //Extrusion when ward is hovered on
-      // this.map.addLayer({
-      //   'id': 'ward-extrusion',
-      //   'type': 'fill-extrusion',
-      //   'source': 'wards',
-      //   'paint': {
-      //     // Get the `fill-extrusion-color` from the source `color` property.
-      //     'fill-extrusion-color': [
-      //       'case',
-      //       ['boolean', ['feature-state', 'hover'], false],
-      //       '#FF99AF',
-      //       '#FFD6DF'
-      //     ],
+      this.map.addLayer({
+        'id': 'ward-extrusion',
+        'type': 'fill-extrusion',
+        'source': 'wards',
+        'paint': {
+          // Get the `fill-extrusion-color` from the source `color` property.
+          'fill-extrusion-color': [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            '#FF99AF',
+            '#FFD6DF'
+          ],
 
-      //     'fill-extrusion-height': [
-      //       'case',
-      //       ['boolean', ['feature-state', 'hover'], false],
-      //       1000,
-      //       1
-      //     ],
+          'fill-extrusion-height': [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            3000,
+            1
+          ],
 
-      //     'fill-extrusion-base': 0,
-      //     // "fill-extrusion-vertical-gradient": true,
-      //     // Make extrusions slightly opaque to see through indoor walls.
-      //     'fill-extrusion-opacity': [
-      //       'case',
-      //       ['boolean', ['feature-state', 'hover'], false],
-      //       1,
-      //       0.2
-      //     ]
-      //   }
-      // });
+          'fill-extrusion-base': 200,
+          // "fill-extrusion-vertical-gradient": true,
+          // Make extrusions slightly opaque to see through indoor walls.
+          'fill-extrusion-opacity':1
+          // [
+          //   'case',
+          //   ['boolean', ['feature-state', 'hover'], false],
+          //   1,
+          //   0.2
+          // ]
+        }
+      });
       //Listener for ward click to go to the show page
       this.map.on("click", "wards-fill", (e) => {
         let ward_name = e.features[0].properties.ward_en;
@@ -120,6 +127,23 @@ export default class extends Controller {
           );
         }
         this.hoveredStateId = null;
+      });
+      //Place labels
+      this.map.addLayer({
+        'id': 'ward-labels',
+        'type': 'symbol',
+        'source': 'ward-labels',
+        'minzoom': 2,
+        'layout': {
+          'text-field': ['get', 'ward_en'],
+          'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+          // 'text-radial-offset': 0.5,
+          'text-justify': 'auto'
+          // 'icon-image': ['get', 'icon']
+        },
+        'paint': {
+          'text-color': '#290009'
+        }
       });
       //Set space and globe fog colors
       this.map.setFog({
