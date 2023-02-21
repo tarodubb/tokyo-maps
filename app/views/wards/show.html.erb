@@ -1,6 +1,12 @@
 <div>
-  <div id = "map" class = "img-wrapper" ></div>
-  <div class="container">
+  <div id = "ward-banner" class = "img-wrapper d-flex align-items-center justify-content-center flex-column show-banner" >
+   <div class = "ward-title">
+    <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+    <h3 class = "pop_text">Population: <%=@ward.population %> </h3>
+    <h3 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
+   </div>
+    </div>
+
     <div class="dropdown">
       <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
       <div class="dropdown-content">
@@ -11,8 +17,8 @@
         <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
       </div>
     </div>
-    <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
-    <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
+
+  <div class="container">
     <div class = "row" id = "summary">
       <div class="col-6 my-4">
         <%= image_tag("shibuyaflag.jpg", width: 500) %>
