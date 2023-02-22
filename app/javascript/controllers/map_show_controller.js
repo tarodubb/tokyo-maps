@@ -29,9 +29,7 @@ export default class extends Controller {
         type: 'geojson',
         data: '../labels.geojson'
       })
-
       //Fill each ward with color
-
       this.map.addLayer(
         {
           'id': 'wards-fill',
@@ -40,7 +38,7 @@ export default class extends Controller {
           'layout': {},
           'paint': {
             'fill-color': '#FF99AF',
-            'fill-opacity': 1
+            'fill-opacity': 0.6
           }
         });
       //Set the border
@@ -54,6 +52,23 @@ export default class extends Controller {
           "line-width": 3,
           "line-opacity": 0.7,
         },
+      });
+      //Place labels
+      this.map.addLayer({
+        'id': 'ward-labels',
+        'type': 'symbol',
+        'source': 'ward-labels',
+        'minzoom': 2,
+        'layout': {
+          'text-field': ['get', 'ward_en'],
+          'text-variable-anchor': ['top'],
+          // 'text-radial-offset': 0.5,
+          'text-justify': 'auto'
+          // 'icon-image': ['get', 'icon']
+        },
+        'paint': {
+          'text-color': '#290009'
+        }
       });
     });
 
