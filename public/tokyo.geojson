@@ -9,9 +9,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "id": 131211,
-        "one_ldk_sort_height": 70500,
-        "two_ldk_sort_height": 97500,
-        "three_ldk_sort_height": 122300
+        "one_ldk_sort_height": 1418,
+        "two_ldk_sort_height": 1025,
+        "three_ldk_sort_height": 817
       },
       "geometry": {
         "type": "Polygon",
@@ -5250,9 +5250,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131059,
-        "one_ldk_sort_height": 123400,
-        "two_ldk_sort_height": 202900,
-        "three_ldk_sort_height": 269100
+        "one_ldk_sort_height": 810,
+        "two_ldk_sort_height": 492,
+        "three_ldk_sort_height": 371
       },
       "geometry": {
         "type": "Polygon",
@@ -8879,9 +8879,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131016,
-        "one_ldk_sort_height": 191300,
-        "two_ldk_sort_height": 326100,
-        "three_ldk_sort_height": 687300
+        "one_ldk_sort_height": 522,
+        "two_ldk_sort_height": 306,
+        "three_ldk_sort_height": 145
       },
       "geometry": {
         "type": "Polygon",
@@ -11156,9 +11156,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131067,
-        "one_ldk_sort_height": 121000,
-        "two_ldk_sort_height": 170900,
-        "three_ldk_sort_height": 209300
+        "one_ldk_sort_height": 826,
+        "two_ldk_sort_height": 585,
+        "three_ldk_sort_height": 477
       },
       "geometry": {
         "type": "Polygon",
@@ -13565,9 +13565,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131091,
-        "one_ldk_sort_height": null,
-        "two_ldk_sort_height": null,
-        "three_ldk_sort_height": null
+        "one_ldk_sort_height": 826,
+        "two_ldk_sort_height": 458,
+        "three_ldk_sort_height": 334
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -17916,9 +17916,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131237,
-        "one_ldk_sort_height": 75100,
-        "two_ldk_sort_height": 110300,
-        "three_ldk_sort_height": 138700
+        "one_ldk_sort_height": 1331,
+        "two_ldk_sort_height": 906,
+        "three_ldk_sort_height": 720
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -21627,9 +21627,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131041,
-        "one_ldk_sort_height": 144000,
-        "two_ldk_sort_height": 210100,
-        "three_ldk_sort_height": 268000
+        "one_ldk_sort_height": 694,
+        "two_ldk_sort_height": 475,
+        "three_ldk_sort_height": 373
       },
       "geometry": {
         "type": "Polygon",
@@ -26964,9 +26964,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131130,
-        "one_ldk_sort_height": 206000,
-        "two_ldk_sort_height": 351100,
-        "three_ldk_sort_height": 529300
+        "one_ldk_sort_height": 485,
+        "two_ldk_sort_height": 284,
+        "three_ldk_sort_height": 188
       },
       "geometry": {
         "type": "Polygon",
@@ -31229,9 +31229,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131172,
-        "one_ldk_sort_height": 94600,
-        "two_ldk_sort_height": 141000,
-        "three_ldk_sort_height": 149900
+        "one_ldk_sort_height": 1057,
+        "two_ldk_sort_height": 709,
+        "three_ldk_sort_height": 667
       },
       "geometry": {
         "type": "Polygon",
@@ -35706,9 +35706,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131164,
-        "one_ldk_sort_height": 105400,
-        "two_ldk_sort_height": 158800,
-        "three_ldk_sort_height": 235200
+        "one_ldk_sort_height": 948,
+        "two_ldk_sort_height": 629,
+        "three_ldk_sort_height": 425
       },
       "geometry": {
         "type": "Polygon",
@@ -41231,9 +41231,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131024,
-        "one_ldk_sort_height": 180500,
-        "two_ldk_sort_height": 231800,
-        "three_ldk_sort_height": 328800
+        "one_ldk_sort_height": 554,
+        "two_ldk_sort_height": 431,
+        "three_ldk_sort_height": 304
       },
       "geometry": {
         "type": "Polygon",
@@ -42112,9 +42112,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131156,
-        "one_ldk_sort_height": 100400,
-        "two_ldk_sort_height": 139200,
-        "three_ldk_sort_height": 181300
+        "one_ldk_sort_height": 996,
+        "two_ldk_sort_height": 718,
+        "three_ldk_sort_height": 551
       },
       "geometry": {
         "type": "Polygon",
@@ -48053,9 +48053,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131199,
-        "one_ldk_sort_height": 85100,
-        "two_ldk_sort_height": 109600,
-        "three_ldk_sort_height": 136700
+        "one_ldk_sort_height": 1175,
+        "two_ldk_sort_height": 912,
+        "three_ldk_sort_height": 731
       },
       "geometry": {
         "type": "Polygon",
@@ -53158,9 +53158,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131121,
-        "one_ldk_sort_height": 101700,
-        "two_ldk_sort_height": 161800,
-        "three_ldk_sort_height": 236700
+        "one_ldk_sort_height": 983,
+        "two_ldk_sort_height": 618,
+        "three_ldk_sort_height": 422
       },
       "geometry": {
         "type": "Polygon",
@@ -63091,9 +63091,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131075,
-        "one_ldk_sort_height": 95200,
-        "two_ldk_sort_height": 130700,
-        "three_ldk_sort_height": 182500
+        "one_ldk_sort_height": 1050,
+        "two_ldk_sort_height": 765,
+        "three_ldk_sort_height": 547
       },
       "geometry": {
         "type": "Polygon",
@@ -64536,9 +64536,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131148,
-        "one_ldk_sort_height": 105000,
-        "two_ldk_sort_height": 136300,
-        "three_ldk_sort_height": 173000
+        "one_ldk_sort_height": 952,
+        "two_ldk_sort_height": 733,
+        "three_ldk_sort_height": 578
       },
       "geometry": {
         "type": "Polygon",
@@ -70201,9 +70201,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131202,
-        "one_ldk_sort_height": 83300,
-        "two_ldk_sort_height": 104000,
-        "three_ldk_sort_height": 133400
+        "one_ldk_sort_height": 1200,
+        "two_ldk_sort_height": 961,
+        "three_ldk_sort_height": 749
       },
       "geometry": {
         "type": "Polygon",
@@ -77686,9 +77686,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131083,
-        "one_ldk_sort_height": 97100,
-        "two_ldk_sort_height": 169200,
-        "three_ldk_sort_height": 195500
+        "one_ldk_sort_height": 1029,
+        "two_ldk_sort_height": 591,
+        "three_ldk_sort_height": 511
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -80033,9 +80033,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131105,
-        "one_ldk_sort_height": null,
-        "two_ldk_sort_height": null,
-        "three_ldk_sort_height": null
+        "one_ldk_sort_height": 806,
+        "two_ldk_sort_height": 465,
+        "three_ldk_sort_height": 317
       },
       "geometry": {
         "type": "Polygon",
@@ -85718,9 +85718,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131229,
-        "one_ldk_sort_height": 69700,
-        "two_ldk_sort_height": 98500,
-        "three_ldk_sort_height": 132500
+        "one_ldk_sort_height": 1434,
+        "two_ldk_sort_height": 1015,
+        "three_ldk_sort_height": 754
       },
       "geometry": {
         "type": "Polygon",
@@ -90179,9 +90179,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131032,
-        "one_ldk_sort_height": 246000,
-        "two_ldk_sort_height": 468600,
-        "three_ldk_sort_height": 866200
+        "one_ldk_sort_height": 406,
+        "two_ldk_sort_height": 213,
+        "three_ldk_sort_height": 115
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -93986,9 +93986,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131113,
-        "one_ldk_sort_height": null,
-        "two_ldk_sort_height": null,
-        "three_ldk_sort_height": null
+        "one_ldk_sort_height": 1190,
+        "two_ldk_sort_height": 704,
+        "three_ldk_sort_height": 526
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -101997,9 +101997,9 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131181,
-        "one_ldk_sort_height": 93600,
-        "two_ldk_sort_height": 120400,
-        "three_ldk_sort_height": 163600
+        "one_ldk_sort_height": 1068,
+        "two_ldk_sort_height": 830,
+        "three_ldk_sort_height": 611
       },
       "geometry": {
         "type": "Polygon",

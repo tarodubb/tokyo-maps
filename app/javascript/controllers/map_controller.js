@@ -1,56 +1,60 @@
 import { Controller, ValueListObserver } from "@hotwired/stimulus";
 
 export default class extends Controller {
+  // Define the values that can be passed to the controller
   static values = {
-    apiKey: String,
-    areas: Array,
+    apiKey: String, // a string value for the API key
+    areas: Array, // an array of areas
   };
-  static targets = ["globus"];
+
+  // Define the HTML elements to be targeted by the controller
+  static targets = ["globus", "sortKey"];
+
+  // Declare the class variables
   map = null;
   hoveredStateId = null;
 
   connect() {
     let map_style = "";
-    mapboxgl.accessToken = this.apiKeyValue;
+    mapboxgl.accessToken = this.apiKeyValue; // Set the Mapbox access token
     this.map = new mapboxgl.Map({
-      container: this.globusTarget,
-      style: 'mapbox://styles/timchap96/cle9d1pes000201ltisdfvwnm',
-      zoom: 1,
-      center: [139.697888, 35.685098],
-      projection: "globe",
+      container: this.globusTarget, // Set the map container
+      style: 'mapbox://styles/timchap96/cle9d1pes000201ltisdfvwnm', // Set the map style
+      zoom: 1, // Set the initial zoom level
+      center: [139.697888, 35.685098], // Set the initial center coordinates
+      projection: "globe", // Set the map projection to globe
     });
     this.hoveredStateId = null;
 
     if (map_style !== "sort") {
       this.map.on("load", () => {
-        //Add source for ward shapes
+        // Add source for ward shapes
         this.map.addSource('wards', {
           type: 'geojson',
           data: 'tokyo.geojson'
         });
-        //Add source for ward labels
+        // Add source for ward labels
         this.map.addSource('ward-labels', {
           type: 'geojson',
           data: 'labels.geojson'
         })
-        //Fill each ward with color
-        this.map.addLayer(
-          {
-            'id': 'wards-fill',
-            'type': 'fill',
-            'source': 'wards',
-            'layout': {},
-            'paint': {
-              'fill-color': '#FF99AF',
-              'fill-opacity': [
-                'case',
-                ['boolean', ['feature-state', 'hover'], false],
-                1,
-                0.4
-              ]
-            }
-          });
-        //Set the border
+        // Fill each ward with color
+        this.map.addLayer({
+          'id': 'wards-fill',
+          'type': 'fill',
+          'source': 'wards',
+          'layout': {},
+          'paint': {
+            'fill-color': '#FF99AF',
+            'fill-opacity': [
+              'case',
+              ['boolean', ['feature-state', 'hover'], false],
+              1,
+              0.4
+            ]
+          }
+        });
+        // Set the border
         this.map.addLayer({
           id: "wards-outline",
           type: "line",
@@ -62,37 +66,29 @@ export default class extends Controller {
             "line-opacity": 0.7,
           },
         });
-        //Extrusion when ward is hovered on
+        // Extrusion when ward is hovered on
         this.map.addLayer({
           'id': 'ward-extrusion',
           'type': 'fill-extrusion',
           'source': 'wards',
+          'layout': {
+            'visibility': 'visible'
+          },
           'paint': {
-            // Get the `fill-extrusion-color` from the source `color` property.
             'fill-extrusion-color': [
               'case',
               ['boolean', ['feature-state', 'hover'], false],
               '#FF99AF',
               '#FFD6DF'
             ],
-
             'fill-extrusion-height': [
               'case',
               ['boolean', ['feature-state', 'hover'], false],
               3000,
               1
             ],
-
             'fill-extrusion-base': 200,
-            // "fill-extrusion-vertical-gradient": true,
-            // Make extrusions slightly opaque to see through indoor walls.
             'fill-extrusion-opacity': 1
-            // [
-            //   'case',
-            //   ['boolean', ['feature-state', 'hover'], false],
-            //   1,
-            //   0.2
-            // ]
           }
         });
         //Listener for ward click to go to the show page
@@ -310,6 +306,26 @@ export default class extends Controller {
       pitch: 0,
     });
   }
-  sort() {
+  sort() { // sort function takes user selection from form and sets extrusion height based on that
+    if (this.map.getLayer('ward-sort-extrusion')) { // Check if a layer called "ward-sort-extrusion" already exists in the map
+      this.map.removeLayer('ward-sort-extrusion') // If it does, remove it
+    };
+    let sortKey = this.sortKeyTarget.selectedOptions[0].id // Get the selected sorting option's ID
+    this.map.setLayoutProperty("ward-extrusion", "visibility", 'none'); // Hide "ward-extrusion" to hover extrusion doesen't happen
+    this.map.addLayer({
+      'id': 'ward-sort-extrusion', // Add a new layer with ID "ward-sort-extrusion"
+      'type': 'fill-extrusion', // The layer type is "fill-extrusion", which is used for creating 3D extrusions on a map
+      'source': 'wards',
+      'layout': {
+        'visibility': 'visible' // Set the layer visibility to "visible"
+      },
+      'paint': {
+        'fill-extrusion-color': '#FF99AF', // Set the color of the extrusion
+        'fill-extrusion-height': ['get', `${sortKey}`], // Set the height of the extrusion based on the selected sorting option which gets it from the wards source
+        'fill-extrusion-base': 200, // Set the base height of the extrusion
+        'fill-extrusion-opacity': 1 // Set the opacity of the extrusion to 100%
+      }
+    });
   }
+
 }

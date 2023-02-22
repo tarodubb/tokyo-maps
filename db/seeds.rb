@@ -77,9 +77,9 @@ wards.each do |en_name, jp_name|
   # Update the tokyo geojson with new rent information to be used for sorting.
   wards_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"]&.downcase == temp_ward.name
-      feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
-      feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
-      feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
+      feature["properties"]["one_ldk_sort_height"] = 100_000_000 / temp_ward.one_ldk_avg_rent
+      feature["properties"]["two_ldk_sort_height"] = 100_000_000 / temp_ward.two_ldk_avg_rent
+      feature["properties"]["three_ldk_sort_height"] = 100_000_000 / temp_ward.three_ldk_avg_rent
     end
   end
   p "Setting lat and long values for ward"
