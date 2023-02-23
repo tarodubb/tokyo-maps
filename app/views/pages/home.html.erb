@@ -2,7 +2,7 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   <button id="fly-to-tokyo" data-action="click->map#flyTokyo">Fly to Tokyo</button>
   <button id="reset-view"data-action="click->map#reset">Reset</button>
-  <form data-action = "change->map#sort">
+  <form data-action="change->map#sort">
     <div class="form-group">
       <label for="exampleFormControlSelect1">Sort</label>
       <select class="form-control" id="exampleFormControlSelect1" data-map-target="sortKey" fill-extrusion-input = "" >

@@ -2,7 +2,7 @@ require "json"
 require "faker"
 require "securerandom"
 require "open-uri"
-require_relative "../app/functions/extrusion_height"
+require_relative "../functions/extrusion_height"
 
 p "Destroying Wards"
 Ward.destroy_all
