@@ -1,26 +1,29 @@
 <div>
-  <%# Map %>
-  <div id="map-show-container" data-controller="map-show" data-map-show-areas-value= "<%= @areas.to_json %>"
-    data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <div id="map-show" data-map-show-target="globus" class="img-wrapper"></div>
-  </div>
-
-  <div class="container">
-    <div class="dropdown">
-      <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-      <div class="dropdown-content">
-        <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
+  <div id = "ward-banner" class = "img-wrapper d-flex align-items-center justify-content-center flex-column show-banner" >
+   <div class = "ward-title">
+    <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+    <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
+    <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
+   </div>
+    </div>
+    <div class="dropdown-wrapper">
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+        <div class="dropdown-content">
+          <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
+        </div>s
       </div>
     </div>
-    <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
-    <h3>Population: <%=@ward.population %> Population Density: <%=@ward.population_density %></h3>
-    <div class = "row" id = "summary">
+
+  <div class="container my-4">
+  <h2 class = "bold" id = "summary">Background</h2>
+    <div class = "row">
       <div class="col-6 my-4">
-        <%= image_tag("shibuyaflag.jpg", width: 500) %>
+        <%= image_tag("shibuyaflag.jpg", class: "flag-wrapper") %>
       </div>
       <div class="col-6 my-4">
         <div class="ward-text">
@@ -30,7 +33,7 @@
       </div>
     </div>
     <%# Places of interest cards  %>
-    <h3 id = "poi">Points of interests in </h3>
+    <h2 class = "bold" id = "poi">Points of interests</h2>
     <div class="row">
       <div class="col-4 my-4">
         <div class="card points">
@@ -58,16 +61,22 @@
       </div>
     </div>
     <img src="" alt="">
-    <h3 id = "rent">Rent Prices</h3>
-    <p>Average rent prices for....</p>
-    <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
-    <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
-    <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
-    <h3 id = "safety">Safety Info</h3>
-    <p> <%=@ward.safety%></p>
+    <div class="row">
+      <h2 class = "bold" id = "rent">Rent Prices</h2>
+      <div class="rent-wrapper">
+        <p>Average rent prices for....</p>
+        <div class="rent-price-wrapper">
+          <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
+          <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
+          <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
+        </div>
+      </div>
+      <h2 class = "bold" id = "safety">Safety Info</h2>
+      <p> <%=@ward.safety%></p>
+    </div>
     <%# Reviews  %>
     <div class="container m-5">
-      <h1 class="m-4">Reviews of <%= @ward.name.capitalize %></h1>
+      <h2 class="m-4 bold">Reviews of <%= @ward.name.capitalize %></h2>
       <div class="row">
         <% if @ward.reviews.blank? %>
           <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
