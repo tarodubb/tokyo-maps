@@ -2,7 +2,7 @@ require "json"
 require "faker"
 require "securerandom"
 require "open-uri"
-require_relative "../functions/extrusion_height"
+require_relative "../app/functions/extrusion_height"
 
 p "Destroying Wards"
 Ward.destroy_all
@@ -57,7 +57,7 @@ wards.each do |en_name, jp_name|
     if parsed_ward["name"].downcase + " ku" == en_name
       temp_ward.population = parsed_ward["population"].to_i
       temp_ward.population_density = parsed_ward["population_density"].to_i
-      temp_ward.one_ldk_avg_rent = rand(500..2000)
+      temp_ward.one_ldk_avg_rent = parsed_ward["one_ldk_avg_rent"]
       temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
       temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
       temp_ward.summary = parsed_ward["summary"]
@@ -82,7 +82,7 @@ wards.each do |en_name, jp_name|
   # Update the tokyo geojson with new rent information to be used for sorting.
   wards_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"]&.downcase == temp_ward.name
-      feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
+      p feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
       feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
       feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
     end
@@ -126,11 +126,12 @@ end
     password: password,
     username: username,
     address: address,
-    avatar: "/app/assets/images/dog-costume-banana-slug-kitai.jpg",
+    avatar: "/app/assets/images/dog-costume-banana-slug-kitai.jpg"
   )
   p user
 end
 
 get_max_avg = ExtrusionHeight.get_max_avg
+p get_max_avg
 ExtrusionHeight.extrude_height(get_max_avg)
 p "Seeding of the users has been successfully completed"
