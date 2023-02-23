@@ -5,7 +5,6 @@ class WardsController < ApplicationController
 
   def show
     @ward = Ward.find(params[:id])
-    @reviews = Review.where(ward: @ward)
     # Cant change area to singular or it breaks the whole map_show_controller
     @areas = {
       name: @ward.name,
@@ -17,5 +16,6 @@ class WardsController < ApplicationController
       latitude: @ward.latitude,
       longitude: @ward.longitude
     }
+    @review = Review.new
   end
 end
