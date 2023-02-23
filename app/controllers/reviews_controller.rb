@@ -1,12 +1,13 @@
 class ReviewsController < ApplicationController
   def new
-    @ward = Ward.find(params[:ward_id])
     @review = Review.new
   end
 
   def create
     @ward = Ward.find(params[:ward_id])
-    @review = Review.new(review_params)
+    new_params = review_params
+    new_params[:user_id] = current_user.id
+    @review = Review.new(new_params)
     @review.ward = @ward
     if @review.save
       redirect_to ward_path(@ward)
