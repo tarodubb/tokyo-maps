@@ -132,6 +132,5 @@ end
 end
 
 get_max_avg = ExtrusionHeight.get_max_avg
-p get_max_avg
 ExtrusionHeight.extrude_height(get_max_avg)
 p "Seeding of the users has been successfully completed"
