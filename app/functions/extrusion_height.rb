@@ -42,17 +42,17 @@ class ExtrusionHeight
   end
 
   def self.extrude_height(avg_rent_max_array)
-    h = 5000
+    h = 5000.0
     wards_geojson = File.read("public/tokyo.geojson")
     wards_parsed_geojson = JSON.parse(wards_geojson)
     wards_parsed_geojson["features"].each do |feature|
       # Multiply each avg by height factor category
       feature["properties"]["one_ldk_sort_height"] =
-        avg_rent_max_array[0] * h / feature["properties"]["one_ldk_sort_height"]
+        (h / avg_rent_max_array[0]) * feature["properties"]["one_ldk_sort_height"]
       feature["properties"]["two_ldk_sort_height"] =
-        avg_rent_max_array[1] * h / feature["properties"]["two_ldk_sort_height"]
+        (h / avg_rent_max_array[1]) * feature["properties"]["two_ldk_sort_height"]
       feature["properties"]["three_ldk_sort_height"] =
-        avg_rent_max_array[2] * h / feature["properties"]["three_ldk_sort_height"]
+        (h / avg_rent_max_array[2]) * feature["properties"]["three_ldk_sort_height"]
     end
     File.write('public/tokyo.geojson', JSON.pretty_generate(wards_parsed_geojson))
   end
