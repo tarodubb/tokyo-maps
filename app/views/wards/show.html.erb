@@ -1,5 +1,10 @@
 <div>
-  <div id = "map" class = "img-wrapper" ></div>
+  <%# Map %>
+  <div id="map-show-container" data-controller="map-show" data-map-show-areas-value= "<%= @areas.to_json %>"
+    data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="map-show" data-map-show-target="globus" class="img-wrapper"></div>
+  </div>
+
   <div class="container">
     <div class="dropdown">
       <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>

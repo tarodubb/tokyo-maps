@@ -35,12 +35,19 @@ wards = {
   "edogawa ku" => "江戸川区",
 }
 
+# Join and parse wards dataset
 wards_file_path = File.join(File.dirname(__FILE__), "./wards.json")
 wards_info = File.read(wards_file_path)
 wards_parsed_json = JSON.parse(wards_info)
 
-wards_geojson = File.read("/Users/Kito/code/natasha-cher/tokyo-maps/public/tokyo.geojson")
+
+# Parse the outline geodata of each tokyo ward
+wards_geojson = File.read("public/tokyo.geojson")
 wards_parsed_geojson = JSON.parse(wards_geojson)
+
+# Parse the lat and long of each ward geodata
+labels_geojson = File.read("public/labels.geojson")
+labels_parsed_geojson = JSON.parse(labels_geojson)
 
 wards.each do |en_name, jp_name|
   temp_ward = Ward.new(name: en_name)
@@ -71,16 +78,27 @@ wards.each do |en_name, jp_name|
     end
   end
 
+  # Update the tokyo geojson with new rent information to be used for sorting.
   wards_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"]&.downcase == temp_ward.name
       feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
       feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
       feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
-      p temp_ward.name
-      p feature["properties"]["one_ldk_sort_height"]
+    end
+  end
+  p "Setting lat and long values for ward"
+  # Set lat and long for each ward
+  labels_parsed_geojson["features"].each do |feature|
+    if feature["properties"]["ward_en"].downcase + " ku" == temp_ward.name
+      temp_ward.longitude = feature["geometry"]["coordinates"][0]
+      temp_ward.latitude = feature["geometry"]["coordinates"][1]
     end
   end
   temp_ward.save
+end
+# Changes the tokyo geojson with new rent data.
+File.open('public/tokyo.geojson', 'w') do |file|
+  file.write(JSON.pretty_generate(wards_parsed_geojson))
 end
 
 # User seeding
