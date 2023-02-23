@@ -2,6 +2,7 @@ require "json"
 require "faker"
 require "securerandom"
 require "open-uri"
+require_relative "../app/functions/extrusion_height"
 
 p "Destroying Wards"
 Ward.destroy_all
@@ -86,6 +87,7 @@ wards.each do |en_name, jp_name|
       feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
     end
   end
+
   p "Setting lat and long values for ward"
   # Set lat and long for each ward
   labels_parsed_geojson["features"].each do |feature|
@@ -129,4 +131,6 @@ end
   p user
 end
 
+p get_max_avg
+extrude_height(get_max_avg)
 p "Seeding of the users has been successfully completed"

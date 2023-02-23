@@ -5,10 +5,9 @@
       "population": 59441,
       "population_density": 5100,
       "international_schools": 7,
-      "one_ldk_avg_rent": 191300 ,
+      "one_ldk_avg_rent": 191300,
       "two_ldk_avg_rent": 326100,
       "three_ldk_avg_rent": 687300,
-
       "summary": "Chiyoda is located at the very center of Tokyo and is home to many important government and business buildings. It is also known for its many parks and shrines, including the Imperial Palace and Yasukuni Shrine.",
       "points_of_interest": [
         "Imperial Palace",
@@ -24,8 +23,7 @@
       "population": 147620,
       "population_density": 14460,
       "international_schools": 8,
-
-      "one_ldk_avg_rent": 180500 ,
+      "one_ldk_avg_rent": 180500,
       "two_ldk_avg_rent": 231800,
       "three_ldk_avg_rent": 328800,
       "summary": "Chūō is a bustling commercial district with many shopping and entertainment options. It is also home to several famous seafood markets, including the Tsukiji Market.",
@@ -43,7 +41,7 @@
       "population": 251461,
       "population_density": 12180,
       "international_schools": 12,
-      "one_ldk_avg_rent": 246000 ,
+      "one_ldk_avg_rent": 246000,
       "two_ldk_avg_rent": 468600,
       "three_ldk_avg_rent": 866200,
       "summary": "Minato is a major business district and home to several important embassies. It is also known for its many parks and museums, including the Tokyo Tower and Zojoji Temple.",
@@ -61,7 +59,7 @@
       "population": 339211,
       "population_density": 18690,
       "international_schools": 6,
-      "one_ldk_avg_rent": 144000 ,
+      "one_ldk_avg_rent": 144000,
       "two_ldk_avg_rent": 210100,
       "three_ldk_avg_rent": 268000,
       "summary": "Shinjuku is a bustling entertainment district with many shopping, dining, and nightlife options. It is also home to several large parks, including Shinjuku Gyoen.",
@@ -79,7 +77,7 @@
       "population": 223389,
       "population_density": 19790,
       "international_schools": 8,
-      "one_ldk_avg_rent": 123400 ,
+      "one_ldk_avg_rent": 123400,
       "two_ldk_avg_rent": 202900,
       "three_ldk_avg_rent": 269100,
       "summary": "Bunkyō is a residential area known for its many universities and cultural institutions. It is also home to several large parks, including Ueno Park and Koishikawa Korakuen Garden.",
@@ -91,7 +89,7 @@
       ],
       "historical_significance": "Bunkyō has a long history as a center of learning and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": ""
-      },
+    },
     {
       "name": "Taito",
       "population": 201953,
@@ -109,7 +107,7 @@
       ],
       "historical_significance": "Taitō has a long history as a center of religion and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and preserved.",
       "flag": ""
-      },
+    },
     {
       "name": "Sumida",
       "population": 273249,
@@ -145,162 +143,276 @@
       ],
       "historical_significance": "Kōtō has a long history as a center of industry and transportation in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": ""
-      },
-      {
-        "name": "Setagaya",
-        "population": 948933,
-        "population_density": 14600,
-        "international_schools": 10,
-        "one_ldk_avg_rent": 101700,
-        "two_ldk_avg_rent": 161800,
-        "three_ldk_avg_rent": 236700,
-        "summary": "Setagaya is a residential area known for its many parks and cultural institutions. It is also home to several universities and the popular shopping and entertainment district of Shimokitazawa.",
-        "points_of_interest": ["Kinuta Park", "Futako Tamagawa", "Setagaya Art Museum", "Shimokitazawa"],
-        "historical_significance": "Setagaya has a long history as a center of education and culture in Tokyo. It was once home to many scholars and artists, and still maintains a vibrant creative scene today.",
-        "flag": ""
-        },
-        {
-          "name": "Shibuya",
-          "population": 246513,
-          "population_density": 15650,
-          "international_schools": 6,
-          "one_ldk_avg_rent": 206000,
-          "two_ldk_avg_rent": 351100,
-          "three_ldk_avg_rent": 529300,
-          "summary": "Shibuya is a bustling commercial and entertainment district known for its many shops, restaurants, and nightlife. It is also home to several iconic landmarks, including the Shibuya Crossing and the Hachiko Statue.",
-          "points_of_interest": ["Shibuya Crossing", "Hachiko Statue", "Yoyogi Park", "Meiji Shrine"],
-          "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
-          "flag": ""
-        },
-        {
-          "name": "Nakano",
-          "population": 332902,
-          "population_density": 20940,
-          "international_schools": 4,
-          "one_ldk_avg_rent": 105000,
-          "two_ldk_avg_rent": 136300,
-          "three_ldk_avg_rent": 173000,
-          "summary": "Nakano is a residential and commercial area known for its many shops and restaurants. It is also home to several cultural institutions, including the Nakano Sun Plaza and the Nakano Zero Hall.",
-          "points_of_interest": ["Nakano Broadway", "Nakano Sun Plaza", "Nakano Shiki Theater", "Nakano Station"],
-          "historical_significance": "Nakano has a long history as a center of entertainment and culture in Tokyo. It was once home to many theaters and cinemas, and still maintains a vibrant creative scene today.",
-          "flag": ""
-        },
-        {
-          "name": "Suginami",
-          "population": 570483,
-          "population_density": 17050,
-          "international_schools": 3,
-          "one_ldk_avg_rent": 100400,
-          "two_ldk_avg_rent": 139200,
-          "three_ldk_avg_rent": 181300,
-          "summary": "Suginami is a residential and commercial area known for its many parks and cultural institutions. It is also home to several universities and the popular shopping district of Koenji.",
-          "points_of_interest": ["Koenji", "Inokashira Park", "Suginami Animation Museum", "Zenpukuji Park"],
-          "historical_significance": "Suginami has a long history as a center of arts and culture in Tokyo. It was once home to many artists and writers, and still maintains a vibrant creative scene today.",
-          "flag": ""
-        },
-        {
-          "name": "Toshima",
-          "population": 294673,
-          "population_density": 22650,
-          "international_schools": 4,
-          "one_ldk_avg_rent": 105400,
-          "two_ldk_avg_rent": 158800,
-          "three_ldk_avg_rent": 235200,
-          "summary": "Toshima is a residential and commercial ward, featuring a number of popular shopping districts such as Ikebukuro and Nishi-Sugamo. It is also home to several parks, including Ikebukuro Nishiguchi Park and Zoshigaya Kishimojindo. The area was historically known for its cultivation of mulberry trees for silk production.",
-          "points_of_interest": ["Ikebukuro", "Sunshine City", "Zoshigaya Kishimojindo", "Ikebukuro Nishiguchi Park"],
-          "historical_significance": "Toshima was historically a center of silk production, and was also the site of a major battle during the Boshin War in 1868.",
-          "flag": ""
-        },
-        {
-          "name": "Kita",
-          "population": 340221,
-          "population_density": 16750,
-          "international_schools": 2,
-          "one_ldk_avg_rent": 94600,
-          "two_ldk_avg_rent": 141000,
-          "three_ldk_avg_rent": 149900,
-          "summary": "Kita is a residential and commercial area known for its many parks, including Oji Park and Asukayama Park. It is also home to several universities, including Ochanomizu University and Tokyo University of Science.",
-          "points_of_interest": ["Oji Shrine", "Asukayama Park", "Ochanomizu University", "Tokyo University of Science"],
-          "historical_significance": "Kita has a rich cultural heritage, with many historic temples and shrines dating back to the Edo period. It was also the site of a major battle during the Meiji Restoration in 1868.",
-          "flag": ""
-        },
-        {
-          "name": "Arakawa",
-          "population": 213648,
-          "population_density": 20750,
-          "international_schools": 1,
-          "one_ldk_avg_rent": 93600,
-          "two_ldk_avg_rent": 120400,
-          "three_ldk_avg_rent": 163600,
-          "summary": "Arakawa is a primarily residential area located in northeastern Tokyo, known for its many parks and cultural institutions. It is home to several universities, including Nihon University and Tokyo University of Science.",
-          "points_of_interest": ["Arakawa Amusement Park", "Arakawa Yuenchi Park", "Nippori Textile Town", "Nippori Fabric Town"],
-          "historical_significance": "Arakawa has a long history as a center of textile production, dating back to the Edo period. It was also the site of several major battles during the Boshin War in 1868.",
-          "flag": ""
-        },
-        {
-          "name": "Itabashi",
-          "population": 569225,
-          "population_density": 17690,
-          "international_schools": 3,
-          "one_ldk_avg_rent": 85100,
-          "two_ldk_avg_rent": 109600,
-          "three_ldk_avg_rent": 136700,
-          "summary": "Itabashi is a residential and commercial area with a mix of old and new buildings. It is home to several universities, and has many parks and green spaces.",
-          "points_of_interest": ["Itabashi Ward Museum of Art", "Takashimadaira Park", "Shimoita Park", "Nakajima Park"],
-          "historical_significance": "Itabashi was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Itabashi-jinja Shrine.",
-          "flag": ""
-        },
-        {
-          "name": "Nerima",
-          "population": 734403,
-          "population_density": 15110,
-          "international_schools": 4,
-          "one_ldk_avg_rent": 83300,
-          "two_ldk_avg_rent": 104000,
-          "three_ldk_avg_rent": 133400,
-          "summary": "Nerima is a residential area with a mix of old and new buildings. It is home to several universities, and has many parks and green spaces.",
-          "points_of_interest": ["Toshimaen Amusement Park", "Hikarigaoka Park", "Shakujii Park", "Nakamura Tsune Atelier"],
-          "historical_significance": "Nerima was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Hikawa Shrine.",
-          "flag": ""
-        },
-        {
-          "name": "Adachi",
-          "population": 691057,
-          "population_density": 12570,
-          "international_schools": 1,
-          "one_ldk_avg_rent": 70500,
-          "two_ldk_avg_rent": 97500,
-          "three_ldk_avg_rent": 122300,
-          "summary": "Adachi is a residential area on the outskirts of Tokyo. It has many parks and green spaces, and is known for its traditional Japanese architecture.",
-          "points_of_interest": ["Kita-Senju shopping district", "Arakawa Furusato Street", "Adachi Fish Market", "Adachi Museum of Art"],
-          "historical_significance": "Adachi has a long history as a center of agriculture and fishing in Tokyo. It was once home to many samurai and other nobles, and still has several historic temples and shrines.",
-          "flag": ""
-        },
-        {
-          "name": "Katsushika",
-          "population": 447140,
-          "population_density": 12400,
-          "international_schools": 0,
-          "one_ldk_avg_rent": 69700,
-          "two_ldk_avg_rent": 98500,
-          "three_ldk_avg_rent": 132500,
-          "summary": "Katsushika is a residential area located in eastern Tokyo. It is home to the famous Shibamata Taishakuten temple and has a traditional, working-class feel.",
-          "points_of_interest": ["Shibamata Taishakuten", "Horikiri Iris Garden", "Mizumoto Park", "Katsushika Hachimangu Shrine"],
-          "historical_significance": "Katsushika has a long history, dating back to the Edo period when it was a center of agriculture and commerce. It was also the site of a major battle during the Boshin War.",
-          "flag": ""
-        },
-        {
-          "name": "Edogawa",
-          "population": 701287,
-          "population_density": 11800,
-          "international_schools": 1,
-          "one_ldk_avg_rent": 75100,
-          "two_ldk_avg_rent": 110300,
-          "three_ldk_avg_rent": 138700,
-          "summary": "Edogawa is a residential area located in eastern Tokyo, known for its parks and riverfront views. It is home to Tokyo Disneyland and the Kasai Rinkai Park.",
-          "points_of_interest": ["Tokyo Disneyland", "Kasai Rinkai Park", "Gyosen Park", "Edogawa Stadium"],
-          "historical_significance": "Edogawa was once a rural area, but has since developed into a modern residential and commercial center. It was also the site of a major battle during the Satsuma Rebellion.",
-          "flag": ""
-        }
+    },
+    {
+      "name": "Setagaya",
+      "population": 948933,
+      "population_density": 14600,
+      "international_schools": 10,
+      "one_ldk_avg_rent": 101700,
+      "two_ldk_avg_rent": 161800,
+      "three_ldk_avg_rent": 236700,
+      "summary": "Setagaya is a residential area known for its many parks and cultural institutions. It is also home to several universities and the popular shopping and entertainment district of Shimokitazawa.",
+      "points_of_interest": [
+        "Kinuta Park",
+        "Futako Tamagawa",
+        "Setagaya Art Museum",
+        "Shimokitazawa"
+      ],
+      "historical_significance": "Setagaya has a long history as a center of education and culture in Tokyo. It was once home to many scholars and artists, and still maintains a vibrant creative scene today.",
+      "flag": ""
+    },
+    {
+      "name": "Shibuya",
+      "population": 246513,
+      "population_density": 15650,
+      "international_schools": 6,
+      "one_ldk_avg_rent": 206000,
+      "two_ldk_avg_rent": 351100,
+      "three_ldk_avg_rent": 529300,
+      "summary": "Shibuya is a bustling commercial and entertainment district known for its many shops, restaurants, and nightlife. It is also home to several iconic landmarks, including the Shibuya Crossing and the Hachiko Statue.",
+      "points_of_interest": [
+        "Shibuya Crossing",
+        "Hachiko Statue",
+        "Yoyogi Park",
+        "Meiji Shrine"
+      ],
+      "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
+      "flag": ""
+    },
+    {
+      "name": "Nakano",
+      "population": 332902,
+      "population_density": 20940,
+      "international_schools": 4,
+      "one_ldk_avg_rent": 105000,
+      "two_ldk_avg_rent": 136300,
+      "three_ldk_avg_rent": 173000,
+      "summary": "Nakano is a residential and commercial area known for its many shops and restaurants. It is also home to several cultural institutions, including the Nakano Sun Plaza and the Nakano Zero Hall.",
+      "points_of_interest": [
+        "Nakano Broadway",
+        "Nakano Sun Plaza",
+        "Nakano Shiki Theater",
+        "Nakano Station"
+      ],
+      "historical_significance": "Nakano has a long history as a center of entertainment and culture in Tokyo. It was once home to many theaters and cinemas, and still maintains a vibrant creative scene today.",
+      "flag": ""
+    },
+    {
+      "name": "Suginami",
+      "population": 570483,
+      "population_density": 17050,
+      "international_schools": 3,
+      "one_ldk_avg_rent": 100400,
+      "two_ldk_avg_rent": 139200,
+      "three_ldk_avg_rent": 181300,
+      "summary": "Suginami is a residential and commercial area known for its many parks and cultural institutions. It is also home to several universities and the popular shopping district of Koenji.",
+      "points_of_interest": [
+        "Koenji",
+        "Inokashira Park",
+        "Suginami Animation Museum",
+        "Zenpukuji Park"
+      ],
+      "historical_significance": "Suginami has a long history as a center of arts and culture in Tokyo. It was once home to many artists and writers, and still maintains a vibrant creative scene today.",
+      "flag": ""
+    },
+    {
+      "name": "Toshima",
+      "population": 294673,
+      "population_density": 22650,
+      "international_schools": 4,
+      "one_ldk_avg_rent": 105400,
+      "two_ldk_avg_rent": 158800,
+      "three_ldk_avg_rent": 235200,
+      "summary": "Toshima is a residential and commercial ward, featuring a number of popular shopping districts such as Ikebukuro and Nishi-Sugamo. It is also home to several parks, including Ikebukuro Nishiguchi Park and Zoshigaya Kishimojindo. The area was historically known for its cultivation of mulberry trees for silk production.",
+      "points_of_interest": [
+        "Ikebukuro",
+        "Sunshine City",
+        "Zoshigaya Kishimojindo",
+        "Ikebukuro Nishiguchi Park"
+      ],
+      "historical_significance": "Toshima was historically a center of silk production, and was also the site of a major battle during the Boshin War in 1868.",
+      "flag": ""
+    },
+    {
+      "name": "Shinagawa",
+      "population": 392038,
+      "population_density": 16450,
+      "international_schools": 3,
+      "one_ldk_avg_rent": 121000,
+      "two_ldk_avg_rent": 218000,
+      "three_ldk_avg_rent": 299000,
+      "summary": "Shinagawa is a transportation hub and residential ward in Tokyo, featuring Shinagawa Station, one of the busiest train stations in Tokyo. It is also home to several international schools, including the American School in Japan and the Tokyo International School.",
+      "points_of_interest": [
+        "Shinagawa Aquarium",
+        "Sengaku-ji Temple",
+        "Happoen Garden",
+        "Tennozu Isle"
+      ],
+      "historical_significance": "Shinagawa was historically an important post town along the Tokaido road, which connected Tokyo to Kyoto during the Edo period.",
+      "flag": ""
+    },
+    {
+      "name": "Meguro",
+      "population": 292087,
+      "population_density": 19450,
+      "international_schools": 2,
+      "one_ldk_avg_rent": 124000,
+      "two_ldk_avg_rent": 215000,
+      "three_ldk_avg_rent": 315000,
+      "summary": "Meguro is a residential ward in Tokyo, known for its high-end neighborhoods and beautiful cherry blossom-lined Meguro River. It is also home to several international schools, including the International School of the Sacred Heart.",
+      "points_of_interest": [
+        "Meguro River",
+        "Meguro Sky Garden",
+        "Meguro Parasitological Museum",
+        "Institute of Nature Study"
+      ],
+      "historical_significance": "Meguro was once a rural area known for its cherry blossom trees, and was a popular destination for hanami (cherry blossom viewing) during the Edo period.",
+      "flag": ""
+    },
+    {
+      "name": "Ota",
+      "population": 722608,
+      "population_density": 12600,
+      "international_schools": 3,
+      "one_ldk_avg_rent": 84000,
+      "two_ldk_avg_rent": 142000,
+      "three_ldk_avg_rent": 190000,
+      "summary": "Ota is a ward in Tokyo known for its proximity to Haneda Airport and its lively shopping districts. It is also home to several international schools, including the Tokyo Korean 1st High School.",
+      "points_of_interest": [
+        "Ota Market",
+        "Heiwajima Antique Fair",
+        "Ikegami Honmonji Temple",
+        "Kamata Hachiman Shrine"
+      ],
+      "historical_significance": "Ota was home to a number of samurai residences during the Edo period, and was also the site of the Battle of Sekigahara in 1600, which marked the beginning of Tokugawa shogunate's rule over Japan.",
+      "flag": ""
+    },
+    {
+      "name": "Kita",
+      "population": 340221,
+      "population_density": 16750,
+      "international_schools": 2,
+      "one_ldk_avg_rent": 94600,
+      "two_ldk_avg_rent": 141000,
+      "three_ldk_avg_rent": 149900,
+      "summary": "Kita is a residential and commercial area known for its many parks, including Oji Park and Asukayama Park. It is also home to several universities, including Ochanomizu University and Tokyo University of Science.",
+      "points_of_interest": [
+        "Oji Shrine",
+        "Asukayama Park",
+        "Ochanomizu University",
+        "Tokyo University of Science"
+      ],
+      "historical_significance": "Kita has a rich cultural heritage, with many historic temples and shrines dating back to the Edo period. It was also the site of a major battle during the Meiji Restoration in 1868.",
+      "flag": ""
+    },
+    {
+      "name": "Arakawa",
+      "population": 213648,
+      "population_density": 20750,
+      "international_schools": 1,
+      "one_ldk_avg_rent": 93600,
+      "two_ldk_avg_rent": 120400,
+      "three_ldk_avg_rent": 163600,
+      "summary": "Arakawa is a primarily residential area located in northeastern Tokyo, known for its many parks and cultural institutions. It is home to several universities, including Nihon University and Tokyo University of Science.",
+      "points_of_interest": [
+        "Arakawa Amusement Park",
+        "Arakawa Yuenchi Park",
+        "Nippori Textile Town",
+        "Nippori Fabric Town"
+      ],
+      "historical_significance": "Arakawa has a long history as a center of textile production, dating back to the Edo period. It was also the site of several major battles during the Boshin War in 1868.",
+      "flag": ""
+    },
+    {
+      "name": "Itabashi",
+      "population": 569225,
+      "population_density": 17690,
+      "international_schools": 3,
+      "one_ldk_avg_rent": 85100,
+      "two_ldk_avg_rent": 109600,
+      "three_ldk_avg_rent": 136700,
+      "summary": "Itabashi is a residential and commercial area with a mix of old and new buildings. It is home to several universities, and has many parks and green spaces.",
+      "points_of_interest": [
+        "Itabashi Ward Museum of Art",
+        "Takashimadaira Park",
+        "Shimoita Park",
+        "Nakajima Park"
+      ],
+      "historical_significance": "Itabashi was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Itabashi-jinja Shrine.",
+      "flag": ""
+    },
+    {
+      "name": "Nerima",
+      "population": 734403,
+      "population_density": 15110,
+      "international_schools": 4,
+      "one_ldk_avg_rent": 83300,
+      "two_ldk_avg_rent": 104000,
+      "three_ldk_avg_rent": 133400,
+      "summary": "Nerima is a residential area with a mix of old and new buildings. It is home to several universities, and has many parks and green spaces.",
+      "points_of_interest": [
+        "Toshimaen Amusement Park",
+        "Hikarigaoka Park",
+        "Shakujii Park",
+        "Nakamura Tsune Atelier"
+      ],
+      "historical_significance": "Nerima was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Hikawa Shrine.",
+      "flag": ""
+    },
+    {
+      "name": "Adachi",
+      "population": 691057,
+      "population_density": 12570,
+      "international_schools": 1,
+      "one_ldk_avg_rent": 70500,
+      "two_ldk_avg_rent": 97500,
+      "three_ldk_avg_rent": 122300,
+      "summary": "Adachi is a residential area on the outskirts of Tokyo. It has many parks and green spaces, and is known for its traditional Japanese architecture.",
+      "points_of_interest": [
+        "Kita-Senju shopping district",
+        "Arakawa Furusato Street",
+        "Adachi Fish Market",
+        "Adachi Museum of Art"
+      ],
+      "historical_significance": "Adachi has a long history as a center of agriculture and fishing in Tokyo. It was once home to many samurai and other nobles, and still has several historic temples and shrines.",
+      "flag": ""
+    },
+    {
+      "name": "Katsushika",
+      "population": 447140,
+      "population_density": 12400,
+      "international_schools": 0,
+      "one_ldk_avg_rent": 69700,
+      "two_ldk_avg_rent": 98500,
+      "three_ldk_avg_rent": 132500,
+      "summary": "Katsushika is a residential area located in eastern Tokyo. It is home to the famous Shibamata Taishakuten temple and has a traditional, working-class feel.",
+      "points_of_interest": [
+        "Shibamata Taishakuten",
+        "Horikiri Iris Garden",
+        "Mizumoto Park",
+        "Katsushika Hachimangu Shrine"
+      ],
+      "historical_significance": "Katsushika has a long history, dating back to the Edo period when it was a center of agriculture and commerce. It was also the site of a major battle during the Boshin War.",
+      "flag": ""
+    },
+    {
+      "name": "Edogawa",
+      "population": 701287,
+      "population_density": 11800,
+      "international_schools": 1,
+      "one_ldk_avg_rent": 75100,
+      "two_ldk_avg_rent": 110300,
+      "three_ldk_avg_rent": 138700,
+      "summary": "Edogawa is a residential area located in eastern Tokyo, known for its parks and riverfront views. It is home to Tokyo Disneyland and the Kasai Rinkai Park.",
+      "points_of_interest": [
+        "Tokyo Disneyland",
+        "Kasai Rinkai Park",
+        "Gyosen Park",
+        "Edogawa Stadium"
+      ],
+      "historical_significance": "Edogawa was once a rural area, but has since developed into a modern residential and commercial center. It was also the site of a major battle during the Satsuma Rebellion.",
+      "flag": ""
+    }
   ]
 }
