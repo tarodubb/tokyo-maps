@@ -78,33 +78,27 @@
     <div class="container m-5">
       <h2 class="m-4 bold">Reviews of <%= @ward.name.capitalize %></h2>
       <div class="row">
-        <div class="col-6">
-          <div class="card-review m-4">
-            <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
-            <div class="card-product-infos">
-              <h2>Ron ⭐⭐⭐⭐⭐</h2>
-              <p>"Living in Shibuya is an amazing experience! The energy of the city is palpable, and there is always something to do or see. I love being able to walk to all of the trendy shops, cafes, and bars. The only downside is that it can be a bit crowded and noisy at times, but the excitement of the area more than makes up for it."</p>
+        <% if @ward.reviews.blank? %>
+          <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
+        <% else %>
+          <% @ward.reviews.each do |review| %>
+            <div class="col-6">
+              <div class="card-review m-4">
+                <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
+                <div class="card-product-infos">
+                  <h2><%= review.user.first_name %></h2>
+                  <p><%= review.content %></p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card-review m-4">
-            <img src="https://png.pngtree.com/element_our/20190529/ourlarge/pngtree-user-cartoon-girl-avatar-image_1200112.jpg" />
-            <div class="card-product-infos">
-              <h2>Paulina ⭐⭐⭐⭐⭐</h2>
-              <p>"Shibuya is the perfect place to live if you want to experience the best of Tokyo. The ward is home to some of the most popular attractions in the city, including the famous Shibuya crossing and the Hachiko statue. There are also tons of great restaurants and shopping options in the area. I feel lucky to call Shibuya my home!"</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card-review m-4">
-            <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-vector-stock-91602499.jpg" />
-            <div class="card-product-infos">
-              <h2>Roman ⭐⭐⭐</h2>
-              <p>"While Shibuya is undoubtedly one of the most exciting areas in Tokyo, it's not for everyone. The crowds can be overwhelming, and it can be difficult to find peace and quiet in the midst of all the hustle and bustle. Additionally, the cost of living in Shibuya is quite high, which can be a real challenge for many people. If you're looking for a more laid-back lifestyle, Shibuya may not be the best fit for you."</p>
-            </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
+    <%= simple_form_for([@ward, @review]) do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :content %>
+      <%= f.button :submit %>
+    <% end %>
+    <%= link_to "Back to all wards", wards_path %>
   </div>
