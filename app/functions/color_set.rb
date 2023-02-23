@@ -1,6 +1,6 @@
 require_relative "./extrusion_height"
 class ColorSet
-  def color_set
+  def self.color_set
     # Set main color (The higher the number the darker the color)
     red = 59
     green = 57
@@ -14,8 +14,8 @@ class ColorSet
     hover_green = 255
     hover_blue = 255
 
-    max_avg = get_max_avg
-    min_avg = get_min_avg
+    max_avg = ExtrusionHeight.get_max_avg
+    min_avg = ExtrusionHeight.get_min_avg
 
     max_color_r = red / max_avg[0]
     max_color_g = green / max_avg[0]
