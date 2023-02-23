@@ -9,9 +9,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "id": 131211,
-        "one_ldk_sort_height": 1418,
-        "two_ldk_sort_height": 1025,
-        "three_ldk_sort_height": 817
+        "one_ldk_sort_height": 1432.9268292682927,
+        "two_ldk_sort_height": 1040.3329065300895,
+        "three_ldk_sort_height": 705.957053798199,
+        "base-color": "rgb(42,41,148)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -5250,9 +5253,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131059,
-        "one_ldk_sort_height": 810,
-        "two_ldk_sort_height": 492,
-        "three_ldk_sort_height": 371
+        "one_ldk_sort_height": 2508.130081300813,
+        "two_ldk_sort_height": 2164.959453691848,
+        "three_ldk_sort_height": 1553.3364119141074,
+        "base-color": "rgb(29,28,104)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -8879,9 +8885,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131016,
-        "one_ldk_sort_height": 522,
-        "two_ldk_sort_height": 306,
-        "three_ldk_sort_height": 145
+        "one_ldk_sort_height": 3888.211382113821,
+        "two_ldk_sort_height": 3479.5134443021766,
+        "three_ldk_sort_height": 3967.328561533133,
+        "base-color": "rgb(13,13,46)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -11156,9 +11165,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131067,
-        "one_ldk_sort_height": 826,
-        "two_ldk_sort_height": 585,
-        "three_ldk_sort_height": 477
+        "one_ldk_sort_height": 2459.349593495935,
+        "two_ldk_sort_height": 1823.5168587281262,
+        "three_ldk_sort_height": 1208.1505425998614,
+        "base-color": "rgb(30,29,106)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -13565,9 +13577,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131091,
-        "one_ldk_sort_height": 826,
-        "two_ldk_sort_height": 458,
-        "three_ldk_sort_height": 334
+        "one_ldk_sort_height": 2459.349593495935,
+        "two_ldk_sort_height": 2326.077678190354,
+        "three_ldk_sort_height": 1725.9293465712306,
+        "base-color": "rgb(30,29,106)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -17916,9 +17931,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131237,
-        "one_ldk_sort_height": 1331,
-        "two_ldk_sort_height": 906,
-        "three_ldk_sort_height": 720
+        "one_ldk_sort_height": 1526.4227642276423,
+        "two_ldk_sort_height": 1176.9099445155782,
+        "three_ldk_sort_height": 800.6234126067882,
+        "base-color": "rgb(41,40,145)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -21627,9 +21645,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131041,
-        "one_ldk_sort_height": 694,
-        "two_ldk_sort_height": 475,
-        "three_ldk_sort_height": 373
+        "one_ldk_sort_height": 2926.829268292683,
+        "two_ldk_sort_height": 2241.784037558685,
+        "three_ldk_sort_height": 1546.98683906719,
+        "base-color": "rgb(24,24,86)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -26964,9 +26985,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131130,
-        "one_ldk_sort_height": 485,
-        "two_ldk_sort_height": 284,
-        "three_ldk_sort_height": 188
+        "one_ldk_sort_height": 4186.991869918699,
+        "two_ldk_sort_height": 3746.265471617584,
+        "three_ldk_sort_height": 3055.2990071577,
+        "base-color": "rgb(10,9,34)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -31229,9 +31253,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131172,
-        "one_ldk_sort_height": 1057,
-        "two_ldk_sort_height": 709,
-        "three_ldk_sort_height": 667
+        "one_ldk_sort_height": 1922.7642276422764,
+        "two_ldk_sort_height": 1504.4814340588987,
+        "three_ldk_sort_height": 865.2736088663125,
+        "base-color": "rgb(36,35,128)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -35706,9 +35733,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131164,
-        "one_ldk_sort_height": 948,
-        "two_ldk_sort_height": 629,
-        "three_ldk_sort_height": 425
+        "one_ldk_sort_height": 2142.2764227642274,
+        "two_ldk_sort_height": 1694.408877507469,
+        "three_ldk_sort_height": 1357.6541214500114,
+        "base-color": "rgb(34,33,119)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -41231,9 +41261,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131024,
-        "one_ldk_sort_height": 554,
-        "two_ldk_sort_height": 431,
-        "three_ldk_sort_height": 304
+        "one_ldk_sort_height": 3668.6991869918697,
+        "two_ldk_sort_height": 2473.324797268459,
+        "three_ldk_sort_height": 1897.9450473331792,
+        "base-color": "rgb(16,15,55)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -42112,9 +42145,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131156,
-        "one_ldk_sort_height": 996,
-        "two_ldk_sort_height": 718,
-        "three_ldk_sort_height": 551
+        "one_ldk_sort_height": 2040.650406504065,
+        "two_ldk_sort_height": 1485.2752880921894,
+        "three_ldk_sort_height": 1046.5250519510505,
+        "base-color": "rgb(35,34,123)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -48053,9 +48089,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131199,
-        "one_ldk_sort_height": 1175,
-        "two_ldk_sort_height": 912,
-        "three_ldk_sort_height": 731
+        "one_ldk_sort_height": 1729.6747967479675,
+        "two_ldk_sort_height": 1169.440887750747,
+        "three_ldk_sort_height": 789.0787347033017,
+        "base-color": "rgb(39,37,136)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -53158,9 +53197,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131121,
-        "one_ldk_sort_height": 983,
-        "two_ldk_sort_height": 618,
-        "three_ldk_sort_height": 422
+        "one_ldk_sort_height": 2067.0731707317073,
+        "two_ldk_sort_height": 1726.4191207853178,
+        "three_ldk_sort_height": 1366.3126298776263,
+        "base-color": "rgb(35,33,122)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -63091,9 +63133,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131075,
-        "one_ldk_sort_height": 1050,
-        "two_ldk_sort_height": 765,
-        "three_ldk_sort_height": 547
+        "one_ldk_sort_height": 1934.959349593496,
+        "two_ldk_sort_height": 1394.5795988049508,
+        "three_ldk_sort_height": 1053.4518586931424,
+        "base-color": "rgb(36,35,128)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -64536,9 +64581,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131148,
-        "one_ldk_sort_height": 952,
-        "two_ldk_sort_height": 733,
-        "three_ldk_sort_height": 578
+        "one_ldk_sort_height": 2134.1463414634145,
+        "two_ldk_sort_height": 1454.332052923602,
+        "three_ldk_sort_height": 998.6146386515816,
+        "base-color": "rgb(34,33,119)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -70201,9 +70249,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131202,
-        "one_ldk_sort_height": 1200,
-        "two_ldk_sort_height": 961,
-        "three_ldk_sort_height": 749
+        "one_ldk_sort_height": 1693.0894308943089,
+        "two_ldk_sort_height": 1109.6884336320954,
+        "three_ldk_sort_height": 770.030016162549,
+        "base-color": "rgb(39,38,138)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -77686,9 +77737,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131083,
-        "one_ldk_sort_height": 1029,
-        "two_ldk_sort_height": 591,
-        "three_ldk_sort_height": 511
+        "one_ldk_sort_height": 1973.5772357723577,
+        "two_ldk_sort_height": 1805.3777208706786,
+        "three_ldk_sort_height": 1128.4922650658045,
+        "base-color": "rgb(36,35,126)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -80033,9 +80087,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131105,
-        "one_ldk_sort_height": 806,
-        "two_ldk_sort_height": 465,
-        "three_ldk_sort_height": 317
+        "one_ldk_sort_height": 2520.3252032520327,
+        "two_ldk_sort_height": 2294.067434912505,
+        "three_ldk_sort_height": 1818.2867697991226,
+        "base-color": "rgb(29,28,103)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -85718,9 +85775,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131229,
-        "one_ldk_sort_height": 1434,
-        "two_ldk_sort_height": 1015,
-        "three_ldk_sort_height": 754
+        "one_ldk_sort_height": 1416.6666666666667,
+        "two_ldk_sort_height": 1051.0029876227059,
+        "three_ldk_sort_height": 764.83491110598,
+        "base-color": "rgb(42,41,149)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
@@ -90179,9 +90239,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131032,
-        "one_ldk_sort_height": 406,
-        "two_ldk_sort_height": 213,
-        "three_ldk_sort_height": 115
+        "one_ldk_sort_height": 5000.0,
+        "two_ldk_sort_height": 5000.0,
+        "three_ldk_sort_height": 5000.0,
+        "base-color": "rgb(0,0,0)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -93986,9 +94049,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131113,
-        "one_ldk_sort_height": 1190,
-        "two_ldk_sort_height": 704,
-        "three_ldk_sort_height": 526
+        "one_ldk_sort_height": 1707.3170731707316,
+        "two_ldk_sort_height": 1515.151515151515,
+        "three_ldk_sort_height": 1096.7444008312168,
+        "base-color": "rgb(39,38,137)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -101997,9 +102063,12 @@
         "area_ja": "都区部",
         "area_en": "Tokubu",
         "code": 131181,
-        "one_ldk_sort_height": 1068,
-        "two_ldk_sort_height": 830,
-        "three_ldk_sort_height": 611
+        "one_ldk_sort_height": 1902.439024390244,
+        "two_ldk_sort_height": 1284.677763551003,
+        "three_ldk_sort_height": 944.3546525051951,
+        "base-color": "rgb(37,35,129)",
+        "hover-color": "rgb(255,255,255)",
+        "non-hover-color": "rgb(255,255,255)"
       },
       "geometry": {
         "type": "Polygon",
