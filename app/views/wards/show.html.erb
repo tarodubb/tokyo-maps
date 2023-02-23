@@ -7,17 +7,16 @@
    </div>
     </div>
     <div class="dropdown-wrapper">
-    <div class="dropdown">
-      <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-      <div class="dropdown-content">
-        <li><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></li>
-        <li><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></li>
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+        <div class="dropdown-content">
+          <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
+        </div>s
       </div>
-    </div>
-
     </div>
 
   <div class="container">
@@ -61,13 +60,15 @@
       </div>
     </div>
     <img src="" alt="">
-    <h3 id = "rent">Rent Prices</h3>
-    <p>Average rent prices for....</p>
-    <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
-    <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
-    <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
-    <h3 id = "safety">Safety Info</h3>
-    <p> <%=@ward.safety%></p>
+    <div class="row">
+      <h3 id = "rent">Rent Prices</h3>
+      <p>Average rent prices for....</p>
+      <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
+      <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
+      <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
+      <h3 id = "safety">Safety Info</h3>
+      <p> <%=@ward.safety%></p>
+    </div>
     <%# Reviews  %>
     <div class="container m-5">
       <h1 class="m-4">Reviews of <%= @ward.name.capitalize %></h1>
