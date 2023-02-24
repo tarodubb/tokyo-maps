@@ -1,26 +1,26 @@
 <div>
   <div id = "ward-banner" class = "img-wrapper d-flex align-items-center justify-content-center flex-column show-banner" >
-   <div class = "ward-title">
-    <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
-    <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
-    <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
-   </div>
+    <div class = "ward-title">
+      <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+      <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
+      <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
     </div>
-    <div class="dropdown-wrapper">
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-        <div class="dropdown-content">
-          <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
-        </div>s
+  </div>
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+      <div class="dropdown-content">
+        <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
       </div>
+      s
     </div>
-
+  </div>
   <div class="container my-4">
-  <h2 class = "bold" id = "summary">Background</h2>
+    <h2 class = "bold" id = "summary">Background</h2>
     <div class = "row">
       <div class="col-6 my-4">
         <%= image_tag("shibuyaflag.jpg", class: "flag-wrapper") %>
@@ -32,6 +32,7 @@
         </div>
       </div>
     </div>
+
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>
     <div class="row">
@@ -81,7 +82,7 @@
         <% if @ward.reviews.blank? %>
           <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
         <% else %>
-          <% @ward.reviews.each do |review| %>
+          <% @ward.reviews.first(2).each do |review| %>
             <div class="col-6">
               <div class="card-review m-4">
                 <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
@@ -96,10 +97,14 @@
         <% end %>
       </div>
     </div>
-    <%= simple_form_for([@ward, @review]) do |f| %>
-      <%= f.input :rating %>
-      <%= f.input :content %>
-      <%= f.button :submit %>
-    <% end %>
-    <%= link_to "Back to all wards", wards_path %>
+    <div class="container">
+      <h1 class="mb-3">Leave a review</h1>
+      <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
+        <%= f.input :rating, collection: ["1","2","3","4","5"], label: "Rate this ward" %>
+        <%= f.input :content, label: "Leave a review: " %>
+        <div class="container d-flex justify-content-evenly">
+          <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
+        <% end %>
+      </div>
+    </div>
   </div>

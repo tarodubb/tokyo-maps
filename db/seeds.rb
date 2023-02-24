@@ -63,19 +63,7 @@ wards.each do |en_name, jp_name|
       temp_ward.summary = parsed_ward["summary"]
       temp_ward.points_of_interest = parsed_ward["points_of_interest"]
       # adding photos from google search results to each point of interest
-      options = {}
-      options[:searchType] = "image"
-      options[:imgSize] = "img_size_medium"
-      temp_ward.points_of_interest.each do |point|
-        item = GoogleCustomSearchApi.search(point, options).items[0]
-        if item != nil
-          link = item.link
-          file = URI.open(link)
-          temp_ward.photos.attach(io: file, filename: "#{point[0, 5]}.jpg", content_type: "image/jpg")
-        end
-      end
       temp_ward.historical_significance = parsed_ward["historical_significance"]
-      temp_ward.flag = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_#{parsed_ward["name"]}a%2C_Tokyo.svg/1200px-Flag_of_Edogawa%2C_Tokyo.svg.png"
     end
   end
 
