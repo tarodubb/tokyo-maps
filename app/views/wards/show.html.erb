@@ -81,7 +81,7 @@
         <% if @ward.reviews.blank? %>
           <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
         <% else %>
-          <% @ward.reviews.each do |review| %>
+          <% @ward.reviews.first(2).each do |review| %>
             <div class="col-6">
               <div class="card-review m-4">
                 <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
@@ -96,10 +96,14 @@
         <% end %>
       </div>
     </div>
-    <%= simple_form_for([@ward, @review]) do |f| %>
-      <%= f.input :rating %>
-      <%= f.input :content %>
-      <%= f.button :submit %>
+    <div class="container">
+    <h1 class="mb-3">Leave a review</h1>
+    <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
+          <%= f.input :rating, collection: ["1","2","3","4","5"], label: "Rate this ward" %>
+          <%= f.input :content, label: "Leave a review: " %>
+          <div class="container d-flex justify-content-evenly">
+          <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
     <% end %>
-    <%= link_to "Back to all wards", wards_path %>
+    </div>
   </div>
+</div>
