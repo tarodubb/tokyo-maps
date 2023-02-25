@@ -15,3 +15,6 @@ application.register("map-show", MapShowController)
 
 import WardActionController from "./ward_action_controller"
 application.register("ward-action", WardActionController)
+
+import WardSubscriptionController from "./ward_subscription_controller"
+application.register("ward-subscription", WardSubscriptionController)

@@ -33,7 +33,6 @@
       </div>
     </div>
     <div class="container">
-
       <%# Air quality %>
       <% if @air_quality_data %>
         <div class="card air-quality bg-<%= @air_quality_color %> text-white mb-3">
@@ -55,8 +54,6 @@
         <p>No air quality data available.</p>
       <% end %>
     </div>
-
-
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>
     <div class="row">
@@ -132,3 +129,26 @@
       </div>
     </div>
   </div>
+  <div class="container chatroom" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
+    <h1>#<%= @ward.name %></h1>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @ward.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [@ward, @message],
+  html: {class: "d-flex"} do |f|
+%>
+      <%= f.input :content,
+    label: false,
+    placeholder: "Message people in #{@ward.name.capitalize}",
+    wrapper_html: {class: "flex-grow-1"}
+  %>
+      <%= f.submit "Send", class: "btn green mb-3" %>
+    <% end %>
+    <%= simple_form_for [@ward, @message],
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+%>
+    <% end %>
+  </div>
+</div>
