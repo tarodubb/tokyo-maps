@@ -62,6 +62,8 @@ wards.each do |en_name, jp_name|
       temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
       temp_ward.summary = parsed_ward["summary"]
       temp_ward.points_of_interest = parsed_ward["points_of_interest"]
+      # add saftey percentages to wards
+      p temp_ward.safety = parsed_ward["safety"]
       # adding photos from google search results to each point of interest
       temp_ward.historical_significance = parsed_ward["historical_significance"]
     end
@@ -76,7 +78,6 @@ wards.each do |en_name, jp_name|
     end
   end
 
-  p "Setting lat and long values for ward"
   # Set lat and long for each ward
   labels_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"].downcase + " ku" == temp_ward.name
