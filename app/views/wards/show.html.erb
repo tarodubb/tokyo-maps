@@ -33,6 +33,12 @@
       </div>
     </div>
 
+    <div class="row">
+      <% @titles.each |title| do%>
+        <p class="rent-title"><%= title %></p>
+      <% end %>
+    </div>
+
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>
     <div class="row">

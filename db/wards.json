@@ -16,7 +16,13 @@
         "Tokyo International Forum"
       ],
       "historical_significance": "Chiyoda has been the center of political power in Japan for centuries and was the site of many important events in Japanese history, including the Meiji Restoration and the signing of the Treaty of San Francisco.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60
     },
     {
       "name": "Chuo",
@@ -34,7 +40,13 @@
         "Tokyo Station"
       ],
       "historical_significance": "Chūō has a long history as a center of commerce and trade in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Minato",
@@ -52,7 +64,13 @@
         "Mori Art Museum"
       ],
       "historical_significance": "Minato has a long history as a center of international trade and diplomacy. It was heavily bombed during World War II, but has since been rebuilt and modernized.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Shinjuku",
@@ -70,7 +88,13 @@
         "Samurai Museum"
       ],
       "historical_significance": "Shinjuku was originally a small rural village, but rapidly grew into a major transportation hub during the Meiji period. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Bunkyo",
@@ -88,7 +112,13 @@
         "Tokyo Dome"
       ],
       "historical_significance": "Bunkyō has a long history as a center of learning and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Taito",
@@ -106,7 +136,13 @@
         "Ueno Park"
       ],
       "historical_significance": "Taitō has a long history as a center of religion and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and preserved.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Sumida",
@@ -124,7 +160,13 @@
         "Edo-Tokyo Museum"
       ],
       "historical_significance": "Sumida has a long history as a center of industry and trade in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Koto",
@@ -142,7 +184,13 @@
         "Tokyo Big Sight"
       ],
       "historical_significance": "Kōtō has a long history as a center of industry and transportation in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Setagaya",
@@ -160,7 +208,13 @@
         "Shimokitazawa"
       ],
       "historical_significance": "Setagaya has a long history as a center of education and culture in Tokyo. It was once home to many scholars and artists, and still maintains a vibrant creative scene today.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Shibuya",
@@ -178,7 +232,13 @@
         "Meiji Shrine"
       ],
       "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Nakano",
@@ -196,7 +256,13 @@
         "Nakano Station"
       ],
       "historical_significance": "Nakano has a long history as a center of entertainment and culture in Tokyo. It was once home to many theaters and cinemas, and still maintains a vibrant creative scene today.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Suginami",
@@ -214,7 +280,13 @@
         "Zenpukuji Park"
       ],
       "historical_significance": "Suginami has a long history as a center of arts and culture in Tokyo. It was once home to many artists and writers, and still maintains a vibrant creative scene today.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Toshima",
@@ -232,7 +304,13 @@
         "Ikebukuro Nishiguchi Park"
       ],
       "historical_significance": "Toshima was historically a center of silk production, and was also the site of a major battle during the Boshin War in 1868.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Shinagawa",
@@ -250,7 +328,13 @@
         "Tennozu Isle"
       ],
       "historical_significance": "Shinagawa was historically an important post town along the Tokaido road, which connected Tokyo to Kyoto during the Edo period.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Meguro",
@@ -268,7 +352,13 @@
         "Institute of Nature Study"
       ],
       "historical_significance": "Meguro was once a rural area known for its cherry blossom trees, and was a popular destination for hanami (cherry blossom viewing) during the Edo period.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating": 9.25,
+      "shopping_rating": 9.38,
+      "entertainment_rating": 7.50,
+      "security_rating": 9.38,
+      "natural_disaster_safety_rating": 9.00,
+      "housing_cost_satisfaction_rating": 7.00
     },
     {
       "name": "Ota",
@@ -286,7 +376,13 @@
         "Kamata Hachiman Shrine"
       ],
       "historical_significance": "Ota was home to a number of samurai residences during the Edo period, and was also the site of the Battle of Sekigahara in 1600, which marked the beginning of Tokugawa shogunate's rule over Japan.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Kita",
@@ -304,7 +400,13 @@
         "Tokyo University of Science"
       ],
       "historical_significance": "Kita has a rich cultural heritage, with many historic temples and shrines dating back to the Edo period. It was also the site of a major battle during the Meiji Restoration in 1868.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Arakawa",
@@ -322,7 +424,13 @@
         "Nippori Fabric Town"
       ],
       "historical_significance": "Arakawa has a long history as a center of textile production, dating back to the Edo period. It was also the site of several major battles during the Boshin War in 1868.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Itabashi",
@@ -340,7 +448,13 @@
         "Nakajima Park"
       ],
       "historical_significance": "Itabashi was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Itabashi-jinja Shrine.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Nerima",
@@ -358,7 +472,13 @@
         "Nakamura Tsune Atelier"
       ],
       "historical_significance": "Nerima was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Hikawa Shrine.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Adachi",
@@ -376,7 +496,13 @@
         "Adachi Museum of Art"
       ],
       "historical_significance": "Adachi has a long history as a center of agriculture and fishing in Tokyo. It was once home to many samurai and other nobles, and still has several historic temples and shrines.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Katsushika",
@@ -394,7 +520,13 @@
         "Katsushika Hachimangu Shrine"
       ],
       "historical_significance": "Katsushika has a long history, dating back to the Edo period when it was a center of agriculture and commerce. It was also the site of a major battle during the Boshin War.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     },
     {
       "name": "Edogawa",
@@ -412,7 +544,13 @@
         "Edogawa Stadium"
       ],
       "historical_significance": "Edogawa was once a rural area, but has since developed into a modern residential and commercial center. It was also the site of a major battle during the Satsuma Rebellion.",
-      "flag": ""
+      "flag": "",
+      "transportation_rating":  ,
+      "shopping_rating": ,
+      "entertainment_rating": ,
+      "security_rating": ,
+      "natural_disaster_safety_rating": ,
+      "housing_cost_satisfaction_rating":
     }
   ]
 }
