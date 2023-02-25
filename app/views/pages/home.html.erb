@@ -4,13 +4,18 @@
   <button id="reset-view"data-action="click->map#reset">Reset</button>
   <form data-action="change->map#sort">
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Sort</label>
+      <%# <input type="checkbox" id="one_ldk_sort_height" name="1LDK" data-map-target="sortKey">
+      <label for="1LDK"> 1LDK</label><br>
+      <input type="checkbox" id="two_ldk_sort_height" name="2LDK" data-map-target="sortKey">
+      <label for="2LDK">2LDK</label><br>
+      <input type="checkbox" id="three_ldk_sort_height" name="3LDK"  data-map-target="sortKey">
+      <label for="3LDK"> 3LDK</label><br> %>
       <select class="form-control" id="exampleFormControlSelect1" data-map-target="sortKey" fill-extrusion-input = "" >
         <option></option>
         <option id="one_ldk_sort_height">1LDK</option>
         <option id="two_ldk_sort_height">2LDK</option>
         <option id="three_ldk_sort_height">3LDK</option>
-        <option>Safety</option>
+        <option id="safety">Safety</option>
       </select>
     </div>
   </form>

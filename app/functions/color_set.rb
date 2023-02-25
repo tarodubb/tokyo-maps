@@ -1,10 +1,10 @@
 require_relative "./extrusion_height"
 class ColorSet
-  def self.color_set
+  def self.color_set(category)
     # Set main color (The higher the number the darker the color)
-    red = 59
-    green = 57
-    blue = 208
+    max_red = 59
+    max_green = 57
+    max_blue = 208
 
     lower_red = 1
     lower_green = 1
@@ -14,16 +14,6 @@ class ColorSet
     hover_green = 255
     hover_blue = 255
 
-    max_avg = ExtrusionHeight.get_max_avg
-    min_avg = ExtrusionHeight.get_min_avg
-
-    max_color_r = red / max_avg[0]
-    max_color_g = green / max_avg[0]
-    max_color_b = blue / max_avg[0]
-
-    min_color_r = lower_red / min_avg[0]
-    min_color_g = lower_green / min_avg[0]
-    min_color_b = lower_blue / min_avg[0]
 
     wards_geojson = File.read("public/tokyo.geojson")
     wards_parsed_geojson = JSON.parse(wards_geojson)
