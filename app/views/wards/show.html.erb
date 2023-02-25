@@ -32,6 +32,30 @@
         </div>
       </div>
     </div>
+    <div class="container">
+
+      <%# Air quality %>
+      <% if @air_quality_data %>
+        <div class="card air-quality bg-<%= @air_quality_color %> text-white mb-3">
+          <h5 class="card-title"><%= @ward.name.capitalize %> Air Quality Now</h5>
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1569421053595-ff9605a32977?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80" alt="Air quality image">
+          <div class="card-body">
+            <div class="d-flex justify-content-evenly">
+              <div class="aqi mb-3">
+                <p class="card-text"><%= @air_quality_data['list'][0]['main']['aqi'] %></p>
+              </div>
+              <div class="description mb-3">
+                <p class="card-text"><%= @air_quality_description %></p>
+              </div>
+            </div>
+            <p class="card-text">PM 2.5 Pollution level: <%= @air_quality_data['list'][0]['components']['pm2_5'] %></p>
+          </div>
+        </div>
+      <% else %>
+        <p>No air quality data available.</p>
+      <% end %>
+    </div>
+
 
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>

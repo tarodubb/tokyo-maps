@@ -349,6 +349,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   google-api-client
   google_custom_search_api
+  httparty
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
