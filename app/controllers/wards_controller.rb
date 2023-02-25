@@ -22,6 +22,7 @@ class WardsController < ApplicationController
       longitude: @ward.longitude,
     }
     @review = Review.new
+    @message = Message.new
   end
 end
 
