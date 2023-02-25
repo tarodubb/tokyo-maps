@@ -11,9 +11,9 @@
 }
 
 .card-review {
-    width: 500px;
+    width: 550px;
     overflow: hidden;
-    height: 200px;
+    height: 300px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
@@ -42,4 +42,31 @@
 
   .card-review .card-product-infos {
     padding: 16px;
+  }
+
+  .card.air-quality {
+    padding: 32px;
+    max-width: 400px;
+    margin: 0 auto;
+    .card-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .aqi {
+    padding: 32px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+    color: green;
+    font-size: 32px;
+  }
+
+  .description {
+    padding: 32px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: white;
+    color: green;
+    font-size: 32px
   }

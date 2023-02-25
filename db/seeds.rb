@@ -62,20 +62,10 @@ wards.each do |en_name, jp_name|
       temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
       temp_ward.summary = parsed_ward["summary"]
       temp_ward.points_of_interest = parsed_ward["points_of_interest"]
+      # add saftey percentages to wards
+      p temp_ward.safety = parsed_ward["safety"]
       # adding photos from google search results to each point of interest
-      options = {}
-      options[:searchType] = "image"
-      options[:imgSize] = "img_size_medium"
-      temp_ward.points_of_interest.each do |point|
-        item = GoogleCustomSearchApi.search(point, options).items[0]
-        if item != nil
-          link = item.link
-          file = URI.open(link)
-          temp_ward.photos.attach(io: file, filename: "#{point[0, 5]}.jpg", content_type: "image/jpg")
-        end
-      end
       temp_ward.historical_significance = parsed_ward["historical_significance"]
-      temp_ward.flag = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_#{parsed_ward["name"]}a%2C_Tokyo.svg/1200px-Flag_of_Edogawa%2C_Tokyo.svg.png"
     end
   end
 
@@ -85,10 +75,10 @@ wards.each do |en_name, jp_name|
       p feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
       feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
       feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
+      feature["properties"]["safety"] = temp_ward.safety.to_f
     end
   end
 
-  p "Setting lat and long values for ward"
   # Set lat and long for each ward
   labels_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"].downcase + " ku" == temp_ward.name
@@ -131,6 +121,21 @@ end
   p user
 end
 
-get_max_avg = ExtrusionHeight.get_max_avg
-ExtrusionHeight.extrude_height(get_max_avg)
+p get_max_avg = ExtrusionHeight.get_max_avg
+p get_min_avg = ExtrusionHeight.get_min_avg
+get_safety = ExtrusionHeight.get_safety
+ExtrusionHeight.extrude_height(get_max_avg, get_min_avg, get_safety)
 p "Seeding of the users has been successfully completed"
+
+shibuya = Ward.find_by(name: "shibuya ku")
+Review.create!(rating: 4, content: "Living in Shibuya can be exciting, as it provides easy access to other parts of the city, neighboring towns and cities, and is a great place to socialize and meet new people. Additionally, Shibuya is a diverse and welcoming community due to its many international residents. However, living in Shibuya has some downsides, including noise and traffic, particularly during rush hour, and the high cost of living. Housing in Shibuya can also be quite expensive compared to other parts of Tokyo. Overall, if you value convenience, excitement, and a lively atmosphere, Shibuya may be the perfect place for you, but it is essential to consider potential drawbacks before making the decision to move there.", user: User.all.sample, ward: shibuya)
+Review.create!(rating: 2, content: "It was a very frustrating experience because of lack of cleanliness. The area is known for its busy streets and bustling nightlife, but this comes at the cost of cleanliness. Trash and litter are common sights, and the streets and sidewalks are often dirty and unkempt. This can be especially problematic for residents who value cleanliness and hygiene. Overall, the lack of cleanliness in Shibuya can detract from the otherwise exciting and vibrant atmosphere, making it a less than desirable place to live.", user: User.first, ward: shibuya)
+koto = Ward.find_by(name: "koto ku")
+Review.create!(rating: 5, content: "Koto is a hidden gem in Tokyo. The area is quiet, peaceful, and has a lot of charm. There are plenty of parks and green spaces to enjoy, and the community is tight-knit and welcoming. However, the area can be a bit isolated, and the transportation options are limited.", user: User.all.sample, ward: koto)
+Review.create!(rating: 4, content: "Living in Koto is like living in a small town in the heart of Tokyo. The area is quiet, safe, and has a lot of character. The community is friendly, and there are plenty of green spaces to enjoy. However, the area can be a bit isolated, and the transportation options are limited, which can be a challenge at times. Overall, I love living in Koto and wouldn't want to live anywhere else.", user: User.all.sample, ward: koto)
+shinjuku = Ward.find_by(name: "shinjuku ku")
+Review.create!(rating: 3, content: "As a resident of Shinjuku, I love the convenience of the area. With several train and subway lines, it's easy to get around Tokyo. There are plenty of restaurants, bars, and shops, and the nightlife is fantastic. However, the crowds and noise can be overwhelming, and housing can be expensive.", user: User.all.sample, ward: shinjuku)
+Review.create!(rating: 4, content: "Living in Shinjuku is an exciting experience. The area is always buzzing, and there's always something to do. The abundance of transportation options is a huge plus, and there's an endless selection of restaurants and bars to explore. However, it can be challenging to find affordable housing, and the crowds can be overwhelming at times. Overall, I love living in Shinjuku, but it's not for everyone.", user: User.all.sample, ward: shinjuku)
+minato = Ward.find_by(name: "minato ku")
+Review.create!(rating: 4, content: "Living in Minato is a fantastic experience. The area is clean, safe, and has a lot to offer. The neighborhood is full of beautiful parks and gardens, and there are plenty of high-end shops and restaurants. However, the cost of living can be high, and the pace of life can be slow.", user: User.all.sample, ward: minato)
+Review.create!(rating: 4, content: "Minato is a peaceful oasis in the heart of Tokyo. The area is clean, safe, and well-maintained. There are plenty of green spaces to enjoy, and the selection of high-end shops and restaurants is unbeatable. However, the cost of living can be a drawback, and the area can be quiet at times. Overall, I love living in Minato and wouldn't want to live anywhere else.", user: User.all.sample, ward: minato)

@@ -1,26 +1,26 @@
 <div>
   <div id = "ward-banner" class = "img-wrapper d-flex align-items-center justify-content-center flex-column show-banner" >
-   <div class = "ward-title">
-    <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
-    <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
-    <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
-   </div>
+    <div class = "ward-title">
+      <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+      <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
+      <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
     </div>
-    <div class="dropdown-wrapper">
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-        <div class="dropdown-content">
-          <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
-          <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
-        </div>s
+  </div>
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+      <div class="dropdown-content">
+        <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
       </div>
+      s
     </div>
-
+  </div>
   <div class="container my-4">
-  <h2 class = "bold" id = "summary">Background</h2>
+    <h2 class = "bold" id = "summary">Background</h2>
     <div class = "row">
       <div class="col-6 my-4">
         <%= image_tag("shibuyaflag.jpg", class: "flag-wrapper") %>
@@ -31,6 +31,28 @@
           <h4><%= @ward.historical_significance%></h4>
         </div>
       </div>
+    </div>
+    <div class="container">
+      <%# Air quality %>
+      <% if @air_quality_data %>
+        <div class="card air-quality bg-<%= @air_quality_color %> text-white mb-3">
+          <h5 class="card-title"><%= @ward.name.capitalize %> Air Quality Now</h5>
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1569421053595-ff9605a32977?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80" alt="Air quality image">
+          <div class="card-body">
+            <div class="d-flex justify-content-evenly">
+              <div class="aqi mb-3">
+                <p class="card-text"><%= @air_quality_data['list'][0]['main']['aqi'] %></p>
+              </div>
+              <div class="description mb-3">
+                <p class="card-text"><%= @air_quality_description %></p>
+              </div>
+            </div>
+            <p class="card-text">PM 2.5 Pollution level: <%= @air_quality_data['list'][0]['components']['pm2_5'] %></p>
+          </div>
+        </div>
+      <% else %>
+        <p>No air quality data available.</p>
+      <% end %>
     </div>
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>
@@ -81,12 +103,12 @@
         <% if @ward.reviews.blank? %>
           <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
         <% else %>
-          <% @ward.reviews.each do |review| %>
+          <% @ward.reviews.first(2).each do |review| %>
             <div class="col-6">
               <div class="card-review m-4">
                 <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
                 <div class="card-product-infos">
-                  <h2><%= review.user.first_name %></h2>
+                  <h2><%= review.user.first_name %> <%= review.user.last_name %></h2>
                   <p>Rating: <%= review.rating %>/5</p>
                   <p>"<%= review.content %>"</p>
                 </div>
@@ -96,10 +118,37 @@
         <% end %>
       </div>
     </div>
-    <%= simple_form_for([@ward, @review]) do |f| %>
-      <%= f.input :rating %>
-      <%= f.input :content %>
-      <%= f.button :submit %>
-    <% end %>
-    <%= link_to "Back to all wards", wards_path %>
+    <div class="container">
+      <h1 class="mb-3">Leave a review</h1>
+      <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
+        <%= f.input :rating, collection: ["1","2","3","4","5"], label: "Rate this ward" %>
+        <%= f.input :content, label: "Leave a review: " %>
+        <div class="container d-flex justify-content-evenly">
+          <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
+        <% end %>
+      </div>
+    </div>
   </div>
+  <div class="container chatroom" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
+    <h1>#<%= @ward.name %></h1>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @ward.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [@ward, @message],
+  html: {class: "d-flex"} do |f|
+%>
+      <%= f.input :content,
+    label: false,
+    placeholder: "Message people in #{@ward.name.capitalize}",
+    wrapper_html: {class: "flex-grow-1"}
+  %>
+      <%= f.submit "Send", class: "btn green mb-3" %>
+    <% end %>
+    <%= simple_form_for [@ward, @message],
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+%>
+    <% end %>
+  </div>
+</div>
