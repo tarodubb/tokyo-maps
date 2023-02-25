@@ -75,6 +75,7 @@ wards.each do |en_name, jp_name|
       p feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
       feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
       feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
+      feature["properties"]["safety"] = temp_ward.safety.to_f
     end
   end
 
@@ -120,8 +121,10 @@ end
   p user
 end
 
-get_max_avg = ExtrusionHeight.get_max_avg
-ExtrusionHeight.extrude_height(get_max_avg)
+p get_max_avg = ExtrusionHeight.get_max_avg
+p get_min_avg = ExtrusionHeight.get_min_avg
+get_safety = ExtrusionHeight.get_safety
+ExtrusionHeight.extrude_height(get_max_avg, get_min_avg, get_safety)
 p "Seeding of the users has been successfully completed"
 
 shibuya = Ward.find_by(name: "shibuya ku")
