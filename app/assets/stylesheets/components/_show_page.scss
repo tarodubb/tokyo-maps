@@ -52,3 +52,28 @@
 .bed-img{
   margin-bottom: 8px;
 }
+
+.rating-wrapper{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 32px;
+}
+
+.rating-column{
+  display: flex;
+  align-items: center;
+}
+
+.rating-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+}

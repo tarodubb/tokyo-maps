@@ -94,29 +94,43 @@
 
     <div class="row">
       <h2 class = "bold" id = "rating">Community Poll Ratings</h2>
-      <div class="rating-column">
-        <div class="poll-item">
-          <p><%= @ward.transportation_rating %></p>
+      <div class="rating-wrapper">
+    `   <div class="rating-column">
+          <div class="rating-card">
+            <%= image_tag "bus.png", height: 120, class: "bed-img"%>
+            <p>Transportation</p>
+            <p><%= @ward.transportation_rating %>/10</p>
+          </div>
+          <div class="rating-card">
+            <%= image_tag "bag.png", height: 120, class: "bed-img"%>
+            <p>Shopping</p>
+            <p><%= @ward.shopping_rating %>/10</p>
+          </div>
         </div>
-        <div class="poll-item">
-          <p><%= @ward.shopping_rating %></p>
+        <div class="rating-column">
+          <div class="rating-card">
+            <%= image_tag "theater.png", height: 120, class: "bed-img"%>
+            <p>Entertainment</p>
+            <p><%= @ward.entertainment_rating %>/10</p>
+          </div>
+          <div class="rating-card">
+            <%= image_tag "lock.png", height: 120, class: "bed-img"%>
+            <p>Security</p>
+            <p><%= @ward.security_rating %>/10</p>
+          </div>
         </div>
-      </div>
-      <div class="rating-column">
-        <div class="poll-item">
-          <p><%= @ward.entertainment_rating %></p>
-        </div>
-        <div class="poll-item">
-          <p><%= @ward.security_rating %></p>
-        </div>
-      </div>
-      <div class="rating-column">
-        <div class="poll-item">
-          <p><%= @ward.natural_disaster_safety_rating %></p>
-        </div>
-        <div class="poll-item">
-          <p><%= @ward.housing_cost_satisfaction_rating %></p>
-        </div>
+        <div class="rating-column">
+          <div class="rating-card">
+            <%= image_tag "helmet.png", height: 120, class: "bed-img"%>
+            <p>Natural disaster safety</p>
+            <p><%= @ward.natural_disaster_safety_rating %>/10</p>
+          </div>
+          <div class="rating-card">
+            <%= image_tag "key.png", height: 120, class: "bed-img"%>
+            <p>Housing cost satisfaction</p>
+            <p><%= @ward.housing_cost_satisfaction_rating %>/10</p>
+          </div>
+        </div>`
       </div>
     </div>
     <%# Reviews  %>
