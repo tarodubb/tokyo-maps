@@ -86,3 +86,4 @@ gem "color"
 
 gem "nokogiri"
 gem "byebug"
+gem 'httparty'
