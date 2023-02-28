@@ -38,3 +38,17 @@
 .flag-wrapper{
   width: 100%;
 }
+
+.rent-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row{
+  margin-bottom: 32px;
+}
+
+.bed-img{
+  margin-bottom: 8px;
+}
