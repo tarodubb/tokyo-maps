@@ -131,7 +131,7 @@
   </div>
   <div class="container chatroom" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
     <h1>#<%= @ward.name %></h1>
-    <div class="messages" data-chatroom-subscription-target="messages">
+    <div class="messages" data-ward-subscription-target="messages">
       <% @ward.messages.each do |message| %>
         <%= render "messages/message", message: message %>
       <% end %>
