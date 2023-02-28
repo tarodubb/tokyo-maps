@@ -17,6 +17,12 @@
       ],
       "historical_significance": "Chiyoda has been the center of political power in Japan for centuries and was the site of many important events in Japanese history, including the Meiji Restoration and the signing of the Treaty of San Francisco.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60
       "safety": 0.0284
     },
     {
@@ -36,6 +42,12 @@
       ],
       "historical_significance": "Chūō has a long history as a center of commerce and trade in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": "",
+      "transportation_rating":  8.43,
+      "shopping_rating": 7.71,
+      "entertainment_rating": 6.50,
+      "security_rating": 8.14,
+      "natural_disaster_safety_rating": 7.43,
+      "housing_cost_satisfaction_rating": 6.71
       "safety": 0.0104
     },
     {
@@ -55,6 +67,12 @@
       ],
       "historical_significance": "Minato has a long history as a center of international trade and diplomacy. It was heavily bombed during World War II, but has since been rebuilt and modernized.",
       "flag": "",
+      "transportation_rating":  9.67,
+      "shopping_rating": 6.00,
+      "entertainment_rating": 6.33,
+      "security_rating": 7.33,
+      "natural_disaster_safety_rating": 6.33,
+      "housing_cost_satisfaction_rating": 6.00
       "safety": 0.0093
     },
     {
@@ -74,6 +92,12 @@
       ],
       "historical_significance": "Shinjuku was originally a small rural village, but rapidly grew into a major transportation hub during the Meiji period. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": "",
+      "transportation_rating": 8.60,
+      "shopping_rating": 7.30,
+      "entertainment_rating": 6.00,
+      "security_rating": 5.90,
+      "natural_disaster_safety_rating": 6.60,
+      "housing_cost_satisfaction_rating": 5.40
       "safety": 0.0137
     },
     {
@@ -93,6 +117,12 @@
       ],
       "historical_significance": "Bunkyō has a long history as a center of learning and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": "",
+      "transportation_rating":  8.64,
+      "shopping_rating": 7.55,
+      "entertainment_rating": 6.55,
+      "security_rating": 8.45,
+      "natural_disaster_safety_rating": 8.00,
+      "housing_cost_satisfaction_rating": 6.45
       "safety": 0.0039
     },
     {
@@ -112,6 +142,12 @@
       ],
       "historical_significance": "Taitō has a long history as a center of religion and culture in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and preserved.",
       "flag": "",
+      "transportation_rating":  7.20,
+      "shopping_rating": 7.20,
+      "entertainment_rating": 6.00,
+      "security_rating": 6.00,
+      "natural_disaster_safety_rating": 6.20,
+      "housing_cost_satisfaction_rating": 7.40
       "safety": 0.017
     },
     {
@@ -131,6 +167,12 @@
       ],
       "historical_significance": "Sumida has a long history as a center of industry and trade in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": "",
+      "transportation_rating": 7.33,
+      "shopping_rating": 6.33,
+      "entertainment_rating": 5.33,
+      "security_rating": 6.33,
+      "natural_disaster_safety_rating": 3.50,
+      "housing_cost_satisfaction_rating": 3.67
       "safety": 0.007
     },
     {
@@ -150,6 +192,12 @@
       ],
       "historical_significance": "Kōtō has a long history as a center of industry and transportation in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
       "flag": "",
+      "transportation_rating": 7.22,
+      "shopping_rating": 7.70,
+      "entertainment_rating": 6.96,
+      "security_rating": 7.43,
+      "natural_disaster_safety_rating": 6.13,
+      "housing_cost_satisfaction_rating": 6.65
       "safety": 0.0054
     },
     {
@@ -283,6 +331,12 @@
       ],
       "historical_significance": "Meguro was once a rural area known for its cherry blossom trees, and was a popular destination for hanami (cherry blossom viewing) during the Edo period.",
       "flag": "",
+      "transportation_rating": 9.25,
+      "shopping_rating": 9.38,
+      "entertainment_rating": 7.50,
+      "security_rating": 9.38,
+      "natural_disaster_safety_rating": 9.00,
+      "housing_cost_satisfaction_rating": 7.00
       "safety": 0.005
     },
     {
