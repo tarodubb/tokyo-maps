@@ -33,6 +33,7 @@
       </div>
     </div>
     <div class="container">
+
       <%# Air quality %>
       <% if @air_quality_data %>
         <div class="card air-quality bg-<%= @air_quality_color %> text-white mb-3">
@@ -97,6 +98,7 @@
       <h2 class = "bold" id = "safety">Safety Info</h2>
       <p> <%=@ward.safety%></p>
     </div>
+
     <%# Reviews  %>
     <div class="container m-5">
       <h2 class="m-4 bold">Reviews of <%= @ward.name.capitalize %></h2>
@@ -130,8 +132,12 @@
       </div>
     </div>
   </div>
-  <div class="container chatroom" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
-    <h1>#<%= @ward.name %></h1>
+
+  <%# Messages %>
+  <div class="container chatroom my-3" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
+    <div class="header mt-3">
+    <h1><strong>Chat with people in <%= @ward.name.capitalize %></strong></h1>
+    </div>
     <div class="messages" data-ward-subscription-target="messages">
       <% @ward.messages.each do |message| %>
         <%= render "messages/message", message: message %>
