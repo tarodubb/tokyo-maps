@@ -19,7 +19,6 @@ class WardsController < ApplicationController
       latitude: @ward.latitude,
       longitude: @ward.longitude
     }
-    scraper
     @review = Review.new
   end
 

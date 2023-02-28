@@ -33,11 +33,11 @@
       </div>
     </div>
 
-    <div class="row">
-      <% @titles.each |title| do%>
-        <p class="rent-title"><%= title %></p>
-      <% end %>
-    </div>
+    <%# <div class="row"> %>
+      <%# <% @titles.each do |title|%>
+        <%# <p class="rent-title"><%= title %>
+      <%# <% end %>
+    <%# </div> %>
 
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>
@@ -78,8 +78,38 @@
           <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
         </div>
       </div>
+    </div>
+    <div class="row">
       <h2 class = "bold" id = "safety">Safety Info</h2>
       <p> <%=@ward.safety%></p>
+    </div>
+
+    <div class="row">
+      <h2 class = "bold" id = "rating">Community Poll Ratings</h2>
+      <div class="rating-column">
+        <div class="poll-item">
+          <p><%= @ward.transportation_rating %></p>
+        </div>
+        <div class="poll-item">
+          <p><%= @ward.shopping_rating %></p>
+        </div>
+      </div>
+      <div class="rating-column">
+        <div class="poll-item">
+          <p><%= @ward.entertainment_rating %></p>
+        </div>
+        <div class="poll-item">
+          <p><%= @ward.security_rating %></p>
+        </div>
+      </div>
+      <div class="rating-column">
+        <div class="poll-item">
+          <p><%= @ward.natural_disaster_safety_rating %></p>
+        </div>
+        <div class="poll-item">
+          <p><%= @ward.housing_cost_satisfaction_rating %></p>
+        </div>
+      </div>
     </div>
     <%# Reviews  %>
     <div class="container m-5">
