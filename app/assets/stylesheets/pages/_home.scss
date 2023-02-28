@@ -30,8 +30,14 @@
   font-size: 76px;
   text-shadow: 3px 3px 5px #383838;
 }
-.fly-button {
-  padding: 20px 30px;
+#fly-to-tokyo {
+  font-size: larger;
   color: white;
-  background:black;
+  background: rgba(0, 0, 0, 0.592);
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  border-style: none;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 5px black;
 }
