@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :wards, only: %I[index show] do
     resources :reviews, only: %I[create]
+    resources :messages, only: :create
   end
   resources :reviews, only: [:delete]
 end
