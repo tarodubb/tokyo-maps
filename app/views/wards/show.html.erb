@@ -72,10 +72,19 @@
       <h2 class = "bold" id = "rent">Rent Prices</h2>
       <div class="rent-wrapper">
         <p>Average rent prices for....</p>
-        <div class="rent-price-wrapper">
-          <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
-          <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
-          <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
+        <div class="rent-price-wrapper d-flex">
+          <div class="rent-column">
+            <%= image_tag "1ldk.png", height: 240%>
+            <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
+          </div>
+          <div class="rent-column">
+            <%= image_tag "2ldk.png", height: 240%>
+            <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
+          </div>
+          <div class="rent-column">
+            <%= image_tag "3ldk.png", height: 240%>
+            <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
+          </div>
         </div>
       </div>
     </div>
