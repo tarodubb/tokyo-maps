@@ -1,10 +1,9 @@
 <div class="home-container">
   <div id="container" data-controller="map" data-map-areas-value="<%= @areas.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-
     <%# <button id="fly-to-tokyo" data-action="click->map#flyTokyo">Fly to Tokyo</button>
   <button id="reset-view"data-action="click->map#reset">Reset</button> %>
-    <%# <form data-action="change->map#sort">
+    <%#
     <div class="form-group"> %>
     <%# <input type="checkbox" id="one_ldk_sort_height" name="1LDK" data-map-target="sortKey">
       <label for="1LDK"> 1LDK</label><br>
@@ -12,17 +11,16 @@
       <label for="2LDK">2LDK</label><br>
       <input type="checkbox" id="three_ldk_sort_height" name="3LDK"  data-map-target="sortKey">
       <label for="3LDK"> 3LDK</label><br> %>
-
-    <%# <select class="form-control" id="exampleFormControlSelect1" data-map-target="sortKey" fill-extrusion-input = "" >
-
+    <form class="sort-form" data-action="change->map#sort" data-map-target="sortForm">
+      <select class="sort-form-control" id="exampleFormControlSelect1" data-map-target="sortKey">
         <option></option>
         <option id="one_ldk_sort_height">1LDK</option>
         <option id="two_ldk_sort_height">2LDK</option>
         <option id="three_ldk_sort_height">3LDK</option>
         <option id="safety">Safety</option>
       </select>
-    </div>
-  </form> %>
+      <%# </div> %>
+    </form>
     <div class="landing-banner">
       <div class="banner-content">
         <h1 id="banner-title">Tokyo Maps</h1>
@@ -30,7 +28,7 @@
       </div>
       <div class="map-banner" data-map-target="globus"></div>
     </div>
-    <div class="info">
+    <div class="landing-info">
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error possimus molestias necessitatibus reiciendis deleniti praesentium accusantium, beatae voluptas nihil distinctio velit ipsum voluptate excepturi doloribus provident. Rerum voluptatum voluptates nemo.</p>
     </div>
   </div>

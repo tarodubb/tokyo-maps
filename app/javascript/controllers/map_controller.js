@@ -8,7 +8,7 @@ export default class extends Controller {
   };
 
   // Define the HTML elements to be targeted by the controller
-  static targets = ["globus", "sortKey"];
+  static targets = ["globus", "sortKey", "sortForm"];
 
 
   // Declare the class variables
@@ -17,19 +17,42 @@ export default class extends Controller {
 
 
   connect() { // Initial map on home page with fill, hover, and click to show page features
+    if (localStorage.repeater === 'true') {
+      document.querySelector(".banner-content").style.opacity = 0;
+      let landing_info = document.querySelector(".landing-info");
+      landing_info.remove();
+      this.sortFormTarget.style.display = "block";
+      this.globusTarget.classList.add("map-full");
+      this.globusTarget.classList.remove("map-banner");
+    }
+    let center = [];
+    let zoom = 0;
+    let pitch = 0;
+    if (localStorage.repeater === undefined) {
+      center = [139.697988, 35.685098];
+      zoom = 4.99;
+      pitch = 65;
+    }
+    else {
+      center = [139.737888, 35.639098];
+      zoom = 10.85;
+      pitch = 45;
+    }
     mapboxgl.accessToken = this.apiKeyValue; // Set the Mapbox access token
     this.map = new mapboxgl.Map({
       container: this.globusTarget, // Set the map container
       style: 'mapbox://styles/timchap96/cleky3zxc000g01mxat00cwa8', // Set the map style
-      zoom: 4.99, // Set the initial zoom level
-      center: [139.697988, 35.685098], // Set the initial center coordinates
-      pitch: 65,
+      zoom: zoom, // Set the initial zoom level
+      center: center, // Set the initial center coordinates
+      pitch: pitch,
       projection: "globe", // Set the map projection to globe
       attributionControl: 'false'
     });
 
+
     this.map.on("load", () => {
       this.hoveredStateId = null;
+
       //Set space and globe fog colors
       this.map.setFog({
         color: 'rgb(186, 210, 235)', // Lower atmosphere
@@ -38,8 +61,8 @@ export default class extends Controller {
         'space-color': 'rgb(11, 11, 25)', // Background color
         'star-intensity': 0.6 // Background star brightness (default 0.35 at low zooms )
       });
-       // Add source for ward shapes
-       this.map.addSource('wards', {
+      // Add source for ward shapes
+      this.map.addSource('wards', {
         type: 'geojson',
         data: 'tokyo.geojson'
       });
@@ -141,20 +164,58 @@ export default class extends Controller {
         }
         this.hoveredStateId = null;
       });
+      if (localStorage.repeater === 'true') {
+        this.map.setLayoutProperty('wards-fill', 'visibility', 'visible');
+        this.map.setLayoutProperty('wards-outline', 'visibility', 'visible');
+        this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
+        //Place labels
+        this.map.addLayer({
+          'id': 'ward-labels',
+          'type': 'symbol',
+          'source': 'ward-labels',
+          'layout': {},
+          'minzoom': 2,
+          'layout': {
+            'text-field': ['get', 'ward_en'],
+            'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+            // 'text-radial-offset': 0.5,
+            'text-justify': 'auto'
+            // 'icon-image': ['get', 'icon']
+          },
+          'paint': {
+            'text-color': '#290009'
+          }
+        });
+        this.map.resize()
+      }
+      else {
+        let bannerContent = document.querySelector(".banner-content");
+        bannerContent.classList.add(".transition")
+        setTimeout(() => {
+          bannerContent.style.opacity = 1;
+          document.querySelector(".landing-info").style.display = "flex";
+        }, 1000)
+      }
     });
   }
+
   flyTokyo() {
-    document.querySelector(".banner-content").style.display = "none"
-    this.globusTarget.classList.remove("map-banner");
+    document.querySelector(".banner-content").style.display = "none";
+    document.querySelector(".landing-info").style.display = "none";
+    // let landing_info = document.querySelector(".landing-info");
+    // landing_info.remove();
+    this.sortFormTarget.style.display = "block";
     this.globusTarget.classList.add("map-full");
+    this.globusTarget.classList.remove("map-banner");
     this.map.setLayoutProperty('wards-fill', 'visibility', 'visible');
     this.map.setLayoutProperty('wards-outline', 'visibility', 'visible');
     this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
     this.map.flyTo({
-      center: [139.697888, 35.685098],
-      zoom: 10,
+      center: [139.727888, 35.714467],
+      zoom: 10.85,
       pitch: 45,
     });
+    localStorage.repeater = true;
     //Place labels
     this.map.addLayer({
       'id': 'ward-labels',
@@ -175,6 +236,7 @@ export default class extends Controller {
     });
     this.map.resize()
   }
+
   reset() {
     this.map.flyTo({
       center: [139.697888, 35.685098],
@@ -182,6 +244,7 @@ export default class extends Controller {
       pitch: 0,
     });
   }
+
   sort() { // sort function takes user selection from form and sets extrusion height/color based on that data
     if (this.map.getLayer('ward-sort-extrusion')) { // Check if a layer called "ward-sort-extrusion" already exists in the map
       this.map.removeLayer('ward-sort-extrusion') // If it does, remove it
