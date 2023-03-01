@@ -83,4 +83,7 @@ gem 'faker'
 
 gem "cloudinary"
 gem "color"
+
+gem "nokogiri"
+gem "byebug"
 gem 'httparty'

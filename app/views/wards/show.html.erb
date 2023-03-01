@@ -33,11 +33,12 @@
       </div>
     </div>
     <div class="container">
+
       <%# Air quality %>
       <% if @air_quality_data %>
         <div class="card air-quality bg-<%= @air_quality_color %> text-white mb-3">
           <h5 class="card-title"><%= @ward.name.capitalize %> Air Quality Now</h5>
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1569421053595-ff9605a32977?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80" alt="Air quality image">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1578604665675-9aee692f6ddc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1862&q=80" alt="Air quality image">
           <div class="card-body">
             <div class="d-flex justify-content-evenly">
               <div class="aqi mb-3">
@@ -54,12 +55,19 @@
         <p>No air quality data available.</p>
       <% end %>
     </div>
+
+    <%# <div class="row"> %>
+      <%# <% @titles.each do |title|%>
+        <%# <p class="rent-title"><%= title %>
+      <%# <% end %>
+    <%# </div> %>
+
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>
     <div class="row">
       <div class="col-4 my-4">
         <div class="card points">
-          <a href="https://en.japantravel.com/tokyo/shibuya-crossing/3016"><img class="card-img-top" src="https://images.unsplash.com/photo-1609942225969-3f3109a13eb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80" alt="<%= @ward.points_of_interest[0] %>"></a>
+        <img class="card-img-top" src=<%= @point_of_interest_image1 %> alt="<%= @ward.points_of_interest[0] %>">
           <div class="card-body">
             <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
           </div>
@@ -67,7 +75,7 @@
       </div>
       <div class="col-4 my-4">
         <div class="card points">
-          <a href="https://en.japantravel.com/tokyo/hachiko-statue-in-shibuya/44644"><img class="card-img-top" src="https://lp-cms-production.imgix.net/2019-06/6ea751421aeff7758f6bcdac0216043a-hachiko-statue.jpg" alt="<%= @ward.points_of_interest[1] %>"></a>
+        <img class="card-img-top" src=<%= @point_of_interest_image2 %> alt="<%= @ward.points_of_interest[1] %>">
           <div class="card-body">
             <h5 class="card-title"><%= @ward.points_of_interest[1] %></h5>
           </div>
@@ -75,7 +83,7 @@
       </div>
       <div class="col-4 my-4">
         <div class="card points">
-          <a href="https://en.japantravel.com/places/tokyo/yoyogi-park/18"><img class="card-img-top" src="https://jw-webmagazine.com/wp-content/uploads/2017/03/4743931_s.jpg" alt="<%= @ward.points_of_interest[2] %>"></a>
+        <img class="card-img-top" src=<%= @point_of_interest_image3 %> alt="<%= @ward.points_of_interest[2] %>">
           <div class="card-body">
             <h5 class="card-title"><%= @ward.points_of_interest[2] %></h5>
           </div>
@@ -84,18 +92,71 @@
     </div>
     <img src="" alt="">
     <div class="row">
-      <h2 class = "bold" id = "rent">Rent Prices</h2>
+      <h2 class = "bold" id = "rent">Average Rent Prices</h2>
       <div class="rent-wrapper">
-        <p>Average rent prices for....</p>
-        <div class="rent-price-wrapper">
-          <p>1LDK:<%= @ward.one_ldk_avg_rent%></p>
-          <p>2LDK:<%= @ward.two_ldk_avg_rent%></p>
-          <p>3LDK:<%= @ward.three_ldk_avg_rent%></p>
+        <div class="rent-price-wrapper d-flex">
+          <div class="rent-column">
+            <%= image_tag "1ldk.png", height: 240, class: "bed-img"%>
+            <h4>1LDK:  <%= @ward.one_ldk_avg_rent%></h4>
+          </div>
+          <div class="rent-column">
+            <%= image_tag "2ldk.png", height: 240, class: "bed-img"%>
+            <h4>2LDK:  <%= @ward.two_ldk_avg_rent%></h4>
+          </div>
+          <div class="rent-column">
+            <%= image_tag "3ldk.png", height: 240, class: "bed-img"%>
+            <h4>3LDK:  <%= @ward.three_ldk_avg_rent%></h4>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="row">
       <h2 class = "bold" id = "safety">Safety Info</h2>
       <p> <%=@ward.safety%></p>
     </div>
+
+    <div class="row">
+      <h2 class = "bold" id = "rating">Community Poll Ratings</h2>
+      <div class="rating-wrapper">
+    `   <div class="rating-column">
+          <div class="rating-card">
+            <%= image_tag "bus.png", height: 120, class: "bed-img"%>
+            <p>Transportation</p>
+            <p><%= @ward.transportation_rating %>/10</p>
+          </div>
+          <div class="rating-card">
+            <%= image_tag "bag.png", height: 120, class: "bed-img"%>
+            <p>Shopping</p>
+            <p><%= @ward.shopping_rating %>/10</p>
+          </div>
+        </div>
+        <div class="rating-column">
+          <div class="rating-card">
+            <%= image_tag "theater.png", height: 120, class: "bed-img"%>
+            <p>Entertainment</p>
+            <p><%= @ward.entertainment_rating %>/10</p>
+          </div>
+          <div class="rating-card">
+            <%= image_tag "lock.png", height: 120, class: "bed-img"%>
+            <p>Security</p>
+            <p><%= @ward.security_rating %>/10</p>
+          </div>
+        </div>
+        <div class="rating-column">
+          <div class="rating-card">
+            <%= image_tag "helmet.png", height: 120, class: "bed-img"%>
+            <p>Natural disaster safety</p>
+            <p><%= @ward.natural_disaster_safety_rating %>/10</p>
+          </div>
+          <div class="rating-card">
+            <%= image_tag "key.png", height: 120, class: "bed-img"%>
+            <p>Housing cost satisfaction</p>
+            <p><%= @ward.housing_cost_satisfaction_rating %>/10</p>
+          </div>
+        </div>`
+      </div>
+    </div>
+
     <%# Reviews  %>
     <div class="container m-5">
       <h2 class="m-4 bold">Reviews of <%= @ward.name.capitalize %></h2>
@@ -129,8 +190,12 @@
       </div>
     </div>
   </div>
-  <div class="container chatroom" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
-    <h1>#<%= @ward.name %></h1>
+
+  <%# Messages %>
+  <div class="container chatroom my-3" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
+    <div class="header mt-3">
+    <h1><strong>Chat with people in <%= @ward.name.capitalize %></strong></h1>
+    </div>
     <div class="messages" data-ward-subscription-target="messages">
       <% @ward.messages.each do |message| %>
         <%= render "messages/message", message: message %>
