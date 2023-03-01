@@ -33,10 +33,12 @@
       </div>
     </div>
     <div class="container">
-
+      <%# Safety chart %>
+      <h2 class="bold">Crime rates in Tokyo</h2>
+      <%= line_chart Ward.pluck(:name, :safety), dataset: { borderWidth: 3, fill: true, backgroundColor: "rgba(255, 87, 51, 0.2)", borderColor: "#FF5733" } %>
       <%# Air quality %>
       <% if @air_quality_data %>
-        <div class="card air-quality bg-<%= @air_quality_color %> text-white mb-3">
+        <div class="card air-quality bg-<%= @air_quality_color %> text-white my-3">
           <h5 class="card-title"><%= @ward.name.capitalize %> Air Quality Now</h5>
           <img class="card-img-top" src="https://images.unsplash.com/photo-1578604665675-9aee692f6ddc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1862&q=80" alt="Air quality image">
           <div class="card-body">
@@ -55,19 +57,12 @@
         <p>No air quality data available.</p>
       <% end %>
     </div>
-
-    <%# <div class="row"> %>
-      <%# <% @titles.each do |title|%>
-        <%# <p class="rent-title"><%= title %>
-      <%# <% end %>
-    <%# </div> %>
-
     <%# Places of interest cards  %>
     <h2 class = "bold" id = "poi">Points of interests</h2>
     <div class="row">
       <div class="col-4 my-4">
         <div class="card points">
-        <img class="card-img-top" src=<%= @point_of_interest_image1 %> alt="<%= @ward.points_of_interest[0] %>">
+          <img class="card-img-top" src=<%= @point_of_interest_image1 %> alt="<%= @ward.points_of_interest[0] %>">
           <div class="card-body">
             <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
           </div>
@@ -75,7 +70,7 @@
       </div>
       <div class="col-4 my-4">
         <div class="card points">
-        <img class="card-img-top" src=<%= @point_of_interest_image2 %> alt="<%= @ward.points_of_interest[1] %>">
+          <img class="card-img-top" src=<%= @point_of_interest_image2 %> alt="<%= @ward.points_of_interest[1] %>">
           <div class="card-body">
             <h5 class="card-title"><%= @ward.points_of_interest[1] %></h5>
           </div>
@@ -83,7 +78,7 @@
       </div>
       <div class="col-4 my-4">
         <div class="card points">
-        <img class="card-img-top" src=<%= @point_of_interest_image3 %> alt="<%= @ward.points_of_interest[2] %>">
+          <img class="card-img-top" src=<%= @point_of_interest_image3 %> alt="<%= @ward.points_of_interest[2] %>">
           <div class="card-body">
             <h5 class="card-title"><%= @ward.points_of_interest[2] %></h5>
           </div>
@@ -190,11 +185,10 @@
       </div>
     </div>
   </div>
-
   <%# Messages %>
   <div class="container chatroom my-3" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
     <div class="header mt-3">
-    <h1><strong>Chat with people in <%= @ward.name.capitalize %></strong></h1>
+      <h1><strong>Chat with people in <%= @ward.name.capitalize %></strong></h1>
     </div>
     <div class="messages" data-ward-subscription-target="messages">
       <% @ward.messages.each do |message| %>
