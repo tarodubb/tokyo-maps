@@ -4,6 +4,9 @@ require "securerandom"
 require "open-uri"
 require_relative "../app/functions/extrusion_height"
 
+p "Descroying messages"
+Message.destroy_all
+
 p "Destroying Wards"
 Ward.destroy_all
 
@@ -66,6 +69,7 @@ wards.each do |en_name, jp_name|
       p temp_ward.safety = parsed_ward["safety"]
       # adding photos from google search results to each point of interest
       temp_ward.historical_significance = parsed_ward["historical_significance"]
+      temp_ward.safety = parsed_ward["safety"]
     end
   end
 
