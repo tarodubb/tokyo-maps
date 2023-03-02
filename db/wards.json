@@ -22,7 +22,7 @@
       "entertainment_rating": 7.60,
       "security_rating": 7.60,
       "natural_disaster_safety_rating": 6.80,
-      "housing_cost_satisfaction_rating": 7.60
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0284
     },
     {
@@ -47,7 +47,7 @@
       "entertainment_rating": 6.50,
       "security_rating": 8.14,
       "natural_disaster_safety_rating": 7.43,
-      "housing_cost_satisfaction_rating": 6.71
+      "housing_cost_satisfaction_rating": 6.71,
       "safety": 0.0104
     },
     {
@@ -72,7 +72,7 @@
       "entertainment_rating": 6.33,
       "security_rating": 7.33,
       "natural_disaster_safety_rating": 6.33,
-      "housing_cost_satisfaction_rating": 6.00
+      "housing_cost_satisfaction_rating": 6.00,
       "safety": 0.0093
     },
     {
@@ -97,7 +97,7 @@
       "entertainment_rating": 6.00,
       "security_rating": 5.90,
       "natural_disaster_safety_rating": 6.60,
-      "housing_cost_satisfaction_rating": 5.40
+      "housing_cost_satisfaction_rating": 5.40,
       "safety": 0.0137
     },
     {
@@ -122,7 +122,7 @@
       "entertainment_rating": 6.55,
       "security_rating": 8.45,
       "natural_disaster_safety_rating": 8.00,
-      "housing_cost_satisfaction_rating": 6.45
+      "housing_cost_satisfaction_rating": 6.45,
       "safety": 0.0039
     },
     {
@@ -147,7 +147,7 @@
       "entertainment_rating": 6.00,
       "security_rating": 6.00,
       "natural_disaster_safety_rating": 6.20,
-      "housing_cost_satisfaction_rating": 7.40
+      "housing_cost_satisfaction_rating": 7.40,
       "safety": 0.017
     },
     {
@@ -172,7 +172,7 @@
       "entertainment_rating": 5.33,
       "security_rating": 6.33,
       "natural_disaster_safety_rating": 3.50,
-      "housing_cost_satisfaction_rating": 3.67
+      "housing_cost_satisfaction_rating": 3.67,
       "safety": 0.007
     },
     {
@@ -197,7 +197,7 @@
       "entertainment_rating": 6.96,
       "security_rating": 7.43,
       "natural_disaster_safety_rating": 6.13,
-      "housing_cost_satisfaction_rating": 6.65
+      "housing_cost_satisfaction_rating": 6.65,
       "safety": 0.0054
     },
     {
@@ -336,7 +336,7 @@
       "entertainment_rating": 7.50,
       "security_rating": 9.38,
       "natural_disaster_safety_rating": 9.00,
-      "housing_cost_satisfaction_rating": 7.00
+      "housing_cost_satisfaction_rating": 7.00,
       "safety": 0.005
     },
     {
