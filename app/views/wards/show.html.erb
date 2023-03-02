@@ -177,7 +177,7 @@
     <div class="container">
       <h1 class="mb-3">Leave a review</h1>
       <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
-        <%= f.input :rating, collection: ["1","2","3","4","5"], label: "Rate this ward" %>
+        <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
         <%= f.input :content, label: "Leave a review: " %>
         <div class="container d-flex justify-content-evenly">
           <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
@@ -185,6 +185,7 @@
       </div>
     </div>
   </div>
+
   <%# Messages %>
   <div class="container chatroom my-3" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
     <div class="header mt-3">
