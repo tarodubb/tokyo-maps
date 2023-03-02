@@ -21,3 +21,5 @@ application.register("ward-action", WardActionController)
 
 import WardSubscriptionController from "./ward_subscription_controller"
 application.register("ward-subscription", WardSubscriptionController)
+
+import "chartkick/chart.js"
