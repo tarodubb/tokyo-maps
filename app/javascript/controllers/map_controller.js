@@ -8,7 +8,7 @@ export default class extends Controller {
   };
 
   // Define the HTML elements to be targeted by the controller
-  static targets = ["globus", "sortKey", "sortForm"];
+  static targets = ["globus", "sortKey"];
 
 
   // Declare the class variables
@@ -21,7 +21,7 @@ export default class extends Controller {
       document.querySelector(".banner-content").style.opacity = 0;
       let landing_info = document.querySelector(".landing-info");
       landing_info.remove();
-      this.sortFormTarget.style.display = "block";
+      // this.sortFormTarget.style.display = "block";
       this.globusTarget.classList.add("map-full");
       this.globusTarget.classList.remove("map-banner");
     }
@@ -168,6 +168,8 @@ export default class extends Controller {
         this.map.setLayoutProperty('wards-fill', 'visibility', 'visible');
         this.map.setLayoutProperty('wards-outline', 'visibility', 'visible');
         this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
+        let bannerContent = document.querySelector(".banner-content");
+        bannerContent.remove();
         //Place labels
         this.map.addLayer({
           'id': 'ward-labels',
@@ -194,7 +196,7 @@ export default class extends Controller {
         setTimeout(() => {
           bannerContent.style.opacity = 1;
           document.querySelector(".landing-info").style.display = "flex";
-        }, 1000)
+        }, 500)
       }
     });
   }
