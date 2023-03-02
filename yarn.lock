@@ -601,6 +601,11 @@ define-properties@^1.1.4:
     has-property-descriptors "^1.0.0"
     object-keys "^1.1.1"
 
+detect-it@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/detect-it/-/detect-it-4.0.1.tgz#3f8de6b8330f5086270571251bedf10aec049e18"
+  integrity sha512-dg5YBTJYvogK1+dA2mBUDKzOWfYZtHVba89SyZUhc4+e3i2tzgjANFg5lDRCd3UOtRcw00vUTMK8LELcMdicug==
+
 duplexer@~0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.2.tgz#3abe43aef3835f8ae077d136ddce0f276b0400e6"
@@ -1370,6 +1375,13 @@ split2@^2.1.0:
   integrity sha512-RAb22TG39LhI31MbreBgIuKiIKhVsawfTgEGqKHTK87aG+ul/PB8Sqoi3I7kVdRWiCfrKxK3uo4/YUkpNvhPbw==
   dependencies:
     through2 "^2.0.2"
+
+star-rating.js@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/star-rating.js/-/star-rating.js-4.3.0.tgz#6ce4e092480b0693e74fe1799b3a37a7b85caf67"
+  integrity sha512-uHFwdMUf1+roKvZmh+clpkOpJMrRPSxvuWdIFh4oZtPCbyfUI3xzCWqDNtX060L+wRi3AHT3ZNH7JYf05FYeKQ==
+  dependencies:
+    detect-it "^4.0.0"
 
 stimulus-reveal-controller@^4.1.0:
   version "4.1.0"

@@ -11,6 +11,7 @@
     "chart.js": "^4.2.1",
     "chartkick": "^5.0.1",
     "geojson-polygon-labels": "^1.5.0",
+    "star-rating.js": "^4.3.0",
     "stimulus-reveal-controller": "^4.1.0",
     "stimulus-scroll-to": "^4.1.0",
     "webpack": "^5.75.0",
