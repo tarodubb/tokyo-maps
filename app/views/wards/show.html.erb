@@ -1,10 +1,12 @@
 <div>
-  <div id = "ward-banner" class = "img-wrapper d-flex align-items-center justify-content-center flex-column show-banner" >
-    <div class = "ward-title">
-      <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
-      <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
-      <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
+  <div class="banner-wrapper">
+    <div id = "ward-banner" class = "img-wrapper d-flex align-items-center justify-content-center flex-column show-banner" >
     </div>
+      <div class = "ward-title">
+        <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+        <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
+        <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h2>
+      </div>
   </div>
   <div class="dropdown-wrapper">
     <div class="dropdown">
