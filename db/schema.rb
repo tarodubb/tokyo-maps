@@ -108,6 +108,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_072952) do
     t.integer "ward_code"
     t.float "latitude"
     t.float "longitude"
+    t.float "transportation_rating"
+    t.float "shopping_rating"
+    t.float "entertainment_rating"
+    t.float "security_rating"
+    t.float "natural_disaster_safety_rating"
+    t.float "housing_cost_satisfaction_rating"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

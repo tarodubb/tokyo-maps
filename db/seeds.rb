@@ -5,6 +5,9 @@ require "open-uri"
 require_relative "../app/functions/extrusion_height"
 require_relative "../app/functions/normalize"
 
+p "Descroying messages"
+Message.destroy_all
+
 p "Destroying Wards"
 Ward.destroy_all
 
@@ -63,10 +66,17 @@ wards.each do |en_name, jp_name|
       temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
       temp_ward.summary = parsed_ward["summary"]
       temp_ward.points_of_interest = parsed_ward["points_of_interest"]
+      temp_ward.transportation_rating = parsed_ward["transportation_rating"]
+      temp_ward.shopping_rating = parsed_ward["shopping_rating"]
+      temp_ward.entertainment_rating = parsed_ward["entertainment_rating"]
+      temp_ward.security_rating = parsed_ward["security_rating"]
+      temp_ward.natural_disaster_safety_rating = parsed_ward["natural_disaster_safety_rating"]
+      temp_ward.housing_cost_satisfaction_rating = parsed_ward["housing_cost_satisfaction_rating"]
       # add saftey percentages to wards
       p temp_ward.safety = parsed_ward["safety"]
       # adding photos from google search results to each point of interest
       temp_ward.historical_significance = parsed_ward["historical_significance"]
+      temp_ward.safety = parsed_ward["safety"]
     end
   end
 

@@ -13,8 +13,13 @@ application.register("map", MapController)
 import MapShowController from "./map_show_controller"
 application.register("map-show", MapShowController)
 
+import StarRatingController from "./star_rating_controller"
+application.register("star-rating", StarRatingController)
+
 import WardActionController from "./ward_action_controller"
 application.register("ward-action", WardActionController)
 
 import WardSubscriptionController from "./ward_subscription_controller"
 application.register("ward-subscription", WardSubscriptionController)
+
+import "chartkick/chart.js"
