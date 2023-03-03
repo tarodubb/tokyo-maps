@@ -1,4 +1,4 @@
-import { Controller, ValueListObserver } from "@hotwired/stimulus";
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   // Define the values that can be passed to the controller
@@ -168,6 +168,7 @@ export default class extends Controller {
         this.map.setLayoutProperty('wards-fill', 'visibility', 'visible');
         this.map.setLayoutProperty('wards-outline', 'visibility', 'visible');
         this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
+        document.querySelector(".sort").style.opacity = 0.6;
         let bannerContent = document.querySelector(".banner-content");
         bannerContent.remove();
         //Place labels
@@ -192,7 +193,7 @@ export default class extends Controller {
       }
       else {
         let bannerContent = document.querySelector(".banner-content");
-        bannerContent.classList.add(".transition")
+        bannerContent.classList.add("transition")
         setTimeout(() => {
           bannerContent.style.opacity = 1;
           document.querySelector(".landing-info").style.display = "flex";
@@ -204,9 +205,10 @@ export default class extends Controller {
   flyTokyo() {
     document.querySelector(".banner-content").style.display = "none";
     document.querySelector(".landing-info").style.display = "none";
+    document.querySelector(".sort").style.opacity = 1;
     // let landing_info = document.querySelector(".landing-info");
     // landing_info.remove();
-    this.sortFormTarget.style.display = "block";
+    // this.sortFormTarget.style.display = "block";
     this.globusTarget.classList.add("map-full");
     this.globusTarget.classList.remove("map-banner");
     this.map.setLayoutProperty('wards-fill', 'visibility', 'visible');
@@ -239,19 +241,32 @@ export default class extends Controller {
     this.map.resize()
   }
 
-  reset() {
-    this.map.flyTo({
-      center: [139.697888, 35.685098],
-      zoom: 1,
-      pitch: 0,
-    });
+  selectedSort(e) {
+    let rentButtons = document.querySelectorAll(".rent-button");
+    let selectedRent = document.querySelector(".selected-rent-target");
+    if (e.target.id !== "safety") {
+      rentButtons.forEach(button => {
+        button.classList.remove("selected-rent-target");
+      })
+      let sortRentTarget = e.target;
+      sortRentTarget.classList.add("selected-rent-target")
+      this.sort(`${sortRentTarget.id}_sort_height`)
+    }
+    else if (e.target.id === "safety" && selectedRent) {
+      let sortSafetyTarget = e.target;
+      sortSafetyTarget.classList.add("selected-safety-target");
+      this.sort(`${selectedRent.id}_${sortSafetyTarget.id}_height`);
+    }
+    else {
+      this.sort(e.target.id);
+    }
   }
 
-  sort() { // sort function takes user selection from form and sets extrusion height/color based on that data
+  sort(sortTarget) { // sort function takes user selection from form and sets extrusion height/color based on that data
     if (this.map.getLayer('ward-sort-extrusion')) { // Check if a layer called "ward-sort-extrusion" already exists in the map
       this.map.removeLayer('ward-sort-extrusion') // If it does, remove it
     };
-    let sortKey = this.sortKeyTarget.selectedOptions[0].id // Get the selected sorting option's ID
+    let sortKey = sortTarget // Get the selected sorting option's ID
     this.map.setLayoutProperty("ward-extrusion", "visibility", 'none'); // Hide "ward-extrusion" to hover extrusion doesen't happen
     this.map.addLayer({
       'id': 'ward-sort-extrusion', // Add a new layer with ID "ward-sort-extrusion"
@@ -299,5 +314,4 @@ export default class extends Controller {
       this.hoveredStateId = null;
     });
   }
-
 }

@@ -1,14 +1,18 @@
 <div class="home-container">
   <div id="container" data-controller="map" data-map-areas-value="<%= @areas.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <select class="sort-form-control" id="exampleFormControlSelect1" data-map-target="sortKey">
-      <option></option>
-      <option id="one_ldk_safety_height">1LDK Safety</option>
-      <option id="two_ldk_sort_height">2LDK</option>
-      <option id="three_ldk_sort_height">3LDK</option>
-      <option id="safety">Safety</option>
-    </select>
     <div class="landing-banner">
+      <div class="sort">
+        <h2>Sorting</h2>
+        <div class="rent-buttons">
+          <button id="one_ldk" class="rent-button" data-action="click->map#selectedSort">1LDK</button>
+          <button id="two_ldk" class="rent-button" data-action="click->map#selectedSort">2LDK</button>
+          <button id="three_ldk" class="rent-button" data-action="click->map#selectedSort">3LDK</button>
+        </div>
+        <div class="other-buttons">
+          <button class="other-button" id="safety" data-action="click->map#selectedSort">Safety</button>
+        </div>
+      </div>
       <div class="banner-content">
         <h1 id="banner-title">Tokyo Maps</h1>
         <button id="fly-to-tokyo" data-action="click->map#flyTokyo">Explore</button>
