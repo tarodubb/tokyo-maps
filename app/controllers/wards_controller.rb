@@ -27,6 +27,7 @@ class WardsController < ApplicationController
     }
     @review = Review.new
     @message = Message.new
+    scraper
   end
 
   private
@@ -110,15 +111,19 @@ class WardsController < ApplicationController
   end
 
   def scraper
-    rent_url = "https://apartments.gaijinpot.com/en/rent/listing?prefecture=JP-13&city=chiyoda-ku&district=&min_price=&max_price=&min_meter=&rooms=15&distance_station=&agent_id=&building_type=&building_age=&updated_within=&transaction_type=&order=&search=Search"
+    rent_url = "https://www.japan-property.jp/apartment-for-rent/Tokyo?city=%E4%B8%AD%E5%A4%AE%E5%8C%BA&site=www.japan-property.jp"
     # url = "https://www.lewagon.com"
     html = URI.open(rent_url)
     @doc = Nokogiri::HTML.parse(html)
-    bodies = @doc.search(".listing-body").first(3)
-    @cards_info = []
-    bodies.each do |item|
-      @cards_info << item.search(".listing-item").map {|i| i.text.strip}
+    @bodies = @doc.search(".listing").first(3)
+    @houses = []
+    @bodies.each do |house|
+      house_info = {}
+      house_info[:price] = house.css('.info p')&.text&.squish
+      house_info[:name] = house.css('.info h3')&.text&.squish
+      @houses << house_info
     end
+    raise
     # @span = @titles.search(".text-semi-strong")[0].text.strip
     # @array = []
     # @titles.each do |listing|
