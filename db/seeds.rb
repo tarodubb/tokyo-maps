@@ -3,6 +3,7 @@ require "faker"
 require "securerandom"
 require "open-uri"
 require_relative "../app/functions/extrusion_height"
+require_relative "../app/functions/normalize"
 
 p "Descroying messages"
 Message.destroy_all
@@ -131,10 +132,11 @@ end
   p user
 end
 
-p get_max_avg = ExtrusionHeight.get_max_avg
-p get_min_avg = ExtrusionHeight.get_min_avg
+get_max_avg = ExtrusionHeight.get_max_avg
+get_min_avg = ExtrusionHeight.get_min_avg
 get_safety = ExtrusionHeight.get_safety
 ExtrusionHeight.extrude_height(get_max_avg, get_min_avg, get_safety)
+Normalize.normalize_data # THIS NEEDS TO GO BELOW EXTRUDE_HEIGHT. It acceses values written into the geojson after the extrude function is done
 p "Seeding of the users has been successfully completed"
 
 shibuya = Ward.find_by(name: "shibuya ku")
