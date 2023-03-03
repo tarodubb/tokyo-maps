@@ -32,33 +32,65 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <%# Safety chart %>
-      <h2 class="bold">Crime rates in Tokyo</h2>
-      <%= line_chart Ward.pluck(:name, :safety), dataset: { borderWidth: 3, fill: true, backgroundColor: "rgba(255, 87, 51, 0.2)", borderColor: "#FF5733" } %>
-      <%# Air quality %>
-      <% if @air_quality_data %>
-        <div class="card air-quality bg-<%= @air_quality_color %> text-white my-3">
-          <h5 class="card-title"><%= @ward.name.capitalize %> Air Quality Now</h5>
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1578604665675-9aee692f6ddc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1862&q=80" alt="Air quality image">
-          <div class="card-body">
-            <div class="d-flex justify-content-evenly">
-              <div class="aqi mb-3">
-                <p class="card-text"><%= @air_quality_data['list'][0]['main']['aqi'] %></p>
+  </div>
+  <div class="container">
+    <%# Weather and air quality %>
+    <h2 class = "bold text-center">Weather information</h2>
+    <div class="container weather-aqi d-flex justify-content-around">
+      <div class="row">
+        <div class="col-6">
+          <%# Weather %>
+          <div class="card weather my-3">
+            <div class="card-body p-4">
+              <div class="d-flex">
+                <h5 class="card-title text-center">Weather in <%= @ward.name.capitalize %></h5>
               </div>
-              <div class="description mb-3">
-                <p class="card-text"><%= @air_quality_description %></p>
+              <div class="d-flex flex-column text-center mt-5 mb-4">
+                <h6 class="display-4 mb-0 font-weight-bold"><%= @weather_temperature.round %>°C</h6>
+                <span class="small" style="color: #868B94"><%= @weather_main %></span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1" style="font-size: 1rem;">
+                  <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"><%= @weather_wind %> m/s
+                    </span></div>
+                  <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"><%= @weather_humidity %>%</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <%= image_tag(@weather_image) %>
               </div>
             </div>
-            <p class="card-text">PM 2.5 Pollution level: <%= @air_quality_data['list'][0]['components']['pm2_5'] %></p>
           </div>
         </div>
-      <% else %>
-        <p>No air quality data available.</p>
-      <% end %>
+        <%# Air quality %>
+        <div class="col-6">
+          <% if @air_quality_data %>
+            <div class="card air-quality my-3">
+              <h5 class="card-title my-3 text-center">Air quiality in <%= @ward.name.capitalize %></h5>
+              <%= image_tag("air-pollution.png") %>
+              <div class="card-body">
+                <div class="d-flex justify-content-evenly">
+                  <div class="aqi mb-3">
+                    <p class="card-text"><%= @air_quality_data['list'][0]['main']['aqi'] %></p>
+                  </div>
+                  <div class="description mb-3">
+                    <p class="card-text"><%= @air_quality_description %></p>
+                  </div>
+                </div>
+                <p class="card-text">PM 2.5 Pollution level: <%= @air_quality_data['list'][0]['components']['pm2_5'] %></p>
+              </div>
+            </div>
+          <% else %>
+            <p>No air quality data available.</p>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <%# Places of interest cards  %>
-    <h2 class = "bold" id = "poi">Points of interests</h2>
+  </div>
+  <%# Places of interest cards  %>
+  <div class="container">
+    <h2 class = "bold text-center">Points of interest</h2>
     <div class="row">
       <div class="col-4 my-4">
         <div class="card points">
@@ -87,7 +119,7 @@
     </div>
     <img src="" alt="">
     <div class="row">
-      <h2 class = "bold" id = "rent">Average Rent Prices</h2>
+      <h2 class = "bold text-center" id ="rent">Average Rent Prices</h2>
       <div class="rent-wrapper">
         <div class="rent-price-wrapper d-flex">
           <div class="rent-column">
@@ -106,14 +138,14 @@
       </div>
     </div>
     <div class="row">
-      <h2 class = "bold" id = "safety">Safety Info</h2>
-      <p> <%=@ward.safety%></p>
+      <h2 class="bold text-center" id="safety">Crime rates in Tokyo</h2>
+      <%# Safety chart %>
+      <%= line_chart Ward.pluck(:name, :safety), dataset: { borderWidth: 3, fill: true, backgroundColor: "rgba(255, 87, 51, 0.2)", borderColor: "#FF5733" } %>
     </div>
-
     <div class="row">
-      <h2 class = "bold" id = "rating">Community Poll Ratings</h2>
+      <h2 class = "bold text-center" id="rating">Community Poll Ratings</h2>
       <div class="rating-wrapper">
-    `   <div class="rating-column">
+        <div class="rating-column">
           <div class="rating-card">
             <%= image_tag "bus.png", height: 120, class: "bed-img"%>
             <p>Transportation</p>
@@ -148,46 +180,64 @@
             <p>Housing cost satisfaction</p>
             <p><%= @ward.housing_cost_satisfaction_rating %>/10</p>
           </div>
-        </div>`
+        </div>
       </div>
     </div>
-
     <%# Reviews  %>
-    <div class="container m-5">
-      <h2 class="m-4 bold">Reviews of <%= @ward.name.capitalize %></h2>
-      <div class="row">
-        <% if @ward.reviews.blank? %>
-          <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
-        <% else %>
-          <% @ward.reviews.first(2).each do |review| %>
-            <div class="col-6">
-              <div class="card-review m-4">
+    <h2 class="m-4 bold text-center">Reviews of <%= @ward.name.capitalize %></h2>
+    <div class="row">
+      <% if @ward.reviews.blank? %>
+        <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
+      <% else %>
+        <% @ward.reviews.last(3).each do |review| %>
+          <div class="col-4">
+            <div class="card review">
+              <% if @review.user.photo.key %>
+                <img src="<% @review.user.photo.key %>">
+              <% else %>
                 <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
-                <div class="card-product-infos">
-                  <h2><%= review.user.first_name %> <%= review.user.last_name %></h2>
-                  <p>Rating: <%= review.rating %>/5</p>
-                  <p>"<%= review.content %>"</p>
-                </div>
+              <% end %>
+              <div class="text-center">
+                <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
+                <p>Rating: <%= review.rating %>/5</p>
+                <p>"<%= review.content %>"</p>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
-    <div class="container">
-      <h1 class="mb-3">Leave a review</h1>
-      <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
-        <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
-        <%= f.input :content, label: "Leave a review: " %>
-        <div class="container d-flex justify-content-evenly">
-          <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
-        <% end %>
+    <!-- Button trigger modal -->
+    <div class="button d-flex justify-content-center mb-4 mt-0">
+      <button type="button" class="btn green review" data-toggle="modal" data-target="#exampleModal">
+        Leave a review
+      </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Leave a review</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
+              <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
+              <%= f.input :content, label: "Leave a review: " %>
+              <div class="modal-footer">
+                <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
   <%# Messages %>
-  <div class="container chatroom my-3" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
+  <div class="container chatroom my-4" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
     <div class="header mt-3">
       <h1><strong>Chat with people in <%= @ward.name.capitalize %></strong></h1>
     </div>
@@ -211,4 +261,5 @@
 %>
     <% end %>
   </div>
+</div>
 </div>
