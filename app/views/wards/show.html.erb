@@ -193,7 +193,7 @@
           <div class="col-4">
             <div class="card review">
               <% if @review.user.photo.key %>
-                <img src="<% @review.user.photo.key %>">
+              <%= cl_image_tag @revier.user.photo.key %>
               <% else %>
                 <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
               <% end %>
