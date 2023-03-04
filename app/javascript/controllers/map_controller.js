@@ -36,9 +36,9 @@ export default class extends Controller {
       pitch = 65;
     }
     else {
-      center = [139.737888, 35.639098];
-      zoom = 10.85;
-      pitch = 45;
+      center = [139.749888, 35.639098];
+      zoom = 10.4;
+      pitch = 20;
     }
     mapboxgl.accessToken = this.apiKeyValue; // Set the Mapbox access token
     this.map = new mapboxgl.Map({
@@ -82,13 +82,13 @@ export default class extends Controller {
           'visibility': 'none'
         },
         'paint': {
-          'fill-color': '#FF99AF',
-          'fill-opacity': [
+          'fill-color': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],
-            1,
-            0.4
-          ]
+            "#FDFFFC",
+            "white"
+          ],
+          'fill-opacity': 1
         }
       });
       // Set the border
@@ -100,36 +100,36 @@ export default class extends Controller {
           'visibility': 'none'
         },
         paint: {
-          "line-color": "#000",
+          "line-color": "black",
           "line-width": 3,
           "line-opacity": 0.7,
         },
       });
       // Extrusion when ward is hovered on
-      this.map.addLayer({
-        'id': 'ward-extrusion',
-        'type': 'fill-extrusion',
-        'source': 'wards',
-        'layout': {
-          'visibility': 'none'
-        },
-        'paint': {
-          'fill-extrusion-color': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            '#FF99AF',
-            '#FFD6DF'
-          ],
-          'fill-extrusion-height': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            3000,
-            1
-          ],
-          'fill-extrusion-base': 200,
-          'fill-extrusion-opacity': 1
-        }
-      });
+      // this.map.addLayer({
+      //   'id': 'ward-extrusion',
+      //   'type': 'fill-extrusion',
+      //   'source': 'wards',
+      //   'layout': {
+      //     'visibility': 'none'
+      //   },
+      //   'paint': {
+      //     'fill-extrusion-color': [
+      //       'case',
+      //       ['boolean', ['feature-state', 'hover'], false],
+      //       '#FF99AF',
+      //       '#FFD6DF'
+      //     ],
+      //     'fill-extrusion-height': [
+      //       'case',
+      //       ['boolean', ['feature-state', 'hover'], false],
+      //       3000,
+      //       1
+      //     ],
+      //     'fill-extrusion-base': 200,
+      //     'fill-extrusion-opacity': 1
+      //   }
+      // });
       //Listener for ward click to go to the show page
       this.map.on("click", "wards-fill", (e) => {
         let ward_name = e.features[0].properties.ward_en;
@@ -179,7 +179,7 @@ export default class extends Controller {
       if (localStorage.repeater === 'true') {
         this.map.setLayoutProperty('wards-fill', 'visibility', 'visible');
         this.map.setLayoutProperty('wards-outline', 'visibility', 'visible');
-        this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
+        // this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
         document.querySelector(".sort").style.opacity = 0.6;
         let bannerContent = document.querySelector(".banner-content");
         bannerContent.remove();
@@ -193,12 +193,12 @@ export default class extends Controller {
           'layout': {
             'text-field': ['get', 'ward_en'],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
-            // 'text-radial-offset': 0.5,
+            'text-radial-offset': 0.5,
             'text-justify': 'auto'
             // 'icon-image': ['get', 'icon']
           },
           'paint': {
-            'text-color': '#290009'
+            'text-color': 'black'
           }
         });
         this.map.resize()
@@ -225,7 +225,7 @@ export default class extends Controller {
     this.globusTarget.classList.remove("map-banner");
     this.map.setLayoutProperty('wards-fill', 'visibility', 'visible');
     this.map.setLayoutProperty('wards-outline', 'visibility', 'visible');
-    this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
+    // this.map.setLayoutProperty('ward-extrusion', 'visibility', 'visible');
     this.map.flyTo({
       center: [139.727888, 35.714467],
       zoom: 10.85,
@@ -287,18 +287,28 @@ export default class extends Controller {
       'layout': {
         'visibility': 'visible' // Set the layer visibility to "visible"
       },
-      'paint': {
-        'fill-extrusion-color': [
-          'case',
-          ['boolean', ['feature-state', 'hover'], false],
-          ['get', 'hover-color'],
-          ['get', 'base-color']
-        ], // Set the color of the extrusion
-        'fill-extrusion-height': ['get', `${sortKey}`], // Set the height of the extrusion based on the selected sorting option which gets it from the wards source
-        'fill-extrusion-base': 0, // Set the base height of the extrusion
-        'fill-extrusion-opacity': 1 // Set the opacity of the extrusion to 100%
-      }
+      'paint': ["get", "gase-color"]
     });
+    // this.map.setLayoutProperty("ward-extrusion", "visibility", 'none'); // Hide "ward-extrusion" to hover extrusion doesen't happen
+    // this.map.addLayer({
+    //   'id': 'ward-sort-extrusion', // Add a new layer with ID "ward-sort-extrusion"
+    //   'type': 'fill-extrusion', // The layer type is "fill-extrusion", which is used for creating 3D extrusions on a map
+    //   'source': 'wards',
+    //   'layout': {
+    //     'visibility': 'visible' // Set the layer visibility to "visible"
+    //   },
+    //   'paint': {
+    //     'fill-extrusion-color': [
+    //       'case',
+    //       ['boolean', ['feature-state', 'hover'], false],
+    //       ['get', 'hover-color'],
+    //       ['get', 'base-color']
+    //     ], // Set the color of the extrusion
+    //     'fill-extrusion-height': ['get', `${sortKey}`], // Set the height of the extrusion based on the selected sorting option which gets it from the wards source
+    //     'fill-extrusion-base': 0, // Set the base height of the extrusion
+    //     'fill-extrusion-opacity': 1 // Set the opacity of the extrusion to 100%
+    //   }
+    // });
     //When hovered on ward opacity will change
     this.map.on("mousemove", "wards-fill", (e) => {
       if (e.features.length > 0) {
