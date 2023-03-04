@@ -130,10 +130,14 @@ export default class extends Controller {
       });
       //Listener for ward click to go to the show page
       this.map.on("click", "wards-fill", (e) => {
-        debugger;
         let ward_name = e.features[0].properties.ward_en;
         this.areasValue.forEach((area) => {
           if (ward_name.toLowerCase() === area.name) {
+            // Get user selections and pass them through to the show page
+            let selectedRent = document.querySelector(".selected-rent-target").innerHTML;
+            let selectedSafety = document.querySelector(".selected-safety-target").innerHTML;
+            sessionStorage.setItem("ldkSelection", selectedRent);
+            sessionStorage.setItem("safetySelection", selectedSafety);
             window.location.href = `wards/${area.id}`;
           }
         });
