@@ -7,7 +7,7 @@
     </div>
   </div>
   <%# <div class="form-group"> %>
-    <%# <div class="rent-group">
+  <%# <div class="rent-group">
         <input type="checkbox" id="one_ldk_sort_height" name="1LDK" data-map-target="sortKey">
         <label for="1LDK"> 1LDK</label><br>
         <input type="checkbox" id="two_ldk_sort_height" name="2LDK" data-map-target="sortKey">
@@ -15,7 +15,7 @@
         <input type="checkbox" id="three_ldk_sort_height" name="3LDK"  data-map-target="sortKey">
         <label for="3LDK"> 3LDK</label><br>
       </div> %>
-    <%# <div class="safety-group">
+  <%# <div class="safety-group">
         <input type="checkbox" id="safety" name="1LDK" data-map-target="sortKey">
         <label for="1LDK"> 1LDK</label><br>
     </div> %>
@@ -152,7 +152,7 @@
     <div class="row">
       <h2 class="bold text-center" id="safety">Crime rates in Tokyo</h2>
       <%# Safety chart %>
-      <%= line_chart Ward.pluck(:name, :safety), dataset: { borderWidth: 3, fill: true, backgroundColor: "rgba(255, 87, 51, 0.2)", borderColor: "#FF5733" } %>
+      <%= column_chart Ward.pluck(:name, :safety), dataset: { borderWidth: 3, fill: true, backgroundColor: "rgba(255, 87, 51, 0.2)", borderColor: "#FF5733" } %>
     </div>
     <div class="row">
       <h2 class = "bold text-center" id="rating">Community Poll Ratings</h2>
@@ -207,7 +207,7 @@
               <%# if @review.user.photo.key %>
               <%# cl_image_tag @review.user.photo %>
               <%# else %>
-                <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
+              <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
               <%# end %>
               <div class="text-center">
                 <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
