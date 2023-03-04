@@ -1,0 +1,13 @@
+.card-review {
+  height: 100%;
+}
+
+.card-product-infos {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-review h3 {
+  font-size: 2vw;
+}

@@ -446,40 +446,31 @@
       <% end %>
     </div>
   </div>
-  <%# Schools  %>
-  <div class="container m-5">
-    <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
-    <img src="..app/images/school.jpeg" />
-    <div class="row">
-      <% @ward.school_info.each do |school| %>
-        <div class="col-6">
-          <div class="card-review m-4">
-            <div class="card-product-infos">
-              <h1><%= school["name"]%></h1>
-              <h2 class="mb-3"><%= school["website"]%></h2>
-              <h2 class="mb-3"><%= school["phone"]%></h2>
-              <h2 class="mb-3"><%= school["address"]%></h2>
-              <h2 class="mb-3"><%= school["access"]%></h2>
+
+</div>
+
+<%# Schools  %>
+<div class="container m-5">
+  <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
+  <%= image_tag("school.jpeg") %>
+  <div class="row">
+
+    <% @ward.school_info.first(3).each do |school| %>
+      <div class="col-4">
+        <div class="card-school m-4">
+          <div class="card-product-infos">
+            <h3><%= school["name"]%></h3>
+            <div class="card-product-body">
+            <h5 class=" mt-3 mb-3"><i class="fa-solid fa-phone"></i> <%= school["phone"]%></h5>
+            <h5 class="mb-3"><i class="fa-solid fa-location-dot"></i> <%= school["address"]%></h5>
+            <h5 class="mb-3"><i class="fa-solid fa-train"></i> <%= school["access"]%></h5>
+            <h5 class="mb-3"><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></h2>
             </div>
           </div>
-        <% end %>
-=======
-      <%# Schools  %>
-      <div class="container m-5">
-        <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
-        <img src="..app/images/school.jpeg" />
-        <div class="row">
-          <% @ward.school_info.each do |school| %>
-            <div class="col-6">
-              <div class="card-review m-4">
-                <div class="card-product-infos">
-                  <h1><%= school["name"]%></h1>
-                  <h2 class="mb-3"><%= school["website"]%></h2>
-                  <h2 class="mb-3"><%= school["phone"]%></h2>
-                  <h2 class="mb-3"><%= school["address"]%></h2>
-                  <h2 class="mb-3"><%= school["access"]%></h2>
-                </div>
-              </div>
-            <% end %>
-          </div>
         </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
