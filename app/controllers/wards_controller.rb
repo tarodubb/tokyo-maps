@@ -29,7 +29,7 @@ class WardsController < ApplicationController
       two_ldk: @ward.two_ldk_avg_rent,
       three_ldk: @ward.three_ldk_avg_rent,
       latitude: @ward.latitude,
-      longitude: @ward.longitude,
+      longitude: @ward.longitude
     }
     @review = Review.new
     @message = Message.new
