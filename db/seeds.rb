@@ -68,6 +68,7 @@ wards.each do |en_name, jp_name|
       temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
       temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
       temp_ward.summary = parsed_ward["summary"]
+      temp_ward.summary = parsed_ward["summary"]
       temp_ward.points_of_interest = parsed_ward["points_of_interest"]
       temp_ward.transportation_rating = parsed_ward["transportation_rating"]
       temp_ward.shopping_rating = parsed_ward["shopping_rating"]
