@@ -24,6 +24,8 @@ export default class extends Controller {
       // this.sortFormTarget.style.display = "block";
       this.globusTarget.classList.add("map-full");
       this.globusTarget.classList.remove("map-banner");
+      //Clear session storage of user selections on refresh or reload
+      sessionStorage.clear()
     }
     let center = [];
     let zoom = 0;
@@ -134,10 +136,16 @@ export default class extends Controller {
         this.areasValue.forEach((area) => {
           if (ward_name.toLowerCase() === area.name) {
             // Get user selections and pass them through to the show page
-            let selectedRent = document.querySelector(".selected-rent-target").innerHTML;
-            let selectedSafety = document.querySelector(".selected-safety-target").innerHTML;
-            sessionStorage.setItem("ldkSelection", selectedRent);
-            sessionStorage.setItem("safetySelection", selectedSafety);
+
+            let selectedRent = document.querySelector(".selected-rent-target");
+            let selectedSafety = document.querySelector(".selected-safety-target");
+
+            if (selectedRent) {
+              sessionStorage.setItem("ldkSelection", selectedRent.innerHTML);
+            }
+            if (selectedSafety) {
+              sessionStorage.setItem("safetySelection", selectedSafety.innerHTML);
+            }
             window.location.href = `wards/${area.id}`;
           }
         });
