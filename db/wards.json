@@ -66,7 +66,7 @@
         "Mori Art Museum"
       ],
       "historical_significance": "Minato has a long history as a center of international trade and diplomacy. It was heavily bombed during World War II, but has since been rebuilt and modernized.",
-      "flag": "",
+      "flag": "minatoflag.jpg",
       "transportation_rating":  9.67,
       "shopping_rating": 6.00,
       "entertainment_rating": 6.33,
@@ -91,7 +91,7 @@
         "Samurai Museum"
       ],
       "historical_significance": "Shinjuku was originally a small rural village, but rapidly grew into a major transportation hub during the Meiji period. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": "",
+      "flag": "shinjukuflag.jpg",
       "transportation_rating": 8.60,
       "shopping_rating": 7.30,
       "entertainment_rating": 6.00,
@@ -191,7 +191,7 @@
         "Tokyo Big Sight"
       ],
       "historical_significance": "Kōtō has a long history as a center of industry and transportation in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": "",
+      "flag": "kotoflag.jpg",
       "transportation_rating": 7.22,
       "shopping_rating": 7.70,
       "entertainment_rating": 6.96,
@@ -227,7 +227,7 @@
       "one_ldk_avg_rent": 206000,
       "two_ldk_avg_rent": 351100,
       "three_ldk_avg_rent": 529300,
-      "summary": "Shibuya is a bustling commercial and entertainment district known for its many shops, restaurants, and nightlife. It is also home to several iconic landmarks, including the Shibuya Crossing and the Hachiko Statue.",
+      "summary": "Shibuya is a popular and trendy district located in Tokyo, Japan, and is known for its bustling streets, fashion, nightlife, and youth culture. Generally, Japanese people view Shibuya as a vibrant and exciting neighborhood that represents the modern and youthful side of Japan. It's a popular destination for shopping, dining, and entertainment, and many young people aspire to visit or live in Shibuya. At the same time, Shibuya is also associated with some negative aspects, such as overcrowding and traffic congestion, which can make it challenging to navigate during peak hours. Some Japanese people may also view Shibuya's party culture and excessive consumerism as being superficial or lacking in substance. Overall, Shibuya is seen as a significant cultural hub in Japan, and its unique blend of modernity and tradition continues to draw visitors and residents alike.  ",
       "points_of_interest": [
         "Shibuya Crossing",
         "Hachiko Statue",
@@ -235,7 +235,7 @@
         "Meiji Shrine"
       ],
       "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
-      "flag": "",
+      "flag": "shibuyaflag.jpg",
       "safety": 0.0147
     },
     {

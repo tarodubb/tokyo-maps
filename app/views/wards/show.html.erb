@@ -1,10 +1,14 @@
-
 <div class="show-container">
   <div class="show-map">
     <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
     data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       <div class="map-show" data-map-show-target="globus"></div>
     </div>
+      <div class = "ward-title">
+        <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+        <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
+        <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h2>
+      </div>
   </div>
   <div class="dropdown-wrapper">
     <div class="dropdown">
