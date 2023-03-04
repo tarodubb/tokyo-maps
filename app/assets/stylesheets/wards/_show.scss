@@ -1,0 +1,18 @@
+.show-container {
+  position: relative;
+}
+.ward-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.menu-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.info-container {
+  width: auto;
+  margin-left: 15vw;
+}
