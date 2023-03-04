@@ -21,8 +21,9 @@
   }
 }
 
-#map-show {
+.map-show {
   width: 100%;
   height: 400px;
   pointer-events: none;
+  display: block;
 }
