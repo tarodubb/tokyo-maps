@@ -2,14 +2,14 @@
   &.points {
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    height: 400px;
+    height: 300px;
   }
 }
 
 .card-img-top {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  height: 300px;
+  height: 200px;
 }
 
 .card.review {
@@ -24,50 +24,49 @@
 
 .card.air-quality {
   padding: 32px;
-  width: 400px;
-
+  width: 230px;
+  height: 370px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   .card-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
-
-  height: 600px;
-
   img {
-    width: 300px;
+    width: 150px;
   }
 }
 
 .aqi {
-  padding: 32px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
   background-color: lightgray;
   color: black;
-  font-size: 32px;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 .description {
-  padding: 32px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
   background-color: lightgray;
   color: black;
-  font-size: 32px
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 .card.weather {
   padding: 32px;
-  width: 400px;
-
+  width: 230px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   .card-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
-
-  height: 600px;
+  height: 370px;
 }
 
 .weather {
   img {
-    width: 300px;
+    width: 150px;
   }
 }
