@@ -1,4 +1,4 @@
-import { Controller, ValueListObserver } from "@hotwired/stimulus";
+import { Controller} from "@hotwired/stimulus";
 
 export default class extends Controller {
   static values = {
@@ -9,10 +9,11 @@ export default class extends Controller {
   map = null;
   hoveredStateId = null;
   connect() {
+    console.log(this.globusTarget);
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.globusTarget,
-      style: 'mapbox://styles/mapbox/light-v11',
+      style: 'mapbox://styles/timchap96/cleky3zxc000g01mxat00cwa8',
       zoom: 11,
       center: [this.areasValue.longitude, this.areasValue.latitude],
       projection: "globe",
