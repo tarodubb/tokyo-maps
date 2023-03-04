@@ -9,7 +9,13 @@ class WardsController < ApplicationController
   def show
     @ward = Ward.find(params[:id])
     @air_quality_data = get_air_quality_data(@ward.latitude, @ward.longitude)
-    @air_quality_color = get_air_quality_color(@air_quality_data["list"][0]["main"]["aqi"])
+    @weather_data = get_weather_data(@ward.latitude, @ward.longitude)
+    @weather_main = @weather_data["weather"][0]["main"]
+    @weather_description = @weather_data["weather"][0]["description"]
+    @weather_humidity = @weather_data["main"]["humidity"]
+    @weather_temperature = @weather_data["main"]["temp"]
+    @weather_wind = @weather_data["wind"]["speed"]
+    @weather_image = get_weather_image(@weather_main)
     @air_quality_description = get_air_quality_description(@air_quality_data["list"][0]["main"]["aqi"])
     @point_of_interest_image1 = get_point_of_interest_image1
     @point_of_interest_image2 = get_point_of_interest_image2
@@ -23,7 +29,7 @@ class WardsController < ApplicationController
       two_ldk: @ward.two_ldk_avg_rent,
       three_ldk: @ward.three_ldk_avg_rent,
       latitude: @ward.latitude,
-      longitude: @ward.longitude,
+      longitude: @ward.longitude
     }
     @review = Review.new
     @message = Message.new
@@ -41,16 +47,31 @@ class WardsController < ApplicationController
     end
   end
 
-  def get_air_quality_color(aqi)
-    case aqi
-    when 1..2
-      "dark"
-    when 3
-      "warning"
-    when 4
-      "danger"
+  def get_weather_data(latitude, longitude)
+    response = HTTParty.get("https://api.openweathermap.org/data/2.5/weather?lat=#{@ward.latitude}&lon=#{@ward.longitude}&units=metric&appid=d0a9c6891581954c7fe9d124e4c405a2")
+    if response.success?
+      @weather_data = response.parsed_response
     else
-      "dark" # black
+      @weather_data = nil
+    end
+  end
+
+  def get_weather_image(weather)
+    case @weather_main
+    when "Clouds"
+      "cloudy.png"
+    when "Clear"
+      "sunny.png"
+    when "Rain"
+      "rainy.png"
+    when "Drizzle"
+      "rainy.png"
+    when "Thunderstorm"
+      "rainy.png"
+    when "Snow"
+      "snow.png"
+    else
+      "cloudy.png"
     end
   end
 

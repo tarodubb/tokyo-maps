@@ -1,37 +1,26 @@
 <div class="home-container">
   <div id="container" data-controller="map" data-map-areas-value="<%= @areas.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-
-    <%# <button id="fly-to-tokyo" data-action="click->map#flyTokyo">Fly to Tokyo</button>
-  <button id="reset-view"data-action="click->map#reset">Reset</button> %>
-    <%# <form data-action="change->map#sort">
-    <div class="form-group"> %>
-    <%# <input type="checkbox" id="one_ldk_sort_height" name="1LDK" data-map-target="sortKey">
-      <label for="1LDK"> 1LDK</label><br>
-      <input type="checkbox" id="two_ldk_sort_height" name="2LDK" data-map-target="sortKey">
-      <label for="2LDK">2LDK</label><br>
-      <input type="checkbox" id="three_ldk_sort_height" name="3LDK"  data-map-target="sortKey">
-      <label for="3LDK"> 3LDK</label><br> %>
-
-    <%# <select class="form-control" id="exampleFormControlSelect1" data-map-target="sortKey" fill-extrusion-input = "" >
-
-        <option></option>
-        <option id="one_ldk_sort_height">1LDK</option>
-        <option id="two_ldk_sort_height">2LDK</option>
-        <option id="three_ldk_sort_height">3LDK</option>
-        <option id="safety">Safety</option>
-      </select>
-    </div>
-  </form> %>
     <div class="landing-banner">
+      <div class="sort">
+        <h2>Sorting</h2>
+        <div class="rent-buttons">
+          <button id="one_ldk" class="rent-button" data-action="click->map#selectedSort">1LDK</button>
+          <button id="two_ldk" class="rent-button" data-action="click->map#selectedSort">2LDK</button>
+          <button id="three_ldk" class="rent-button" data-action="click->map#selectedSort">3LDK</button>
+        </div>
+        <div class="other-buttons">
+          <button class="other-button" id="safety" data-action="click->map#selectedSort">Safety</button>
+        </div>
+      </div>
       <div class="banner-content">
         <h1 id="banner-title">Tokyo Maps</h1>
         <button id="fly-to-tokyo" data-action="click->map#flyTokyo">Explore</button>
       </div>
       <div class="map-banner" data-map-target="globus"></div>
     </div>
-    <div class="container">
-      <div class="info">
+
+    <div class="landing-info">
         <p>Tokyo Maps is a page dedicated to providing visitors with comprehensive and detailed maps and information of Tokyo, Japan. As soon as you land on Tokyo, you are greeted with a stunning map of the city. The map is divided into 23 wards of the city, allowing visitors to quickly find the information they need.
           <br>
           <br>
@@ -41,7 +30,6 @@
           In addition the page includes helpful information about each ward, such as the ward's history, culture, and important events. This information is presented in an easy-to-read format that is accessible to all visitors.
           Overall, Tokyo Maps is a well-designed page that provides visitors with the information they need to explore and settle down in Tokyo. Whether you're a first-time visitor or a Tokyo inhabitant, this page is an excellent resource for anyone looking to explore the city.
         </p>
-      </div>
     </div>
   </div>
 </div>
