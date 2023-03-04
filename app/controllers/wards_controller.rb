@@ -159,7 +159,6 @@ class WardsController < ApplicationController
       house[:image] = listing.search('.photo.portrait img')
       @houses << house
     end
-    raise
     return @houses
     # @bodies = @doc.search(".listing").first(3)
     # @houses = []
