@@ -35,6 +35,7 @@ def scrape_schools(ku)
   return schools
 end
 
+
 # schools = scrape_schools(ku)
 # schools.each do |school|
 #   # puts "test"

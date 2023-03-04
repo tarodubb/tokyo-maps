@@ -4,39 +4,66 @@
     data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       <div class="map-show" data-map-show-target="globus"></div>
     </div>
-      <div class = "ward-title">
-        <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
-        <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
-        <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h2>
-      </div>
   </div>
-  <div class="ward-info-container">
-    <div class="menu-container">
-      <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
+  <div class="dropdown-wrapper">
+    <div class="ward-info-container">
+      <div class="menu-container">
+        <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+        <div class="dropdown-content">
+          <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+          <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
+        </div>
+      </div>
     </div>
     <%# Main container for all the info %>
     <div class="info-container">
       <%# Based on your selection %>
-      <div class="selection-container">
+      <div class="selection-container my-4">
         <div class="row">
-          <h2 class="bold text-center">Based on your selections</h2>
+          <h2 class="bold text-center mb-3">Based on your selections</h2>
           <div class="col-4">
-            <div class="card selection">
+            <div class="card selection rent">
+              <%# !!!  Tim will add the logic here !!! %>
               <%# rent info %>
+              <h5 class="text-center mb-0">Rent price in <%= @ward.name.capitalize %>: </h5>
+              <% if true %>
+                <div class="rent d-flex justify-content-around">
+                  <%= image_tag "1ldk.png", class: "bed-img"%>
+                  <div class="ldk">
+                    <h2>¥<%= @ward.one_ldk_avg_rent%></h2>
+                  </div>
+                </div>
+              <% elsif true %>
+                <%= image_tag "2ldk.png", class: "bed-img"%>
+                <h2>¥<%= @ward.two_ldk_avg_rent%></h2>
+              <% else %>
+                <%= image_tag "3ldk.png", class: "bed-img"%>
+                <h2>¥<%= @ward.three_ldk_avg_rent%></h2>
+              <% end %>
             </div>
           </div>
+          <%# safety info %>
           <div class="col-4">
             <div class="card selection">
-              <%# safety info %>
+              <h5 class="text-center">Crime rate in <%= @ward.name.capitalize %>: </h5>
+              <h2 class="text-center"><%= (@ward.safety.to_f * 100) %>%</h2>
             </div>
           </div>
           <div class="col-4">
             <div class="card selection">
               <%# schools info %>
+              <h5 class="text-center">Number of international schools: </h5>
+              <h2 class="text-center"><%= @ward.school_info.count %></h2>
             </div>
           </div>
         </div>
@@ -44,7 +71,7 @@
       <%# Overview %>
       <div class="overview-container">
         <div class="row">
-          <h2 class = "bold text-center">Overview</h2>
+          <h2 class = "bold text-center mb-3">Overview</h2>
           <div class="col-6 my-1">
             <%# Embed the video %>
             <% if @ward.name == "koto ku" %>
@@ -116,6 +143,16 @@
         </div>
       </div>
       <%# Population %>
+      <div class="population card mb-4">
+        <div class="pop">
+          <h5 class="text-center">Population of <%= @ward.name.capitalize %> </h5>
+          <h2 class="text-center"><%= @ward.population %> people</h2>
+        </div>
+        <div class="density">
+          <h5 class="text-center">Population density in <%= @ward.name.capitalize %> </h5>
+          <h2 class="text-center"><%= @ward.population_density %> persons per km²</h2>
+        </div>
+      </div>
       <%# Safety chart %>
       <h2 class="bold text-center" id="safety">Crime rates in Tokyo</h2>
       <% current_ward_name = @ward.name.capitalize %>
@@ -153,54 +190,54 @@
             </div>
           </div>
         </div>
-        <%# Reviews  %>
-        <h2 class="m-4 bold text-center">Reviews of <%= @ward.name.capitalize %></h2>
-        <div class="row">
-          <% if @ward.reviews.blank? %>
-            <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
-          <% else %>
-            <% @ward.reviews.last(3).each do |review| %>
-              <div class="col-4">
-                <div class="card review">
-                  <%# if @review.user.photo.key %>
-                  <%# cl_image_tag @review.user.photo %>
-                  <%# else %>
-                  <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
-                  <%# end %>
-                  <div class="text-center">
-                    <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
-                    <p>Rating: <%= review.rating %>/5</p>
-                    <p>"<%= review.content %>"</p>
-                  </div>
+      </div>
+      <%# Reviews  %>
+      <h2 class="m-4 bold text-center">Reviews of <%= @ward.name.capitalize %></h2>
+      <div class="row">
+        <% if @ward.reviews.blank? %>
+          <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
+        <% else %>
+          <% @ward.reviews.last(3).each do |review| %>
+            <div class="col-4">
+              <div class="card review">
+                <%# if @review.user.photo.key %>
+                <%# cl_image_tag @review.user.photo %>
+                <%# else %>
+                <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
+                <%# end %>
+                <div class="text-center">
+                  <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
+                  <p>Rating: <%= review.rating %>/5</p>
+                  <p>"<%= review.content %>"</p>
                 </div>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
-        <!-- Button trigger modal -->
-        <div class="button d-flex justify-content-center mb-4 mt-0">
-          <button type="button" class="btn green review" data-toggle="modal" data-target="#exampleModal">
-            Leave a review
-          </button>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Leave a review</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
-                  <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
-                  <%= f.input :content, label: "Leave a review: " %>
-                  <div class="modal-footer">
-                    <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
-                  <% end %>
-                </div>
+        <% end %>
+      </div>
+      <!-- Button trigger modal -->
+      <div class="button d-flex justify-content-center mb-4 mt-0">
+        <button type="button" class="btn green review" data-toggle="modal" data-target="#exampleModal">
+          Leave a review
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Leave a review</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
+                <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
+                <%= f.input :content, label: "Leave a review: " %>
+                <div class="modal-footer">
+                  <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -226,8 +263,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+      </div>
+</div>
 </div>
 <<<<<<< HEAD
 <%# Schools  %>
