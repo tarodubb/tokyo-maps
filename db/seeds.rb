@@ -3,6 +3,7 @@ require "faker"
 require "securerandom"
 require "open-uri"
 require_relative "../app/functions/extrusion_height"
+require_relative "scraper.rb"
 require_relative "../app/functions/normalize"
 
 p "Descroying messages"
@@ -55,7 +56,9 @@ labels_geojson = File.read("public/labels.geojson")
 labels_parsed_geojson = JSON.parse(labels_geojson)
 
 wards.each do |en_name, jp_name|
-  temp_ward = Ward.new(name: en_name)
+  ward_scrape_name = en_name.downcase.split(" ", -1)[0] + "-ku"
+  schools = scrape_schools(ward_scrape_name)
+  temp_ward = Ward.new(name: en_name, school_info: schools)
 
   wards_parsed_json["tokyo_wards"].each do |parsed_ward|
     if parsed_ward["name"].downcase + " ku" == en_name

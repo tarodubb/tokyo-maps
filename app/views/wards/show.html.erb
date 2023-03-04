@@ -274,4 +274,26 @@
     <% end %>
   </div>
 </div>
+
+<%# Schools  %>
+ <div class="container m-5">
+  <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
+   <img src="..app/images/school.jpeg" />
+    <div class="row">
+      <% @ward.school_info.each do |school| %>
+        <div class="col-6">
+          <div class="card-review m-4">
+            <div class="card-product-infos">
+              <h1><%= school["name"]%></h1>
+              <h2 class="mb-3"><%= school["website"]%></h2>
+              <h2 class="mb-3"><%= school["phone"]%></h2>
+              <h2 class="mb-3"><%= school["address"]%></h2>
+              <h2 class="mb-3"><%= school["access"]%></h2>
+            </div>
+          </div>
+      <% end %>
+        </div>
+    </div>
+  </div>
 </div>
+
