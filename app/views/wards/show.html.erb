@@ -1,24 +1,10 @@
-<div>
-  <div id = "ward-banner" class = "img-wrapper d-flex align-items-center justify-content-center flex-column show-banner" >
-    <div class = "ward-title">
-      <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
-      <h2 class = "pop_text">Population: <%=@ward.population %> </h2>
-      <h2 class = "pop_text">Population Density: <%=@ward.population_density %></h3>
+<div class="show-container">
+  <div class="show-map">
+    <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
+    data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="map-show" data-map-show-target="globus"></div>
     </div>
   </div>
-  <%# <div class="form-group"> %>
-    <%# <div class="rent-group">
-        <input type="checkbox" id="one_ldk_sort_height" name="1LDK" data-map-target="sortKey">
-        <label for="1LDK"> 1LDK</label><br>
-        <input type="checkbox" id="two_ldk_sort_height" name="2LDK" data-map-target="sortKey">
-        <label for="2LDK">2LDK</label><br>
-        <input type="checkbox" id="three_ldk_sort_height" name="3LDK"  data-map-target="sortKey">
-        <label for="3LDK"> 3LDK</label><br>
-      </div> %>
-    <%# <div class="safety-group">
-        <input type="checkbox" id="safety" name="1LDK" data-map-target="sortKey">
-        <label for="1LDK"> 1LDK</label><br>
-    </div> %>
   <div class="dropdown-wrapper">
     <div class="dropdown">
       <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
@@ -207,7 +193,7 @@
               <%# if @review.user.photo.key %>
               <%# cl_image_tag @review.user.photo %>
               <%# else %>
-                <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
+              <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
               <%# end %>
               <div class="text-center">
                 <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
@@ -274,26 +260,24 @@
     <% end %>
   </div>
 </div>
-
 <%# Schools  %>
- <div class="container m-5">
+<div class="container m-5">
   <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
-   <img src="..app/images/school.jpeg" />
-    <div class="row">
-      <% @ward.school_info.each do |school| %>
-        <div class="col-6">
-          <div class="card-review m-4">
-            <div class="card-product-infos">
-              <h1><%= school["name"]%></h1>
-              <h2 class="mb-3"><%= school["website"]%></h2>
-              <h2 class="mb-3"><%= school["phone"]%></h2>
-              <h2 class="mb-3"><%= school["address"]%></h2>
-              <h2 class="mb-3"><%= school["access"]%></h2>
-            </div>
+  <img src="..app/images/school.jpeg" />
+  <div class="row">
+    <% @ward.school_info.each do |school| %>
+      <div class="col-6">
+        <div class="card-review m-4">
+          <div class="card-product-infos">
+            <h1><%= school["name"]%></h1>
+            <h2 class="mb-3"><%= school["website"]%></h2>
+            <h2 class="mb-3"><%= school["phone"]%></h2>
+            <h2 class="mb-3"><%= school["address"]%></h2>
+            <h2 class="mb-3"><%= school["access"]%></h2>
           </div>
-      <% end %>
         </div>
+      <% end %>
     </div>
   </div>
 </div>
-
+</div>
