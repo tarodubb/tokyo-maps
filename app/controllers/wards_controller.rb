@@ -124,7 +124,7 @@ class WardsController < ApplicationController
   end
 
   def scraper
-    rent_url = "https://www.japan-property.jp/apartment-for-rent/Tokyo?city=%E4%B8%AD%E5%A4%AE%E5%8C%BA&site=www.japan-property.jp"
+    rent_url = "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=657&property_types[]=apartment"
     # url = "https://www.lewagon.com"
     html = URI.open(rent_url)
     doc = Nokogiri::HTML.parse(html)
@@ -134,8 +134,11 @@ class WardsController < ApplicationController
       house = {}
       house[:name] = listing.search('.info h3').text.strip
       house[:price] = listing.search('.info p').text.strip
+      house[:address] = listing.search('.location span').text.strip
+      house[:image] = listing.search('.photo.portrait img')
       @houses << house
     end
+    raise
     return @houses
     # @bodies = @doc.search(".listing").first(3)
     # @houses = []
