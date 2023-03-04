@@ -151,7 +151,7 @@ class WardsController < ApplicationController
     doc = Nokogiri::HTML.parse(html)
     items = doc.search('.item')
     @houses = []
-    items.first(3).each do |listing|
+    items.first(4).each do |listing|
       house = {}
       house[:name] = listing.search('.info h3').text.strip
       house[:price] = listing.search('.info p').text.strip

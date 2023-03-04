@@ -167,6 +167,22 @@
       </div>
     </div>
 
+    <%# Places to rent%>
+    <h2 class="m-4 bold text-center">Homes for Rent</h2>
+    <div class="row">
+      <% @houses.each do |house|%>
+        <div class="house-card">
+          <img src= "<%=house[:image]%>" alt="" class = 'house-img'>
+          <div class="house-detail">
+            <p><%=house[:image]%></p>
+            <p><%=house[:price]%></p>
+            <p><%=house[:address]%></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
     <%# Reviews  %>
     <h2 class="m-4 bold text-center">Reviews of <%= @ward.name.capitalize %></h2>
     <div class="row">
@@ -269,4 +285,3 @@
   </div>
 </div>
 </div>
-
