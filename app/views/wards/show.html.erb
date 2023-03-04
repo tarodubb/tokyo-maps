@@ -204,11 +204,11 @@
         <% @ward.reviews.last(3).each do |review| %>
           <div class="col-4">
             <div class="card review">
-              <% if @review.user.photo.key %>
-              <%= cl_image_tag @revier.user.photo.key %>
-              <% else %>
+              <%# if @review.user.photo.key %>
+              <%# cl_image_tag @review.user.photo %>
+              <%# else %>
                 <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
-              <% end %>
+              <%# end %>
               <div class="text-center">
                 <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
                 <p>Rating: <%= review.rating %>/5</p>
