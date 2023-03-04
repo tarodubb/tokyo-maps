@@ -66,7 +66,7 @@
         "Mori Art Museum"
       ],
       "historical_significance": "Minato has a long history as a center of international trade and diplomacy. It was heavily bombed during World War II, but has since been rebuilt and modernized.",
-      "flag": "",
+      "flag": "minatoflag.jpg",
       "transportation_rating":  9.67,
       "shopping_rating": 6.00,
       "entertainment_rating": 6.33,
@@ -91,7 +91,7 @@
         "Samurai Museum"
       ],
       "historical_significance": "Shinjuku was originally a small rural village, but rapidly grew into a major transportation hub during the Meiji period. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": "",
+      "flag": "shinjukuflag.jpg",
       "transportation_rating": 8.60,
       "shopping_rating": 7.30,
       "entertainment_rating": 6.00,
@@ -191,7 +191,7 @@
         "Tokyo Big Sight"
       ],
       "historical_significance": "Kōtō has a long history as a center of industry and transportation in Tokyo. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": "",
+      "flag": "kotoflag.jpg",
       "transportation_rating": 7.22,
       "shopping_rating": 7.70,
       "entertainment_rating": 6.96,
@@ -235,7 +235,7 @@
         "Meiji Shrine"
       ],
       "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
-      "flag": "",
+      "flag": "shibuyaflag.jpg",
       "safety": 0.0147
     },
     {

@@ -110,20 +110,41 @@ class WardsController < ApplicationController
     end
   end
 
+  def get_flag_image
+    case @ward.name
+    when "shibuya ku"
+      "shibuyaflag.jpg"
+    when "koto ku"
+      "kotoflag.jpg"
+    when "shinjuku ku"
+      "https://blog.japanwondertravel.com/wp-content/uploads/2022/03/kabukicho.jpg"
+    when "minato ku"
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/0f/28/8c/roppongi-hills.jpg?w=1200&h=-1&s=1"
+    end
+  end
+
   def scraper
     rent_url = "https://www.japan-property.jp/apartment-for-rent/Tokyo?city=%E4%B8%AD%E5%A4%AE%E5%8C%BA&site=www.japan-property.jp"
     # url = "https://www.lewagon.com"
     html = URI.open(rent_url)
-    @doc = Nokogiri::HTML.parse(html)
-    @bodies = @doc.search(".listing").first(3)
+    doc = Nokogiri::HTML.parse(html)
+    items = doc.search('.item')
     @houses = []
-    @bodies.each do |house|
-      house_info = {}
-      house_info[:price] = house.css('.info p')&.text&.squish
-      house_info[:name] = house.css('.info h3')&.text&.squish
-      @houses << house_info
+    items.first(3).each do |listing|
+      house = {}
+      house[:name] = listing.search('.info h3').text.strip
+      house[:price] = listing.search('.info p').text.strip
+      @houses << house
     end
-    raise
+    return @houses
+    # @bodies = @doc.search(".listing").first(3)
+    # @houses = []
+    # @bodies.each do |house|
+    #   house_info = {}
+    #   house_info[:price] = house.css('.info p')&.text&.squish
+    #   house_info[:name] = house.css('.info h3')&.text&.squish
+    #   @houses << house_info
+    # end
     # @span = @titles.search(".text-semi-strong")[0].text.strip
     # @array = []
     # @titles.each do |listing|

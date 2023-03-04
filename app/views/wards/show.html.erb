@@ -25,7 +25,7 @@
     <h2 class = "bold" id = "summary">Background</h2>
     <div class = "row">
       <div class="col-6 my-4">
-        <%= image_tag("shibuyaflag.jpg", class: "flag-wrapper") %>
+        <%= image_tag(@ward.flag, class: "flag-wrapper") %>
       </div>
       <div class="col-6 my-4">
         <div class="ward-text">
@@ -107,6 +107,7 @@
         </div>
       </div>
     </div>
+
     <div class="row">
       <h2 class = "bold" id = "safety">Safety Info</h2>
       <p> <%=@ward.safety%></p>

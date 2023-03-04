@@ -82,6 +82,7 @@ end
 gem 'faker'
 
 gem "cloudinary"
+gem "active_model_serializers"
 gem "color"
 
 gem "nokogiri"
