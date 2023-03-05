@@ -5,7 +5,12 @@
       <div class="map-show" data-map-show-target="globus"></div>
     </div>
   </div>
-  <div class="ward-info-container">
+  <div class="banner-title">
+    <h3 class = "title-name"><%= @ward.name.upcase %></h3>
+    <p class = "title-pop"><%= @ward.population %></p>
+    <p class = "title-pop-d"><%= @ward.population_density %></p>
+  </div>
+  <div class= "ward-info-container">
     <div class="menu-container">
       <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
       <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
@@ -15,7 +20,7 @@
       <button type="button" class="btn green" data-toggle="modal" data-target="#modal2">Ask a question</button>
     </div>
     <%# Main container for all the info %>
-    <div class="info-container">
+    <div class="container">
       <%# Based on your selection %>
       <div class="selection-container my-4">
         <div class="row">
