@@ -1,4 +1,6 @@
 <div class="show-container">
+  <div class="banner-wrapper">
+  </div>
   <div class="show-map">
     <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
     data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -7,8 +9,8 @@
   </div>
   <div class="banner-title">
     <h3 class = "title-name"><%= @ward.name.upcase %></h3>
-    <p class = "title-pop"><%= @ward.population %></p>
-    <p class = "title-pop-d"><%= @ward.population_density %></p>
+    <p class = "title-pop">Population: <%= @ward.population %></p>
+    <p class = "title-pop-d">Population: Density<%= @ward.population_density %></p>
   </div>
   <div class= "ward-info-container">
     <div class="menu-container">
