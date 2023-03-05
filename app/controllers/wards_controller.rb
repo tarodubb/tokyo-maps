@@ -156,22 +156,9 @@ class WardsController < ApplicationController
       house[:name] = listing.search('.info h3').text.strip
       house[:price] = listing.search('.info p').text.strip
       house[:address] = listing.search('.location span').text.strip
-      house[:image] = listing.search('.photo.portrait img')
+      house[:image] = listing.search('.photo_label img').first[:src]
       @houses << house
     end
     return @houses
-    # @bodies = @doc.search(".listing").first(3)
-    # @houses = []
-    # @bodies.each do |house|
-    #   house_info = {}
-    #   house_info[:price] = house.css('.info p')&.text&.squish
-    #   house_info[:name] = house.css('.info h3')&.text&.squish
-    #   @houses << house_info
-    # end
-    # @span = @titles.search(".text-semi-strong")[0].text.strip
-    # @array = []
-    # @titles.each do |listing|
-    #   @array << listing.text.strip
-    # end
   end
 end

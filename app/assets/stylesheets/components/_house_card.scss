@@ -1,0 +1,34 @@
+.house-card{
+  display: flex;
+}
+
+.house-img{
+  width: 50%;
+}
+
+.house-detail{
+  width: 50%;
+}
+
+.rent-card{
+  display: flex;
+  height: 240px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.rent-img{
+  max-height: 100%;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+.rent-img-wrapper{
+ width: 50%;
+ text-align: center;
+}
+
+.rent-detail{
+ width: 50%;
+}
