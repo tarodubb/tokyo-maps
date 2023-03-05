@@ -1,20 +1,28 @@
 <div class="show-container">
+  <div class="banner-wrapper">
+  </div>
   <div class="show-map">
     <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
     data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       <div class="map-show" data-map-show-target="globus"></div>
     </div>
   </div>
-  <div class="ward-info-container">
+  <div class="banner-title">
+    <h3 class = "title-name"><%= @ward.name.upcase %></h3>
+    <p class = "title-pop">Population: <%= @ward.population %></p>
+    <p class = "title-pop-d">Population: Density<%= @ward.population_density %></p>
+  </div>
+  <div class= "ward-info-container">
     <div class="menu-container">
       <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
       <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
       <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
       <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
       <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
+      <button type="button" class="btn green" data-toggle="modal" data-target="#modal2">Ask a question</button>
     </div>
     <%# Main container for all the info %>
-    <div class="info-container">
+    <div class="container">
       <%# Based on your selection %>
       <div class="selection-container my-4">
         <div class="row">
@@ -205,12 +213,12 @@
       </div>
       <!-- Button trigger modal -->
       <div class="button d-flex justify-content-center mb-4 mt-0">
-        <button type="button" class="btn green review" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn green review" data-toggle="modal" data-target="#modal1">
           Leave a review
         </button>
       </div>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -272,3 +280,59 @@
     </div>
   </div>
 </div>
+
+<%# Messages popup %>
+<!-- Modal -->
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+        <%# Messages %>
+        <div class="container chatroom my-4" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
+        <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          <div class="header mt-3">
+            <h1><strong>Chat with people in <%= @ward.name.capitalize %></strong></h1>
+          </div>
+          <div class="messages" data-ward-subscription-target="messages">
+            <% @ward.messages.each do |message| %>
+              <%= render "messages/message", message: message %>
+            <% end %>
+          </div>
+          <%= simple_form_for [@ward, @message], html: {class: "d-flex"} do |f| %>
+            <%= f.input :content,
+          label: false,
+          placeholder: "Message people in #{@ward.name.capitalize}",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+            <%= f.submit "Send", class: "btn green mb-3" %>
+          <% end %>
+          <%= simple_form_for [@ward, @message],
+        html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+      %>
+        <% end %>
+      </div>
+</div>
+</div>
+<<<<<<< HEAD
+<%# Schools  %>
+<div class="container m-5">
+  <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
+  <img src="..app/images/school.jpeg" />
+  <div class="row">
+    <% @ward.school_info.each do |school| %>
+      <div class="col-6">
+        <div class="card-review m-4">
+          <div class="card-product-infos">
+            <h1><%= school["name"]%></h1>
+            <h2 class="mb-3"><%= school["website"]%></h2>
+            <h2 class="mb-3"><%= school["phone"]%></h2>
+            <h2 class="mb-3"><%= school["address"]%></h2>
+            <h2 class="mb-3"><%= school["access"]%></h2>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+=======
+>>>>>>> 010ae56a477d4f179d98b5d781d4482d9903ba6b

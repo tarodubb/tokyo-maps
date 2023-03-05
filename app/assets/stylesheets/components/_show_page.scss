@@ -95,3 +95,29 @@
   flex-direction: column;
   align-items: center;
 }
+
+.house-card{
+  display: flex;
+}
+
+.house-img{
+  width: 50%;
+}
+
+.house-detail{
+  width: 50%;
+}
+
+.banner-title{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 280px;
+  height: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.title-pop-d, .title-pop, .title-name{
+  margin: 0;
+}
