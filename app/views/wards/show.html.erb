@@ -8,21 +8,22 @@
     </div>
   </div>
   <div class="banner-title">
-    <h3 class = "title-name"><%= @ward.name.upcase %></h3>
-    <p class = "title-pop">Population: <%= @ward.population %></p>
-    <p class = "title-pop-d">Population: Density<%= @ward.population_density %></p>
+    <h1 class="title-name bold"><%= @ward.name.upcase %></h1>
+    <p><%= @ward.summary %></p>
   </div>
   <div class= "ward-info-container">
-    <div class="menu-container">
-      <p><%= link_to "Ward Map", "#summary", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Summary", "#summary", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Rent Prices", "#rent", data: {controller: "scroll-to"}  %></p>
+    <div class="menu-container m-4">
+      <p><%= link_to "Ward Map", "#map", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Overview", "#overview", data: {controller: "scroll-to"}  %></p>
       <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Community Page", "#framework_structure", data: {controller: "scroll-to"}  %></p>
-      <button type="button" class="btn green" data-toggle="modal" data-target="#modal2">Ask a question</button>
+      <p><%= link_to "Sights", "#sights", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Reviews", "#reviews", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Schools", "#schools", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Rent", "#rent", data: {controller: "scroll-to"}  %></p>
+      <img src="https://static.vecteezy.com/system/resources/previews/005/337/802/original/icon-symbol-chat-outline-illustration-free-vector.jpg" alt="" data-toggle="modal" data-target="#modal2">
     </div>
     <%# Main container for all the info %>
-    <div class="container">
+    <div class="container m-5" id="map">
       <%# Based on your selection %>
       <div class="selection-container my-4">
         <div class="row">
@@ -52,7 +53,7 @@
           <div class="col-4">
             <div class="card selection">
               <h5 class="text-center">Crime rate in <%= @ward.name.capitalize %>: </h5>
-              <h2 class="text-center"><%= (@ward.safety.to_f * 100) %>%</h2>
+              <h2 class="text-center"><%= (@ward.safety.to_f * 100).round %>%</h2>
             </div>
           </div>
           <div class="col-4">
@@ -65,22 +66,21 @@
         </div>
       </div>
       <%# Overview %>
-      <div class="overview-container">
+      <div class="overview-container" id="overview">
         <div class="row">
           <h2 class = "bold text-center mb-3">Overview</h2>
           <div class="col-6 my-1">
             <%# Embed the video %>
             <% if @ward.name == "koto ku" %>
-              <iframe width="500" height="315" src="https://www.youtube.com/embed/8i9ltzhq80s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/8i9ltzhq80s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <% elsif @ward.name == "shibuya ku" %>
-              <iframe width="500" height="315" src="https://www.youtube.com/embed/Bh2Z1Hxb3es" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/Bh2Z1Hxb3es" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <% elsif @ward.name == "shinjuku ku" %>
-              <iframe width="500" height="315" src="https://www.youtube.com/embed/DjdUEyjx8GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/DjdUEyjx8GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <% elsif @ward.name == "minato ku" %>
-              <iframe width="500" height="315" src="https://www.youtube.com/embed/jbFSysHYYJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/jbFSysHYYJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <% else %>
             <% end %>
-            <p><%= @ward.summary %></p>
           </div>
           <div class="col-6">
             <%# Weather and air quality %>
@@ -158,7 +158,7 @@
                              backgroundColor: ward_names.map{|ward_name| ward_name == current_ward_name ? "rgba(255, 87, 51, 0.5)" : "rgba(128, 128, 128, 0.2)" },
                              borderColor: "#FF5733" } %>
       <%# Places of interest cards  %>
-      <div class="container mt-5">
+      <div class="container mt-5" id="sights">
         <h2 class = "bold text-center">Sights in <%= @ward.name.capitalize %></h2>
         <div class="row">
           <div class="col-4 my-4">
@@ -188,7 +188,7 @@
         </div>
       </div>
       <%# Reviews  %>
-      <h2 class="m-4 bold text-center">Reviews of <%= @ward.name.capitalize %></h2>
+      <h2 class="m-4 bold text-center" id="reviews">Reviews of <%= @ward.name.capitalize %></h2>
       <div class="row">
         <% if @ward.reviews.blank? %>
           <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
@@ -220,7 +220,7 @@
       <!-- Modal -->
       <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
+          <div class="content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Leave a review</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -230,7 +230,7 @@
             <div class="modal-body">
               <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
                 <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
-                <%= f.input :content, label: "Leave a review: " %>
+                <%= f.input :content, label: "Your review: " %>
                 <div class="modal-footer">
                   <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
                 <% end %>
@@ -240,7 +240,7 @@
         </div>
       </div>
       <%# Schools  %>
-      <div class="container m-5">
+      <div class="container m-5" id="schools">
         <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
         <%= image_tag("school.jpeg") %>
         <div class="row">
@@ -262,7 +262,7 @@
         </div>
       </div>
       <%# Rent Houses %>
-      <h2 class="m-4 bold text-center">Locations Avaliable right now for rent<%= @ward.name.capitalize %></h2>
+      <h2 class="m-4 bold text-center" id="rent">Locations Avaliable right now for rent<%= @ward.name.capitalize %></h2>
       <div class="row">
         <% @houses.each do |house| %>
           <div class="col-6 d-flex justify-content-center mb-3">

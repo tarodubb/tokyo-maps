@@ -31,3 +31,17 @@ a.nav-link{
 .navbar-nav.nav-link:hover{
   color: red;
 }
+
+.menu-container {
+  img {
+    width: 200px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: #61A866;
+  }
+}
