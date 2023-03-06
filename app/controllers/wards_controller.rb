@@ -157,6 +157,7 @@ class WardsController < ApplicationController
       house[:price] = listing.search('.info p').text.strip
       house[:address] = listing.search('.location span').text.strip
       house[:image] = listing.search('.photo_label img').first[:src]
+      house[:url] = listing.search('a').first['href']
       @houses << house
     end
     return @houses

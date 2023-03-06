@@ -13,6 +13,7 @@
 .rent-card{
   display: flex;
   height: 224px;
+  width: 560px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   background-color: white;
@@ -31,10 +32,15 @@
 .rent-img-wrapper{
  width: 50%;
  text-align: center;
+ margin-left: 16px;
  background-color: rgb(211, 207, 207);
 }
 
 .rent-detail{
  width: 50%;
- padding-left: 16px;
+ padding: 0 16px;
+}
+
+.rent-detail p{
+  font-size: 12px;
 }
