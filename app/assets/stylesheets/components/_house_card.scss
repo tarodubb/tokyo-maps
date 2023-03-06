@@ -12,23 +12,29 @@
 
 .rent-card{
   display: flex;
-  height: 240px;
+  height: 224px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 .rent-img{
-  max-height: 100%;
+  max-height: 200px;
   width: auto;
   display: block;
   margin: auto;
+
 }
 
 .rent-img-wrapper{
  width: 50%;
  text-align: center;
+ background-color: rgb(211, 207, 207);
 }
 
 .rent-detail{
  width: 50%;
+ padding-left: 16px;
 }
