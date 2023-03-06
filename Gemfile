@@ -89,3 +89,7 @@ gem "nokogiri"
 gem "byebug"
 gem 'httparty'
 gem "chartkick"
+
+# slick installation
+
+gem 'slick_rails'

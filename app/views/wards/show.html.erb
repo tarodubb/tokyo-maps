@@ -265,15 +265,19 @@
       <h2 class="m-4 bold text-center">Locations Avaliable right now for rent<%= @ward.name.capitalize %></h2>
       <div class="row">
         <% @houses.each do |house| %>
-          <div class="rent-card col-6">
-            <div class="rent-img-wrapper">
-              <img src="<%= house[:image] %>" alt="" class = "rent-img">
-            </div>
-            <div class ="rent-detail">
-              <p> <%= house[:name] %> </p>
-              <p> <%= house[:price] %> </p>
-              <p> <%= house[:address] %> </p>
-            </div>
+          <div class="col-6 d-flex justify-content-center mb-3">
+            <a href="https://www.japan-property.jp<%= house[:url]%>">
+              <div class="rent-card">
+                <div class="rent-img-wrapper overflow-hidden">
+                  <img src="<%= house[:image] %>" alt="" class = "rent-img">
+                </div>
+                <div class ="rent-detail">
+                  <p> <%= house[:name] %> </p>
+                  <p> <%= house[:price] %> </p>
+                  <p> <%= house[:address] %> </p>
+                </div>
+              </div>
+            </a>
           </div>
         <% end %>
       </div>
@@ -312,27 +316,3 @@
       </div>
 </div>
 </div>
-<<<<<<< HEAD
-<%# Schools  %>
-<div class="container m-5">
-  <h2 class="m-4 bold">International Schools <%= @ward.name.capitalize %></h2>
-  <img src="..app/images/school.jpeg" />
-  <div class="row">
-    <% @ward.school_info.each do |school| %>
-      <div class="col-6">
-        <div class="card-review m-4">
-          <div class="card-product-infos">
-            <h1><%= school["name"]%></h1>
-            <h2 class="mb-3"><%= school["website"]%></h2>
-            <h2 class="mb-3"><%= school["phone"]%></h2>
-            <h2 class="mb-3"><%= school["address"]%></h2>
-            <h2 class="mb-3"><%= school["access"]%></h2>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-</div>
-=======
->>>>>>> 010ae56a477d4f179d98b5d781d4482d9903ba6b
