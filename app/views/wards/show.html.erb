@@ -53,7 +53,7 @@
           <div class="col-4">
             <div class="card selection">
               <h5 class="text-center">Crime rate in <%= @ward.name.capitalize %>: </h5>
-              <h2 class="text-center"><%= (@ward.safety.to_f * 100).round %>%</h2>
+              <h2 class="text-center"><%= (@ward.safety.to_f * 100).round(2) %>%</h2>
             </div>
           </div>
           <div class="col-4">
@@ -240,58 +240,56 @@
         </div>
       </div>
       <%# Schools  %>
-      <div class="container m-5" id="schools">
-        <h2 class="m-4 bold text-center">International Schools in <%= @ward.name.capitalize %></h2>
-        <div class="row">
-          <% @ward.school_info.first(3).each do |school| %>
-            <div class="col-4">
-              <div class="card-school">
-                <div class="card-product-infos">
-                  <h3 class="m-0"><%= school["name"]%></h3>
-                  <div class="card-product-body">
-                    <p class=" mt-3 mb-3"><i class="fa-solid fa-phone"></i> <%= school["phone"]%></p>
-                    <p class="mb-3"><i class="fa-solid fa-location-dot"></i> <%= school["address"]%></p>
-                    <p class="mb-3"><i class="fa-solid fa-train"></i> <%= school["access"]%><p>
-                    <p class="mb-3"><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></p>
+      <h2 class="m-4 bold text-center" id="schools">International Schools in <%= @ward.name.capitalize %></h2>
+      <div class="row">
+        <% @ward.school_info.first(3).each do |school| %>
+          <div class="col-4">
+            <div class="card-school">
+              <div class="card-product-infos">
+                <h3 class="m-0"><%= school["name"]%></h3>
+                <div class="card-product-body">
+                  <p class=" mt-3 mb-3"><i class="fa-solid fa-phone"></i> <%= school["phone"]%></p>
+                  <p class="mb-3"><i class="fa-solid fa-location-dot"></i> <%= school["address"]%></p>
+                  <p class="mb-3"><i class="fa-solid fa-train"></i> <%= school["access"]%>
+                    <p>
+                      <p class="mb-3"><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
+          <%# Rent Houses %>
+          <h2 class="m-4 bold text-center" id="rent">Locations Avaliable right now for rent<%= @ward.name.capitalize %></h2>
+          <div class="row">
+            <% @houses.each do |house| %>
+              <div class="col-6 d-flex justify-content-center mb-3">
+                <a href="https://www.japan-property.jp<%= house[:url]%>">
+                  <div class="rent-card">
+                    <div class="rent-img-wrapper overflow-hidden">
+                      <img src="<%= house[:image] %>" alt="" class = "rent-img">
+                    </div>
+                    <div class ="rent-detail">
+                      <p> <%= house[:name] %> </p>
+                      <p> <%= house[:price] %> </p>
+                      <p> <%= house[:address] %> </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-      <%# Rent Houses %>
-      <h2 class="m-4 bold text-center" id="rent">Locations Avaliable right now for rent<%= @ward.name.capitalize %></h2>
-      <div class="row">
-        <% @houses.each do |house| %>
-          <div class="col-6 d-flex justify-content-center mb-3">
-            <a href="https://www.japan-property.jp<%= house[:url]%>">
-              <div class="rent-card">
-                <div class="rent-img-wrapper overflow-hidden">
-                  <img src="<%= house[:image] %>" alt="" class = "rent-img">
-                </div>
-                <div class ="rent-detail">
-                  <p> <%= house[:name] %> </p>
-                  <p> <%= house[:price] %> </p>
-                  <p> <%= house[:address] %> </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        <% end %>
-      </div>
     </div>
-    </div>
-  </div>
-
-<%# Messages popup %>
-<!-- Modal -->
-<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+    <%# Messages popup %>
+    <!-- Modal -->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
         <%# Messages %>
         <div class="container chatroom my-4" data-controller="ward-subscription" data-ward-subscription-ward-id-value="<%= @ward.id %>">
-        <span aria-hidden="true">&times;</span>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          <span aria-hidden="true">&times;</span>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
           <div class="header mt-3">
             <h1><strong>Chat with people in <%= @ward.name.capitalize %></strong></h1>
           </div>
@@ -313,5 +311,5 @@
       %>
         <% end %>
       </div>
-</div>
-</div>
+    </div>
+  </div>
