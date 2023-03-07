@@ -106,31 +106,31 @@ export default class extends Controller {
     if (localStorage.ldkToggle === undefined) {
       localStorage.ldkToggle = false;
     }
-    if (localStorage.safetyToggle === undefined) {
-      localStorage.safetyToggle = false;
+    if (localStorage.secondaryToggle === undefined) {
+      localStorage.secondaryToggle = false;
     }
     // Check which buttons have been pressed and assign vals to local storage
     if (e.target.id === "one_ldk" || e.target.id === "two_ldk" || e.target.id === "three_ldk") {
       localStorage.ldkToggle = e.target.id
     }
-    if (e.target.id === "safety") {
-      localStorage.safetyToggle = e.target.id
+    if (e.target.id === "safety" || e.target.id === "international_schools") {
+      localStorage.secondaryToggle = e.target.id
     }
-    if (localStorage.ldkToggle !== "false" && localStorage.safetyToggle !== "false") {
+    if (localStorage.ldkToggle !== "false" && localStorage.secondaryToggle !== "false") {
       console.log("Set ldk and safety");
-      this.sort(`${localStorage.ldkToggle}_${localStorage.safetyToggle}_color`);
+      this.sort(`${localStorage.ldkToggle}_${localStorage.secondaryToggle}_color`);
     }
-    else if (localStorage.ldkToggle && localStorage.safetyToggle === "false") {
+    else if (localStorage.ldkToggle && localStorage.secondaryToggle === "false") {
       console.log("Set ldk");
       this.sort(`${localStorage.ldkToggle}_sort_color`)
     }
     else {
       console.log("Set safety");
-      this.sort(`${localStorage.safetyToggle}`)
+      this.sort(`${localStorage.secondaryToggle}`)
     }
     if (e.target.id === "clear") {
       localStorage.ldkToggle = false;
-      localStorage.safetyToggle = false;
+      localStorage.secondaryToggle = false;
       rentButtons.forEach(button => {
         button.classList.remove("selected-rent-target");
       })

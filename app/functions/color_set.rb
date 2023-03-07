@@ -6,17 +6,16 @@ class ColorSet
   @min_r = 1
   @min_g = 1
   @min_b = 1
-  def self.color_set(avg_rent_max_array, avg_rent_min_array, safety_array)
-    min_1ldk = avg_rent_min_array[0]
-    min_2ldk = avg_rent_min_array[1]
-    min_3ldk = avg_rent_min_array[2]
+  def self.color_set(avg_max, avg_min)
+    min_1ldk = avg_min[:oneldk]
+    min_2ldk = avg_min[:twoldk]
+    min_3ldk = avg_min[:threeldk]
+    min_safety = avg_min[:safety]
 
-    max_1ldk = avg_rent_max_array[0]
-    max_2ldk = avg_rent_max_array[1]
-    max_3ldk = avg_rent_max_array[2]
-
-    max_safety = safety_array[0]
-    min_safety = safety_array[1]
+    max_1ldk = avg_max[:oneldk]
+    max_2ldk = avg_max[:twoldk]
+    max_3ldk = avg_max[:threeldk]
+    max_safety = avg_max[:safety]
 
     wards_geojson = File.read("public/tokyo.geojson")
     wards_parsed_geojson = JSON.parse(wards_geojson)
@@ -60,7 +59,6 @@ class ColorSet
   end
 
   def self.rgb(normalized_val)
-    p normalized_val
     red = @max_r - ((@max_r - @min_r) * normalized_val)
     green = @max_g - ((@max_g - @min_g) * normalized_val)
     blue = @max_b - ((@max_b - @min_b) * normalized_val)
