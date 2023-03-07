@@ -98,25 +98,72 @@ export default class extends Controller {
     localStorage.repeater = true;
     this.map.resize()
   }
+
   selectedSort(e) {
     let rentButtons = document.querySelectorAll(".rent-button");
     let selectedRent = document.querySelector(".selected-rent-target");
-    if (e.target.id !== "safety") {
+    if (localStorage.ldkToggle === undefined) {
+      localStorage.ldkToggle = false;
+    }
+    if (localStorage.safetyToggle === undefined) {
+      localStorage.safetyToggle = false;
+    }
+
+    if (e.target.id === "one_ldk" || e.target.id === "two_ldk" || e.target.id === "three_ldk") {
+      localStorage.ldkToggle = e.target.id
+      // rentButtons.forEach(button => {
+      //   button.classList.remove("selected-rent-target");
+      // })
+      // let sortRentTarget = e.target;
+      // sortRentTarget.classList.add("selected-rent-target")
+      // this.sort(`${localStorage.ldkToggle}_sort_color`, sortRentTarget.id)
+    }
+    if (e.target.id === "safety") {
+      localStorage.safetyToggle = e.target.id
+      // sortSafetyTarget.classList.add("selected-safety-target");
+      // this.sort(`${localStorage.safetyToggle}`);
+    }
+    if (localStorage.ldkToggle && localStorage.safetyToggle) {
+      this.sort(`${localStorage.ldkToggle}_${localStorage.safetyToggle}_color`);
+    }
+    else if (localStorage.ldkToggle && localStorage.safetyToggle !== true) {
+      this.sort(`${localStorage.ldkToggle}_color`)
+    }
+    else {
+      this.sort(`${localStorage.safetyToggle}`)
+    }
+    if (e.target.id === "clear") {
+      localStorage.ldkToggle = false;
+      localStorage.safetyToggle = false;
       rentButtons.forEach(button => {
         button.classList.remove("selected-rent-target");
       })
-      let sortRentTarget = e.target;
-      sortRentTarget.classList.add("selected-rent-target")
-      this.sort(`${sortRentTarget.id}_sort_color`, sortRentTarget.id)
+      this.removeSortLayers();
     }
-    else if (e.target.id === "safety" && selectedRent) {
-      let sortSafetyTarget = e.target;
-      sortSafetyTarget.classList.add("selected-safety-target");
-      this.sort(`${selectedRent.id}_${sortSafetyTarget.id}_color`, selectedRent.id, sortSafetyTarget.id);
-    }
-    else {
-      this.sort(e.target.id);
-    }
+
+    // if (rentStatus && safetyStatus) {
+    //   let sortSafetyTarget = e.target;
+    //   sortSafetyTarget.classList.add("selected-safety-target");
+    //   this.sort(`${selectedRent.id}_${sortSafetyTarget.id}_color`, selectedRent.id, sortSafetyTarget.id);
+    // }
+
+    // if (e.target.id !== "safety" && safetyStatus === false) {
+    //   rentButtons.forEach(button => {
+    //     button.classList.remove("selected-rent-target");
+    //   })
+    //   let sortRentTarget = e.target;
+    //   sortRentTarget.classList.add("selected-rent-target")
+    //   this.sort(`${sortRentTarget.id}_sort_color`, sortRentTarget.id)
+    // }
+    // else if (e.target.id === "safety" && selectedRent) {
+    //   let sortSafetyTarget = e.target;
+    //   sortSafetyTarget.classList.add("selected-safety-target");
+    //   this.sort(`${selectedRent.id}_${sortSafetyTarget.id}_color`, selectedRent.id, sortSafetyTarget.id);
+    //   safetyStatus = true;
+    // }
+    // else{
+    //   this.sort(e.target.id);
+    // }
   }
   sort(sortTarget, sortValue, sortSafety) { // sort function takes user selection from form and sets extrusion height/color based on that data
     let sortKey = sortTarget // Get the selected sorting option's ID
@@ -331,7 +378,7 @@ export default class extends Controller {
       },
     }, firstSymbolId);
   }
-  removeSortLayers(){
+  removeSortLayers() {
     if (this.map.getLayer('wards-sort-fill')) { // Check if a layer called "ward-sort-extrusion" already exists in the map
       this.map.removeLayer('wards-sort-fill') // If it does, remove it
       this.map.removeLayer('wards-sort-outline')
