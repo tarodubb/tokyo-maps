@@ -11,7 +11,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
   </head>
-  <body data-controller = "ward-action" data-action = "scroll->ward-action#zoom"><%= render "shared/navbar" %>
+  <body data-controller = "ward-action" data-action = "scroll->ward-action#zoom">
+    <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%# <script async src="https://cse.google.com/cse.js?cx=b4172f6ce6f634a86"></script> %>
     <div class="gcse-search"></div>
@@ -21,7 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OGshwV7Kjrm0cKMJYy+9on2chc0gMCjK+i/v/h7lW8ePzNl6L+rD6zLFI1W8Xv/5" crossorigin="anonymous"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+</body>
 </html>
