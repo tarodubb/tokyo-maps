@@ -145,7 +145,7 @@ class WardsController < ApplicationController
   end
 
   def scraper
-    rent_url = "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=657&property_types[]=apartment"
+    rent_url = @ward.rent_url
     # url = "https://www.lewagon.com"
     html = URI.open(rent_url)
     doc = Nokogiri::HTML.parse(html)
