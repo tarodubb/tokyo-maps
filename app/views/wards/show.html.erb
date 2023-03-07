@@ -300,7 +300,7 @@
               <%= render "messages/message", message: message %>
             <% end %>
           </div>
-          <%= simple_form_for [@ward, @message], html: {class: "d-flex"} do |f| %>
+          <%= simple_form_for [@ward, @message], html: { data: { action: "turbo:submit-end->ward-subscription#resetForm" }, class: "d-flex" } do |f| %>
             <%= f.input :content,
           label: false,
           placeholder: "Message people in #{@ward.name.capitalize}",
@@ -308,10 +308,6 @@
         %>
             <%= f.submit "Send", class: "btn green mb-3" %>
           <% end %>
-          <%= simple_form_for [@ward, @message],
-        html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-      %>
-        <% end %>
       </div>
     </div>
   </div>
