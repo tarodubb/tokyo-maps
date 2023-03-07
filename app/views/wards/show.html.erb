@@ -264,7 +264,7 @@
           <div class="row">
             <% @houses.each do |house| %>
               <div class="col-6 d-flex justify-content-center mb-3">
-                <a href="https://www.japan-property.jp<%= house[:url]%>">
+                <a href="https://www.japan-property.jp<%= house[:url]%>" class = "rent-link">
                   <div class="rent-card">
                     <div class="rent-img-wrapper overflow-hidden">
                       <img src="<%= house[:image] %>" alt="" class = "rent-img">
@@ -273,6 +273,7 @@
                       <p> <%= house[:name] %> </p>
                       <p> <%= house[:price] %> </p>
                       <p> <%= house[:address] %> </p>
+                      <p> <%= house[:directions] %> </p>
                     </div>
                   </div>
                 </a>
