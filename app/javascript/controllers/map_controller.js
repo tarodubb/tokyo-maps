@@ -114,23 +114,22 @@ export default class extends Controller {
       localStorage.ldkToggle = e.target.id
     }
     if (e.target.id === "safety" || e.target.id === "international_schools") {
+      console.log(e.target.id);
       localStorage.secondaryToggle = e.target.id
     }
     if (localStorage.ldkToggle !== "false" && localStorage.secondaryToggle !== "false") {
-      console.log("Set ldk and safety");
-      this.sort(`${localStorage.ldkToggle}_${localStorage.secondaryToggle}_color`);
+      this.sort(`${localStorage.ldkToggle}_${localStorage.secondaryToggle}_sort_color`);
     }
     else if (localStorage.ldkToggle && localStorage.secondaryToggle === "false") {
-      console.log("Set ldk");
       this.sort(`${localStorage.ldkToggle}_sort_color`)
     }
     else {
-      console.log("Set safety");
-      this.sort(`${localStorage.secondaryToggle}`)
+      this.sort(`${localStorage.secondaryToggle}_sort_color`)
     }
     if (e.target.id === "clear") {
       localStorage.ldkToggle = false;
       localStorage.secondaryToggle = false;
+      this.clearLabels();
       rentButtons.forEach(button => {
         button.classList.remove("selected-rent-target");
       })
@@ -168,7 +167,8 @@ export default class extends Controller {
     this.addSortLayers(sortKey, "-sort")
     this.click();
     this.hover();
-    this.labelChange(sortValue);
+    console.log(sortKey);
+    this.labelChange(localStorage.ldkToggle);
   }
   hover() {
     // this.map.setLayoutProperty("ward-extrusion", "visibility", 'none'); // Hide "ward-extrusion" to hover extrusion doesen't happen
@@ -265,36 +265,58 @@ export default class extends Controller {
       });
     });
   }
-  labelChange(sortValue) {
-    this.map.on("mouseenter", "wards-fill", (e) => {
-      this.areasValue.forEach((area) => {
-        if (sortValue) {
-          this.map.setLayoutProperty('ward_labels', 'text-field', [
-            'format',
-            ['get', 'ward_en'],
-            { 'font-scale': 1.2 },
-            '\n',
-            {},
-            ['get', `${sortValue}_sort_height`],
-            {
-              'font-scale': 0.8,
-              'text-font': [
-                'literal',
-                ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']
-              ]
-            }
-          ]);
-        }
-      });
-
+  labelChange(val1Sort, val2Sort = null) {
+    this.areasValue.forEach((area) => {
+      if (val1Sort && val2Sort) {
+        this.map.setLayoutProperty('ward_labels', 'text-field', [
+          'format',
+          ['get', 'ward_en'],
+          { 'font-scale': 1.2 },
+          '\n',
+          {},
+          ['get', `${val1Sort}_sort_height`],
+          {
+            'font-scale': 0.8,
+            'text-font': [
+              'literal',
+              ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']
+            ]
+          }
+          ['get', `${val2Sort}`],
+          {
+            'font-scale': 0.8,
+            'text-font': [
+              'literal',
+              ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']
+            ]
+          }
+        ]);
+      }
+      else {
+        this.map.setLayoutProperty('ward_labels', 'text-field', [
+          'format',
+          ['get', 'ward_en'],
+          { 'font-scale': 1.2 },
+          '\n',
+          {},
+          ['get', `${val1Sort}_sort_height`],
+          {
+            'font-scale': 0.8,
+            'text-font': [
+              'literal',
+              ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']
+            ]
+          }
+        ]);
+      }
     });
-    this.map.on("mouseleave", "wards-fill", (e) => {
-      this.map.setLayoutProperty('ward_labels', 'text-field', [
-        'format',
-        ['get', 'ward_en'],
-        { 'font-scale': 1.0 },
-      ]);
-    });
+  }
+  clearLabels() {
+    this.map.setLayoutProperty('ward_labels', 'text-field', [
+      'format',
+      ['get', 'ward_en'],
+      { 'font-scale': 1.0 },
+    ]);
   }
   findLabels() {
     const layers = this.map.getStyle().layers;

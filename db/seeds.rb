@@ -85,9 +85,9 @@ wards.each do |en_name, jp_name|
   # Update the tokyo geojson with new rent information to be used for sorting.
   wards_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"]&.downcase == temp_ward.name
-      feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
-      feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
-      feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
+      feature["properties"]["one_ldk"] = temp_ward.one_ldk_avg_rent
+      feature["properties"]["two_ldk"] = temp_ward.two_ldk_avg_rent
+      feature["properties"]["three_ldk"] = temp_ward.three_ldk_avg_rent
       feature["properties"]["international_schools"] = temp_ward[:school_info].count
       # feature["properties"]["transportation_rating"] = temp_ward.transportation_rating
       # feature["properties"]["shopping_rating"] = temp_ward.shopping_rating

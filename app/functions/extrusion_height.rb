@@ -8,16 +8,16 @@ class GetAverage
     wards_parsed_geojson["features"].each do |feature|
       # Find highest value of each rent average from geojson file
 
-      if category_max[:oneldk].nil? || feature["properties"]["one_ldk_sort_height"] > category_max[:oneldk]
+      if category_max[:oneldk].nil? || feature["properties"]["one_ldk"] > category_max[:oneldk]
         category_max[:oneldk] =
-          feature["properties"]["one_ldk_sort_height"]
+          feature["properties"]["one_ldk"]
       end
-      if category_max[:twoldk].nil? || feature["properties"]["two_ldk_sort_height"] > category_max[:twoldk]
+      if category_max[:twoldk].nil? || feature["properties"]["two_ldk"] > category_max[:twoldk]
         category_max[:twoldk] =
-          feature["properties"]["two_ldk_sort_height"]
+          feature["properties"]["two_ldk"]
       end
-      if category_max[:threeldk].nil? || feature["properties"]["three_ldk_sort_height"] > category_max[:threeldk]
-        category_max[:threeldk] = feature["properties"]["three_ldk_sort_height"]
+      if category_max[:threeldk].nil? || feature["properties"]["three_ldk"] > category_max[:threeldk]
+        category_max[:threeldk] = feature["properties"]["three_ldk"]
       end
       if category_max[:international_schools].nil? || feature["properties"]["international_schools"] > category_max[:international_schools]
         category_max[:international_schools] = feature["properties"]["international_schools"]
@@ -45,16 +45,16 @@ class GetAverage
     wards_parsed_geojson["features"].each do |feature|
       # Find lowest value of each category from geojson file
 
-      if category_min[:oneldk].nil? || feature["properties"]["one_ldk_sort_height"] < category_min[:oneldk]
+      if category_min[:oneldk].nil? || feature["properties"]["one_ldk"] < category_min[:oneldk]
         category_min[:oneldk] =
-          feature["properties"]["one_ldk_sort_height"]
+          feature["properties"]["one_ldk"]
       end
-      if category_min[:twoldk].nil? || feature["properties"]["two_ldk_sort_height"] < category_min[:twoldk]
+      if category_min[:twoldk].nil? || feature["properties"]["two_ldk"] < category_min[:twoldk]
         category_min[:twoldk] =
-          feature["properties"]["two_ldk_sort_height"]
+          feature["properties"]["two_ldk"]
       end
-      if category_min[:threeldk].nil? || feature["properties"]["three_ldk_sort_height"] < category_min[:threeldk]
-        category_min[:threeldk] = feature["properties"]["three_ldk_sort_height"]
+      if category_min[:threeldk].nil? || feature["properties"]["three_ldk"] < category_min[:threeldk]
+        category_min[:threeldk] = feature["properties"]["three_ldk"]
       end
       if category_min[:international_schools].nil? || feature["properties"]["international_schools"] < category_min[:international_schools]
         category_min[:international_schools] = feature["properties"]["international_schools"]
