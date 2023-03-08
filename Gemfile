@@ -89,6 +89,7 @@ gem "nokogiri"
 gem "byebug"
 gem 'httparty'
 gem "chartkick"
+gem "geocoder"
 
 # slick installation
 
