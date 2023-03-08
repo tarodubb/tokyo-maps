@@ -5,6 +5,7 @@ export default class extends Controller {
   static values = {
     apiKey: String, // a string value for the API key
     areas: Array, // an array of areas
+    user: Object
   };
 
   // Define the HTML elements to be targeted by the controller
@@ -19,6 +20,7 @@ export default class extends Controller {
   connect() { // Initial map on home page with fill, hover, and click to show page features
     this.mapInitialize();
     this.mapLoad();
+
   }
   mapInitialize() {
     if (localStorage.repeater === 'true') {
@@ -75,6 +77,7 @@ export default class extends Controller {
       this.click();
       this.userStep();
       this.hover();
+      this.#addUserToMap();
     });
   }
 
@@ -308,6 +311,9 @@ export default class extends Controller {
     }
     return firstSymbolId
   }
+  findGeoTag() {
+    const marker = this.map.marker.getElement()
+  }
   addLayers(baseColor, hoverColor, type) {
     this.removeSortLayers();
     let firstSymbolId = this.findLabels();
@@ -398,5 +404,13 @@ export default class extends Controller {
         document.querySelector(".landing-info").style.display = "flex";
       }, 500)
     }
+  }
+  #addUserToMap() {
+    const customMarker = document.createElement("div")
+    customMarker.innerHTML = this.userValue.marker_html
+
+    new mapboxgl.Marker(customMarker)
+      .setLngLat(this.userValue.coord)
+      .addTo(this.map)
   }
 }

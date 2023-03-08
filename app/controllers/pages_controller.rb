@@ -14,5 +14,11 @@ class PagesController < ApplicationController
         three_ldk: ward.three_ldk_avg_rent
       }
     end
+    if current_user && current_user.address
+      @user_address = {
+        coord: [current_user.longitude, current_user.latitude],
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 end
