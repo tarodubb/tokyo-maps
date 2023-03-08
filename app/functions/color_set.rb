@@ -1,4 +1,4 @@
-require_relative "./extrusion_height"
+require_relative "./get_average"
 class ColorSet
   @max_r = 255
   @max_g = 255

@@ -1,4 +1,4 @@
-require_relative "./extrusion_height"
+require_relative "./get_average"
 class Normalize
   def self.normalize_data
     wards_geojson = File.read("public/tokyo.geojson")

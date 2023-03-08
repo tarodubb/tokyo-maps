@@ -2,7 +2,7 @@ require "json"
 require "faker"
 require "securerandom"
 require "open-uri"
-require_relative "../app/functions/extrusion_height"
+require_relative "../app/functions/get_average"
 require_relative "scraper.rb"
 require_relative "../app/functions/normalize"
 
