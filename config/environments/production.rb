@@ -86,6 +86,7 @@ Rails.application.configure do
   # Force redirect through CloudFlare https route
   # This encrypts the data between the server and the user
   # config.force_ssl = true
+  config.enable_dependency_loading = true
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

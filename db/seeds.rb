@@ -143,7 +143,7 @@ get_max_avg = GetAverage.get_max_avg
 get_min_avg = GetAverage.get_min_avg
 ColorSet.color_set(get_max_avg, get_min_avg)
 # ExtrusionHeight.extrude_height(get_max_avg, get_min_avg, get_safety)
-Normalize.normalize_data # THIS NEEDS TO GO BELOW EXTRUDE_HEIGHT. It acceses values written into the geojson after the extrude function is done
+# Normalize.normalize_data # THIS NEEDS TO GO BELOW ColorSet. It acceses values written into the geojson after the extrude function is done
 p "Seeding of the users has been successfully completed"
 
 shibuya = Ward.find_by(name: "shibuya ku")
