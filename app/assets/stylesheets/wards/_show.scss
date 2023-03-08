@@ -24,10 +24,15 @@
   padding-top: 50px;
   font-size: 1.5rem;
 }
+.menu-container img {
+  width: 100px;
+  height: auto;
+  position: -40px;
+}
 
 .info-container {
-  width: auto;
-  margin: 5vh 5vw;
+  width: 80%;
+  margin: 5vh 1vw;
   display: flex;
   flex-direction: column;
 }
@@ -42,7 +47,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, .2);
   padding: 3rem;
   border-radius: 5px;
-  width: 60vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,9 +58,14 @@
 
 .reviews {
   width: 100%;
+  height: auto;
+}
+.review-cards {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  height: 60vh;
+  justify-content: space-around;
 }
 
 .selection-container {
@@ -71,8 +81,6 @@
 .safety-chart {
 }
 
-.reviews {
-}
 
 .rentals {
 }
