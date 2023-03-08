@@ -298,6 +298,8 @@ GEM
       faraday (>= 0.17.5, < 3.a)
       jwt (>= 1.5, < 3.0)
       multi_json (~> 1.10)
+    slick_rails (1.5.9)
+      railties (>= 3.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -372,6 +374,7 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   simple_form!
+  slick_rails
   sprockets-rails
   stimulus-rails
   turbo-rails

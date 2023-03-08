@@ -8,8 +8,12 @@
 }
 .menu-container {
   position: sticky;
-  top: 0;
-  left: 0;
+  top: 50px;
+  left: -30px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-top: 50px;
 }
 
 .info-container {
