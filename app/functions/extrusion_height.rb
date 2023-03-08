@@ -1,58 +1,78 @@
 require "json"
 
-class ExtrusionHeight
+class GetAverage
   def self.get_max_avg
     wards_geojson = File.read("public/tokyo.geojson")
     wards_parsed_geojson = JSON.parse(wards_geojson)
-    max_1ldk = 0
-    max_2ldk = 0
-    max_3ldk = 0
+    category_max = {}
     wards_parsed_geojson["features"].each do |feature|
       # Find highest value of each rent average from geojson file
-      max_1ldk = feature["properties"]["one_ldk_sort_height"] if feature["properties"]["one_ldk_sort_height"] > max_1ldk
-      max_2ldk = feature["properties"]["two_ldk_sort_height"] if feature["properties"]["two_ldk_sort_height"] > max_2ldk
-      if feature["properties"]["three_ldk_sort_height"] > max_3ldk
-        max_3ldk = feature["properties"]["three_ldk_sort_height"]
+
+      if category_max[:oneldk].nil? || feature["properties"]["one_ldk"] > category_max[:oneldk]
+        category_max[:oneldk] =
+          feature["properties"]["one_ldk"]
+      end
+      if category_max[:twoldk].nil? || feature["properties"]["two_ldk"] > category_max[:twoldk]
+        category_max[:twoldk] =
+          feature["properties"]["two_ldk"]
+      end
+      if category_max[:threeldk].nil? || feature["properties"]["three_ldk"] > category_max[:threeldk]
+        category_max[:threeldk] = feature["properties"]["three_ldk"]
+      end
+      if category_max[:international_schools].nil? || feature["properties"]["international_schools"] > category_max[:international_schools]
+        category_max[:international_schools] = feature["properties"]["international_schools"]
+      end
+      # if category_max[:shopping_rating].nil? || feature["properties"]["shopping_rating"] > category_max[:shopping_rating]
+      #   category_max[:shopping_rating] = feature["properties"]["shopping_rating"]
+      # end
+      # if category_max[:entertainment_rating].nil? || feature["properties"]["entertainment_rating"] > category_max[:entertainment_rating]
+      #   category_max[:entertainment_rating] = feature["properties"]["entertainment_rating"]
+      # end
+      # if category_max[:natural_disaster_safety_rating].nil? || feature["properties"]["natural_disaster_safety_rating"] > category_max[:natural_disaster_safety_rating]
+      #   category_max[:natural_disaster_safety_rating] = feature["properties"]["natural_disaster_safety_rating"]
+      # end
+      if category_max[:safety].nil? || feature["properties"]["safety"] > category_max[:safety]
+        category_max[:safety] = feature["properties"]["safety"]
       end
     end
-    # Set normalized height factor for each category
-    [max_1ldk, max_2ldk, max_3ldk]
+    category_max
   end
 
   def self.get_min_avg
     wards_geojson = File.read("public/tokyo.geojson")
     wards_parsed_geojson = JSON.parse(wards_geojson)
-    min_1ldk = nil
-    min_2ldk = nil
-    min_3ldk = nil
+    category_min = {}
     wards_parsed_geojson["features"].each do |feature|
-      # Find highest value of each rent average from geojson file
-      if min_1ldk.nil? || feature["properties"]["one_ldk_sort_height"] < min_1ldk
-        min_1ldk = feature["properties"]["one_ldk_sort_height"]
-      end
-      if min_2ldk.nil? || feature["properties"]["two_ldk_sort_height"] < min_2ldk
-        min_2ldk = feature["properties"]["two_ldk_sort_height"]
-      end
-      if min_3ldk.nil? || feature["properties"]["three_ldk_sort_height"] < min_3ldk
-        min_3ldk = feature["properties"]["three_ldk_sort_height"]
-      end
-    end
-    # Set normalized height factor for each category
-    [min_1ldk, min_2ldk, min_3ldk]
-  end
+      # Find lowest value of each category from geojson file
 
-  def self.get_safety
-    wards_geojson = File.read("public/tokyo.geojson")
-    wards_parsed_geojson = JSON.parse(wards_geojson)
-    max_safety = nil
-    min_safety = nil
-    wards_parsed_geojson["features"].each do |feature|
-      # Find highest value of each rent average from geojson file
-      max_safety = feature["properties"]["safety"] if max_safety.nil? || feature["properties"]["safety"] > max_safety
-      min_safety = feature["properties"]["safety"] if min_safety.nil? || feature["properties"]["safety"] < min_safety
-      # Set normalized height factor for each category
+      if category_min[:oneldk].nil? || feature["properties"]["one_ldk"] < category_min[:oneldk]
+        category_min[:oneldk] =
+          feature["properties"]["one_ldk"]
+      end
+      if category_min[:twoldk].nil? || feature["properties"]["two_ldk"] < category_min[:twoldk]
+        category_min[:twoldk] =
+          feature["properties"]["two_ldk"]
+      end
+      if category_min[:threeldk].nil? || feature["properties"]["three_ldk"] < category_min[:threeldk]
+        category_min[:threeldk] = feature["properties"]["three_ldk"]
+      end
+      if category_min[:international_schools].nil? || feature["properties"]["international_schools"] < category_min[:international_schools]
+        category_min[:international_schools] = feature["properties"]["international_schools"]
+      end
+      # if category_min[:shopping_rating].nil? || feature["properties"]["shopping_rating"] < category_min[:shopping_rating]
+      #   category_min[:shopping_rating] = feature["properties"]["shopping_rating"]
+      # end
+      # if category_min[:entertainment_rating].nil? || feature["properties"]["entertainment_rating"] < category_min[:entertainment_rating]
+      #   category_min[:entertainment_rating] = feature["properties"]["entertainment_rating"]
+      # end
+      # if category_min[:natural_disaster_safety_rating].nil? || feature["properties"]["natural_disaster_safety_rating"] < category_min[:natural_disaster_safety_rating]
+      #   category_min[:natural_disaster_safety_rating] = feature["properties"]["natural_disaster_safety_rating"]
+      # end
+      if category_min[:safety].nil? || feature["properties"]["safety"] < category_min[:safety]
+        category_min[:safety] = feature["properties"]["safety"]
+      end
     end
-    [max_safety, min_safety]
+    category_min
   end
 
   # def self.extrude_height(avg_rent_max_array, avg_rent_min_array, safety_array)

@@ -59,7 +59,6 @@ wards.each do |en_name, jp_name|
   ward_scrape_name = en_name.downcase.split(" ", -1)[0] + "-ku"
   schools = scrape_schools(ward_scrape_name)
   temp_ward = Ward.new(name: en_name, school_info: schools)
-
   wards_parsed_json["tokyo_wards"].each do |parsed_ward|
     if parsed_ward["name"].downcase + " ku" == en_name
       temp_ward.population = parsed_ward["population"].to_i
@@ -77,7 +76,6 @@ wards.each do |en_name, jp_name|
       temp_ward.natural_disaster_safety_rating = parsed_ward["natural_disaster_safety_rating"]
       temp_ward.housing_cost_satisfaction_rating = parsed_ward["housing_cost_satisfaction_rating"]
       # add saftey percentages to wards
-      p temp_ward.safety = parsed_ward["safety"]
       # adding photos from google search results to each point of interest
       temp_ward.historical_significance = parsed_ward["historical_significance"]
       temp_ward.safety = parsed_ward["safety"]
@@ -87,9 +85,14 @@ wards.each do |en_name, jp_name|
   # Update the tokyo geojson with new rent information to be used for sorting.
   wards_parsed_geojson["features"].each do |feature|
     if feature["properties"]["ward_en"]&.downcase == temp_ward.name
-      p feature["properties"]["one_ldk_sort_height"] = temp_ward.one_ldk_avg_rent
-      feature["properties"]["two_ldk_sort_height"] = temp_ward.two_ldk_avg_rent
-      feature["properties"]["three_ldk_sort_height"] = temp_ward.three_ldk_avg_rent
+      feature["properties"]["one_ldk"] = temp_ward.one_ldk_avg_rent
+      feature["properties"]["two_ldk"] = temp_ward.two_ldk_avg_rent
+      feature["properties"]["three_ldk"] = temp_ward.three_ldk_avg_rent
+      feature["properties"]["international_schools"] = temp_ward[:school_info].count
+      # feature["properties"]["transportation_rating"] = temp_ward.transportation_rating
+      # feature["properties"]["shopping_rating"] = temp_ward.shopping_rating
+      # feature["properties"]["entertainment_rating"] = temp_ward.entertainment_rating
+      # feature["properties"]["natural_disaster_safety_rating"] = temp_ward.natural_disaster_safety_rating
       feature["properties"]["safety"] = temp_ward.safety.to_f
     end
   end
@@ -136,10 +139,9 @@ end
   p user
 end
 
-get_max_avg = ExtrusionHeight.get_max_avg
-get_min_avg = ExtrusionHeight.get_min_avg
-get_safety = ExtrusionHeight.get_safety
-ColorSet.color_set(get_max_avg, get_min_avg, get_safety)
+get_max_avg = GetAverage.get_max_avg
+get_min_avg = GetAverage.get_min_avg
+ColorSet.color_set(get_max_avg, get_min_avg)
 # ExtrusionHeight.extrude_height(get_max_avg, get_min_avg, get_safety)
 Normalize.normalize_data # THIS NEEDS TO GO BELOW EXTRUDE_HEIGHT. It acceses values written into the geojson after the extrude function is done
 p "Seeding of the users has been successfully completed"
