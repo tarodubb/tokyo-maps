@@ -328,6 +328,7 @@
               <div class="school-card">
                 <div class="school-title">
                   <h3><%= school["name"] %></h3>
+                  <%= image_tag("school.png", class: "school-card-img") %>
                 </div>
                 <div class="school-body">
                   <div class="school-body-content">
@@ -344,10 +345,10 @@
                       <p><%= school["access"]%></p>
                     </div>
                   </div>
+                </div>
                   <div class="school-link">
                     <p><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></p>
                   </div>
-                </div>
               </div>
             <% end %>
           </div>
