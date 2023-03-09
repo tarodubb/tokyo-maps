@@ -19,6 +19,9 @@ class GetAverage
       if category_max[:threeldk].nil? || feature["properties"]["three_ldk"] > category_max[:threeldk]
         category_max[:threeldk] = feature["properties"]["three_ldk"]
       end
+      if category_max[:pet].nil? || feature["properties"]["pet"] > category_max[:pet]
+        category_max[:pet] = feature["properties"]["pet"]
+      end
       if category_max[:international_schools].nil? || feature["properties"]["international_schools"] > category_max[:international_schools]
         category_max[:international_schools] = feature["properties"]["international_schools"]
       end
@@ -55,6 +58,9 @@ class GetAverage
       end
       if category_min[:threeldk].nil? || feature["properties"]["three_ldk"] < category_min[:threeldk]
         category_min[:threeldk] = feature["properties"]["three_ldk"]
+      end
+      if category_min[:pet].nil? || feature["properties"]["pet"] < category_min[:pet]
+        category_min[:pet] = feature["properties"]["pet"]
       end
       if category_min[:international_schools].nil? || feature["properties"]["international_schools"] < category_min[:international_schools]
         category_min[:international_schools] = feature["properties"]["international_schools"]
