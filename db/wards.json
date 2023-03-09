@@ -226,6 +226,12 @@
       ],
       "historical_significance": "Setagaya has a long history as a center of education and culture in Tokyo. It was once home to many scholars and artists, and still maintains a vibrant creative scene today.",
       "flag": "",
+      "transportation_rating": 6.67,
+      "shopping_rating": 6.67,
+      "entertainment_rating": 5.17,
+      "security_rating": 7.58,
+      "natural_disaster_safety_rating": 8.08,
+      "housing_cost_satisfaction_rating": 6.0,
       "safety": 0.0045
     },
     {
@@ -246,6 +252,12 @@
       ],
       "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
       "flag": "shibuyaflag.jpg",
+      "transportation_rating": 8.63,
+      "shopping_rating": 8.13,
+      "entertainment_rating": 8.25,
+      "security_rating": 7.63,
+      "natural_disaster_safety_rating": 8.5,
+      "housing_cost_satisfaction_rating": 5.75,
       "safety": 0.0147
     },
     {
@@ -266,6 +278,12 @@
       ],
       "historical_significance": "Nakano has a long history as a center of entertainment and culture in Tokyo. It was once home to many theaters and cinemas, and still maintains a vibrant creative scene today.",
       "flag": "",
+      "transportation_rating": 7.30,
+      "shopping_rating": 7.20,
+      "entertainment_rating": 6.50,
+      "security_rating": 6.90,
+      "natural_disaster_safety_rating": 5.90,
+      "housing_cost_satisfaction_rating": 6.80,
       "safety": 0.006
     },
     {
@@ -286,6 +304,12 @@
       ],
       "historical_significance": "Suginami has a long history as a center of arts and culture in Tokyo. It was once home to many artists and writers, and still maintains a vibrant creative scene today.",
       "flag": "",
+      "transportation_rating": 8.21,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0044
     },
     {
@@ -306,6 +330,12 @@
       ],
       "historical_significance": "Toshima was historically a center of silk production, and was also the site of a major battle during the Boshin War in 1868.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0107
     },
     {
@@ -326,6 +356,12 @@
       ],
       "historical_significance": "Shinagawa was historically an important post town along the Tokaido road, which connected Tokyo to Kyoto during the Edo period.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0049
     },
     {
@@ -372,6 +408,12 @@
       ],
       "historical_significance": "Ota was home to a number of samurai residences during the Edo period, and was also the site of the Battle of Sekigahara in 1600, which marked the beginning of Tokugawa shogunate's rule over Japan.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0055
     },
     {
@@ -392,6 +434,12 @@
       ],
       "historical_significance": "Kita has a rich cultural heritage, with many historic temples and shrines dating back to the Edo period. It was also the site of a major battle during the Meiji Restoration in 1868.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0062
     },
     {
@@ -412,6 +460,12 @@
       ],
       "historical_significance": "Arakawa has a long history as a center of textile production, dating back to the Edo period. It was also the site of several major battles during the Boshin War in 1868.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0057
     },
     {
@@ -432,6 +486,12 @@
       ],
       "historical_significance": "Itabashi was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Itabashi-jinja Shrine.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0052
     },
     {
@@ -452,6 +512,12 @@
       ],
       "historical_significance": "Nerima was once a rural area outside of Tokyo, but became more developed in the early 20th century with the growth of the city. It has a number of historic temples and shrines, including the famous Hikawa Shrine.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0045
     },
     {
@@ -472,6 +538,12 @@
       ],
       "historical_significance": "Adachi has a long history as a center of agriculture and fishing in Tokyo. It was once home to many samurai and other nobles, and still has several historic temples and shrines.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0052
     },
     {
@@ -492,6 +564,12 @@
       ],
       "historical_significance": "Katsushika has a long history, dating back to the Edo period when it was a center of agriculture and commerce. It was also the site of a major battle during the Boshin War.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0059
     },
     {
@@ -512,6 +590,12 @@
       ],
       "historical_significance": "Edogawa was once a rural area, but has since developed into a modern residential and commercial center. It was also the site of a major battle during the Satsuma Rebellion.",
       "flag": "",
+      "transportation_rating": 7.20,
+      "shopping_rating": 6.20,
+      "entertainment_rating": 7.60,
+      "security_rating": 7.60,
+      "natural_disaster_safety_rating": 6.80,
+      "housing_cost_satisfaction_rating": 7.60,
       "safety": 0.0054
     }
   ]
