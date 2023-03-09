@@ -116,7 +116,7 @@ export default class extends Controller {
     if (e.target.id === "one_ldk" || e.target.id === "two_ldk" || e.target.id === "three_ldk") {
       localStorage.ldkToggle = e.target.id
     }
-    if (e.target.id === "safety" || e.target.id === "international_schools") {
+    if (e.target.id === "safety" || e.target.id === "international_schools" || e.target.id === "pet") {
       console.log(e.target.id);
       localStorage.secondaryToggle = e.target.id
     }
@@ -171,7 +171,7 @@ export default class extends Controller {
     this.click();
     this.hover();
     console.log(sortKey);
-    this.labelChange(localStorage.ldkToggle);
+    this.labelChange(localStorage.ldkToggle, localStorage.secondaryToggle);
   }
   hover() {
     // this.map.setLayoutProperty("ward-extrusion", "visibility", 'none'); // Hide "ward-extrusion" to hover extrusion doesen't happen
@@ -270,21 +270,24 @@ export default class extends Controller {
   }
   labelChange(val1Sort, val2Sort = null) {
     this.areasValue.forEach((area) => {
+      console.log(`Val1Sort: ${val1Sort}, Val2sort: ${val2Sort}`);
+      console.log(this.map.getLayer);
       if (val1Sort && val2Sort) {
         this.map.setLayoutProperty('ward_labels', 'text-field', [
           'format',
           ['get', 'ward_en'],
-          { 'font-scale': 1.2 },
+          { 'font-scale': 1.0 },
           '\n',
           {},
-          ['get', `${val1Sort}_sort_height`],
+          ['get', `${val1Sort}`],
           {
             'font-scale': 0.8,
             'text-font': [
               'literal',
               ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']
             ]
-          }
+          },
+          '\n',
           ['get', `${val2Sort}`],
           {
             'font-scale': 0.8,
