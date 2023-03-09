@@ -1,6 +1,6 @@
 <div class="home-container">
 <div id="info"></div>
-  <div id="container" data-controller="map" data-map-areas-value="<%= @areas.to_json %>"
+  <div id="container" data-controller="map" data-map-areas-value="<%= @areas.to_json %>" data-map-user-value = "<%=@user_address.to_json%>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="landing-banner">
       <div class="sort">
@@ -12,6 +12,7 @@
         </div>
         <div class="other-buttons">
           <button class="other-button" id="safety" data-action="click->map#selectedSort">Safety</button>
+          <button class="other-button" id="international_schools" data-action="click->map#selectedSort"># of International Schools</button>
         </div>
         <div class="clear-button">
           <button class="clear" id="clear" data-action="click->map#selectedSort">Clear</button>
@@ -25,15 +26,31 @@
     </div>
 
     <div class="landing-info">
-        <p>Tokyo Maps is a page dedicated to providing visitors with comprehensive and detailed maps and information of Tokyo, Japan. As soon as you land on Tokyo, you are greeted with a stunning map of the city. The map is divided into 23 wards of the city, allowing visitors to quickly find the information they need.
-          <br>
-          <br>
-          Each ward features an interactive map that users can zoom in and out of to get a better understanding of the ward. The map also includes markers for important locations such as apartments, international schools, parks, and popular restaurants. This makes it easy for visitors to plan their home in Tokyo in a particular ward.
-          <br>
-          <br>
-          In addition the page includes helpful information about each ward, such as the ward's history, culture, and important events. This information is presented in an easy-to-read format that is accessible to all visitors.
-          Overall, Tokyo Maps is a well-designed page that provides visitors with the information they need to explore and settle down in Tokyo. Whether you're a first-time visitor or a Tokyo inhabitant, this page is an excellent resource for anyone looking to explore the city.
-        </p>
+      <div class="row mt-3">
+        <div class="col-4">
+         <div class="card-desc">
+          <div class="card-product-infos">
+            <p>Tokyo Maps is a page dedicated to providing visitors with comprehensive and detailed maps and information of Tokyo, Japan. As soon as you land on Tokyo, you are greeted with a stunning map of the city. The map is divided into 23 wards of the city, allowing visitors to quickly find the information they need.</p>
+          </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card-desc">
+            <div class="card-product-infos">
+              <p>Each ward features an interactive map that users can zoom in and out of to get a better understanding of the ward. The map also includes markers for important locations such as apartments, international schools, parks, and popular restaurants. This makes it easy for visitors to plan their home in Tokyo in a particular ward.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card-desc">
+            <div class="card-product-infos">
+              <p>Tokyo Maps is a well-designed page that offers helpful information about each ward, including its history, culture, and important events. The presented information is easily accessible to all visitors in an easy-to-read format. Whether you're a first-time visitor or a Tokyo inhabitant, Tokyo Maps is an excellent resource for anyone looking to explore or settle down in the city.</p>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
+</div>
 </div>

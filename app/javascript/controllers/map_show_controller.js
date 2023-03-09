@@ -1,4 +1,4 @@
-import { Controller} from "@hotwired/stimulus";
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static values = {
@@ -9,7 +9,7 @@ export default class extends Controller {
   map = null;
   hoveredStateId = null;
   connect() {
-    console.log(this.globusTarget);
+
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.globusTarget,
@@ -19,68 +19,82 @@ export default class extends Controller {
       projection: "globe",
     });
     this.map.on("load", () => {
-
-      //Add source for ward shapes
+      let foundWard = ""
+      let firstSymbolId = this.findLabels();
       this.map.addSource('wards', {
         type: 'geojson',
-        data: '../tokyo.geojson'
+        data: '/tokyo.geojson'
       });
-      //Add source for ward labels
-      this.map.addSource('ward-labels', {
-        type: 'geojson',
-        data: '../labels.geojson'
-      })
-      //Fill each ward with color
-      this.map.addLayer(
-        {
-          'id': 'wards-fill',
-          'type': 'fill',
-          'source': 'wards',
-          'layout': {},
-          'paint': {
-            'fill-color': '#FF99AF',
-            'fill-opacity': 0.6
-          }
-        });
-      //Set the border
+      let wardName = ""
+      const mySentence = this.areasValue.name;
+      const words = mySentence.split(" ");
+
+      wardName = words.map((word) => {
+        return word[0].toUpperCase() + word.substring(1);
+      }).join(" ");
       this.map.addLayer({
-        id: "wards-outline",
+        'id': `ward-filter-fill`,
+        'type': 'fill',
+        'source': 'wards',
+        'paint': {
+          'fill-color': ['get', `${localStorage.ldkToggle}_sort_color`],
+          'fill-opacity': 1,
+        },
+        'filter': ['==', 'ward_en', wardName]
+      }, firstSymbolId);
+      this.map.addLayer({
+        id: `wards-filter-outline`,
         type: "line",
         source: "wards",
-        layout: {},
+        'layout': {
+        },
         paint: {
-          "line-color": "#000",
+          "line-color": "black",
           "line-width": 3,
           "line-opacity": 0.7,
         },
-      });
-      //Place labels
-      this.map.addLayer({
-        'id': 'ward-labels',
-        'type': 'symbol',
-        'source': 'ward-labels',
-        'minzoom': 2,
-        'layout': {
-          'text-field': ['get', 'ward_en'],
-          'text-variable-anchor': ['top'],
-          // 'text-radial-offset': 0.5,
-          'text-justify': 'auto'
-          // 'icon-image': ['get', 'icon']
-        },
-        'paint': {
-          'text-color': '#290009'
-        }
-      });
+        'filter': ['==', 'ward_en', wardName]
+      }, firstSymbolId);
+      this.getWardColor();
     });
+  }
+  findLabels() {
+    const layers = this.map.getStyle().layers;
+    // Find the index of the first symbol layer in the map style.
+    let firstSymbolId;
+    for (const layer of layers) {
+      if (layer.type === 'symbol') {
+        firstSymbolId = layer.id;
+        break;
+      }
+    }
+    return firstSymbolId
+  }
+  capitalizeEachLetter(string) {
+    let wardName = ""
+    const words = string.split(" ");
+    wardName = words.map((word) => {
+      return word[0].toUpperCase() + word.substring(1);
+    }).join(" ");
+    return wardName
+  }
+  getWardColor() {
+    console.log(this.areasValue.name);
+    let wardName = this.capitalizeEachLetter(this.areasValue.name);
+    console.log(wardName);
+    fetch("/tokyo.geojson")
+      .then((response) => response.json())
+      .then((data) => {
+        data.features.forEach((ward) => {
+          if (ward.properties.ward_en == wardName) {
+            let wardToggle = `${localStorage.ldkToggle}_sort_color`;
+            console.log(wardToggle);
+            // console.log(ward.properties.(eval(wardToggle)));
+          }
+        })
+      })
+      .catch((error) => console.error(error));
 
   }
-  findWard() {
-    wards_geojson = File.read("../tokyo.geojson")
-    wards_parsed_geojson = JSON.parse(wards_geojson)
-    wards_parsed_geojson["feature"].forEach((ward) => {
-      if (ward["properties"]["ward_en"].downcase === this.areasValue.name) {
-        return ward;
-      }
-    });
-  }
+
 }

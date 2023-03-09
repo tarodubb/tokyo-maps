@@ -1,11 +1,20 @@
 .show-container {
   position: relative;
 }
+
+.banner-title {
+  margin: 0;
+  padding: 0;
+}
+
 .ward-info-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
+
 }
+
 .menu-container {
   position: sticky;
   top: 50px;
@@ -14,9 +23,139 @@
   flex-direction: column;
   padding-left: 50px;
   padding-top: 50px;
+  font-size: 1.5rem;
+}
+
+//Styling for show map banner
+.show-map-landing-banner {
+  background-color: rgb(199, 199, 233);
+  height: 100px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+  background-color: rgb(36, 36, 36);
+}
+
+// Styling for mapbox
+.map-box {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(199, 199, 233);
+  box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+  height: auto
+}
+.show-map #container {
+  padding: 20px;
+}
+.map-show .mapboxgl-map {
+  box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+
+}
+.user-selection {
+  display: flex;
+}
+.show-map-banner-content h1 {
+  text-align: center;
+}
+.card-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  width: 200px;
+  padding: 0;
+  margin: 0 0.5rem;
+  background-color: white;
+
+  .rent {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4 {
+    color: rgba(8, 96, 32, 0.55);
+  }
+}
+
+.user-selection img {
+  width: 64px;
+  height: auto;
+}
+//End of mapbox styling
+
+.menu-container img {
+  width: 100px;
+  height: auto;
+  position: -40px;
 }
 
 .info-container {
-  width: auto;
-  margin-left: 15vw;
+  width: 80%;
+  margin: 5vh 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-container>div:first-child {
+  margin-bottom: 0;
+}
+
+.info-container>div:nth-child(2) {
+  margin: 0;
+  display: block;
+}
+
+.info-container>div:not(:first-child) {
+  margin: 5vh 0;
+}
+.info-container>div {
+  background-color: rgb(36, 36, 36);
+}
+
+.info-container>div:not(:first-child) {
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+  padding: 3rem;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview-container {}
+
+.reviews {
+  width: 100%;
+  height: auto;
+}
+
+.review-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60vh;
+  justify-content: space-around;
+}
+
+.selection-container {
+  padding: 20px;
+}
+
+.population-card {}
+
+.sights-container {}
+
+.safety-chart {}
+
+
+.rentals {}
+
+.schools {}
+
+.row {
+  margin: 0;
 }

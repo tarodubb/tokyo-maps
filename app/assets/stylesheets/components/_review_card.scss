@@ -1,0 +1,35 @@
+.card.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  width: 300px;
+  height: inherit;
+  border: none;
+
+  img {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+  }
+}
+
+.review-cards {
+  align-items: center;
+  // justify-content: space-evenly;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.review-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.review-user h4 {}
+
+.review-user p {
+  font-size: 12px;
+}

@@ -137,6 +137,7 @@ GEM
     font-awesome-sass (6.3.0)
       sassc (~> 2.0)
     gems (1.2.0)
+    geocoder (1.8.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     google-api-client (0.53.0)
@@ -362,6 +363,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass (~> 6.1)
+  geocoder
   google-api-client
   google_custom_search_api
   httparty
