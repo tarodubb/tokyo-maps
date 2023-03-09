@@ -26,8 +26,8 @@
 
 //Styling for show map banner
 .show-map-landing-banner {
+  color: white;
   background-color: rgb(199, 199, 233);
-  height: 100px;
   box-shadow: 0 0 15px rgba(0, 0, 0, .2);
   background-color: rgb(36, 36, 36);
 }
@@ -111,10 +111,11 @@
 }
 .info-container>div {
   background-color: rgb(36, 36, 36);
+  color: black;
 }
 
 .info-container>div:not(:first-child) {
-  color: white;
+  color: black;
   box-shadow: 0 0 15px rgba(0, 0, 0, .2);
   padding: 3rem;
   border-radius: 5px;
@@ -136,7 +137,7 @@
   flex-direction: row;
   align-items: center;
   height: 60vh;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .selection-container {
@@ -156,4 +157,9 @@
 
 .row {
   margin: 0;
+}
+
+.section-title{
+  color: white;
+  padding-bottom: 24px;
 }
