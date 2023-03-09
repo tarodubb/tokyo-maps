@@ -73,7 +73,8 @@
       "security_rating": 7.33,
       "natural_disaster_safety_rating": 6.33,
       "housing_cost_satisfaction_rating": 6.00,
-      "safety": 0.0093
+      "safety": 0.0093,
+      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=656&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
     },
     {
       "name": "Shinjuku",
@@ -198,7 +199,8 @@
       "security_rating": 7.43,
       "natural_disaster_safety_rating": 6.13,
       "housing_cost_satisfaction_rating": 6.65,
-      "safety": 0.0054
+      "safety": 0.0054,
+      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=661&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
     },
     {
       "name": "Setagaya",
