@@ -91,10 +91,10 @@ wards.each do |en_name, jp_name|
       feature["properties"]["three_ldk"] = temp_ward.three_ldk_avg_rent
       feature["properties"]["pet"] = temp_ward.pet_percentage
       feature["properties"]["international_schools"] = temp_ward[:school_info].count
-      # feature["properties"]["transportation_rating"] = temp_ward.transportation_rating
-      # feature["properties"]["shopping_rating"] = temp_ward.shopping_rating
-      # feature["properties"]["entertainment_rating"] = temp_ward.entertainment_rating
-      # feature["properties"]["natural_disaster_safety_rating"] = temp_ward.natural_disaster_safety_rating
+      feature["properties"]["transportation_rating"] = temp_ward.transportation_rating
+      feature["properties"]["shopping_rating"] = temp_ward.shopping_rating
+      feature["properties"]["entertainment_rating"] = temp_ward.entertainment_rating
+      feature["properties"]["natural_disaster_safety_rating"] = temp_ward.natural_disaster_safety_rating
       feature["properties"]["safety"] = temp_ward.safety.to_f
     end
   end

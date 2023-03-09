@@ -14,6 +14,9 @@ class ColorSet
     min_safety = avg_min[:safety]
     min_pet = avg_min[:pet]
     min_school_count = avg_min[:international_schools]
+    min_shopping = avg_min[:shopping]
+    min_entertainment = avg_min[:entertainment]
+    min_natural_disaster = avg_min[:natural_disaster]
 
     max_1ldk = avg_max[:oneldk]
     max_2ldk = avg_max[:twoldk]
@@ -21,6 +24,9 @@ class ColorSet
     max_safety = avg_max[:safety]
     max_pet = avg_max[:pet]
     max_school_count = avg_max[:international_schools]
+    max_shopping = avg_max[:shopping]
+    max_entertainment = avg_max[:entertainment]
+    max_natural_disaster = avg_max[:natural_disaster]
 
     wards_geojson = File.read("public/tokyo.geojson")
     wards_parsed_geojson = JSON.parse(wards_geojson)
@@ -66,6 +72,8 @@ class ColorSet
         feature["properties"]["two_ldk_international_schools_sort_color"] = @no_schools
         feature["properties"]["three_ldk_international_schools_sort_color"] = @no_schools
       else
+        p feature["properties"]["ward_en"]
+        p schools
         feature["properties"]["international_schools_sort_color"] = normalize(schools)
         feature["properties"]["one_ldk_international_schools_sort_color"] = normalize(one_ldk, schools)
         feature["properties"]["two_ldk_international_schools_sort_color"] = normalize(two_ldk, schools)
