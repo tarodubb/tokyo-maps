@@ -1,6 +1,4 @@
-.show-container {
-  position: relative;
-}
+
 
 .banner-title {
   margin: 0;
@@ -11,18 +9,18 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
-
+  justify-content: space-around;
+  position: relative;
 }
 
 .menu-container {
   position: sticky;
-  top: 50px;
-  left: -30px;
+  top: 0px;
+  left: 0px;
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
-  padding-top: 50px;
+  padding-left: 56px;
+  padding-top: 48px;
   font-size: 1.5rem;
 }
 
