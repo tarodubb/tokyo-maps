@@ -270,9 +270,10 @@
                       <img src="<%= house[:image] %>" alt="" class = "rent-img">
                     </div>
                     <div class ="rent-detail">
-                      <p> <%= house[:name] %> </p>
+                      <h6> <strong><%= house[:name] %></strong> </h6>
                       <p> <%= house[:price] %> </p>
-                      <p> <%= house[:directions] %> </p>
+                      <p> <i class="fa-solid fa-location-dot"></i>  <%= house[:address] %> </p>
+                      <p> <i class="fa-solid fa-train"></i>  <%= house[:directions] %> </p>
                     </div>
                   </div>
                 </a>
