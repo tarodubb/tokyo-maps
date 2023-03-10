@@ -38,7 +38,8 @@
   flex-direction: row;
   background-color: rgb(199, 199, 233);
   box-shadow: 0 0 15px rgba(0, 0, 0, .2);
-  height: auto
+  height: auto;
+  border-radius: 5px;
 }
 .show-map #container {
   padding: 20px;
@@ -50,8 +51,9 @@
 .user-selection {
   display: flex;
 }
-.show-map-banner-content h1 {
-  text-align: center;
+.show-map-banner-content{
+  padding: 16px;
+  color: white;
 }
 .card-selection {
   display: flex;
