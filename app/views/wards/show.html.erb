@@ -1,28 +1,36 @@
 <div class="show-container">
-  <div class="banner-wrapper">
-  </div>
-  <div class="map-box-landing">
-    <div class="map-landing-container">
-      <div class="show-map-landing">
-        <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
-          data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          <div class="map-show-landing" data-map-show-target="globus"></div>
-        </div>
-      </div>
-      <div class="show-map-landing-banner">
-        <h2><%=@ward.name.upcase %> </h2>
-        <div class="population">
-          <div class="pop d-flex">
-            <h5 class="text-center">Population of <%= @ward.name.capitalize %> : </h5>
-            <h5 class="text-center"><%= @ward.population %> people</h5>
-          </div>
-          <div class="density d-flex">
-            <h5 class="text-center">Population density in <%= @ward.name.capitalize %> : </h5>
-            <h5 class="text-center"><%= @ward.population_density %> persons per km²</h5>
-          </div>
-        </div>
-      </div>
+  <div class = "banner-wrapper">
+    <img class="img-wrapper" src = "<%= @ward_banner %>">
+    <div class="ward-title">
+      <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+      <h3>Population: <%=@ward.population %></h3>
+      <h3>Population Density: <%=@ward.population_density %></h3>
     </div>
+  </div>
+      <div class="map-box-landing">
+      <% if false %>
+        <div class="map-landing-container">
+          <div class="show-map-landing">
+            <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
+              data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              <div class="map-show-landing" data-map-show-target="globus"></div>
+            </div>
+          </div>
+          <div class="show-map-landing-banner">
+            <h2><%=@ward.name.upcase %> </h2>
+            <div class="population">
+              <div class="pop d-flex">
+                <h5 class="text-center">Population of <%= @ward.name.capitalize %> : </h5>
+                <h5 class="text-center"><%= @ward.population %> people</h5>
+              </div>
+              <div class="density d-flex">
+                <h5 class="text-center">Population density in <%= @ward.name.capitalize %> : </h5>
+                <h5 class="text-center"><%= @ward.population_density %> persons per km²</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <div class= "ward-info-container">
       <div class="menu-container">
         <p><%= link_to "Ward Map", "#map", data: {controller: "scroll-to"}  %></p>
