@@ -32,7 +32,9 @@
   -moz-transition: opacity 2s ease-in-out;
   transition: opacity 2s ease-in-out;
 }
-
+.banner-text p {
+  padding-top: 20px;
+}
 #banner-title {
   font-family: 'Ubuntu', sans-serif;
   font-size: 85px;

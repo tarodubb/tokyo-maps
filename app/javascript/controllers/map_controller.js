@@ -104,7 +104,8 @@ export default class extends Controller {
 
   selectedSort(e) {
     let rentButtons = document.querySelectorAll(".rent-button");
-    let selectedRent = document.querySelector(".selected-rent-target");
+    let secondaryButtons = document.querySelectorAll(".other-button");
+
     // Set local storage button toggle vals
     if (localStorage.ldkToggle === undefined) {
       localStorage.ldkToggle = false;
@@ -114,11 +115,18 @@ export default class extends Controller {
     }
     // Check which buttons have been pressed and assign vals to local storage
     if (e.target.id === "one_ldk" || e.target.id === "two_ldk" || e.target.id === "three_ldk") {
+      rentButtons.forEach(button => {
+        button.classList.remove("selected-rent-target");
+      })
       localStorage.ldkToggle = e.target.id
+      e.target.classList.add("selected-rent-target");
     }
     if (e.target.id === "safety" || e.target.id === "international_schools" || e.target.id === "pet") {
-      console.log(e.target.id);
+      secondaryButtons.forEach(button => {
+        button.classList.remove("selected-safety-target");
+      })
       localStorage.secondaryToggle = e.target.id
+      e.target.classList.add("selected-safety-target");
     }
     if (localStorage.ldkToggle !== "false" && localStorage.secondaryToggle !== "false") {
       this.sort(`${localStorage.ldkToggle}_${localStorage.secondaryToggle}_sort_color`);
@@ -135,6 +143,9 @@ export default class extends Controller {
       this.clearLabels();
       rentButtons.forEach(button => {
         button.classList.remove("selected-rent-target");
+      })
+      secondaryButtons.forEach(button => {
+        button.classList.remove("selected-safety-target");
       })
       this.removeSortLayers();
     }

@@ -1,11 +1,14 @@
 .sort {
   position: absolute;
   display: flex;
+  align-items: center;
   flex-direction: column;
   top:15px;
   left:0;
   z-index: 1;
   opacity: 0;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 5px;
   -webkit-transition: opacity .5s ease-in-out;
   -o-transition: opacity .5s ease-in-out;
   -moz-transition: opacity .5s ease-in-out;
@@ -16,20 +19,38 @@
   text-align: center;
   color: white;
 }
-.rent-button, .other-button{
+.rent-button, .other-button, .clear{
   border-style: none;
   background: aliceblue;
   height: 25px;
-  width: 50px;
+  width: 100px;
   margin: 12px;
+  border-radius: 2px;
+  text-shadow: 3px 3px 5px #383838;
+  box-shadow: 2px 2px 5px black;
+
+
+}
+.clear:hover {
+  background-color: red;
+  color: white;
+  transition: .2s ease-in-out;
 }
 .rent-buttons button:hover {
   background: black;
   color: white;
+  transition: .2s ease-in-out;
+}
+.other-buttons button:hover {
+  background: black;
+  color: white;
+  transition: .2s ease-in-out;
 }
 .selected-rent-target{
-  background: purple;
+  color: white;
+  background: rgb(59, 59, 148);
 }
 .selected-safety-target{
-  background: green;
+  color:white;
+  background: rgb(196, 179, 106);
 }
