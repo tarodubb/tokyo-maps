@@ -52,10 +52,9 @@
             <div class="map-show" data-map-show-target="globus"></div>
           </div>
         </div>
-        <div class="banner">
+        <div class="selection-banner">
           <div class="show-map-banner-content">
-            <h1><%= @ward.name.upcase %></h1>
-            <p><%= @ward.summary %></p>
+            <h5><%= @ward.summary %></h5>
           </div>
           <div class="user-selection">
             <div class="card-selection rent">
@@ -97,34 +96,10 @@
           </div>
         </div>
       </div>
-      <%# Based on your selection %>
-      <div class="selection-container">
-        <div class="row">
-          <h2 class="bold text-center mb-3">Based on your selections</h2>
-          <div class="col-4">
-            <div class="card selection rent">
-              <%# !!!  Tim will add the logic here !!! %>
-              <%# rent info %>
-              <h5 class="text-center mb-0">Rent price in <%= @ward.name.capitalize %>: </h5>
-              <% if true %>
-                <div class="rent d-flex justify-content-around">
-                  <%= image_tag "1ldk.png", class: "bed-img"%>
-                  <div class="ldk">
-                    <h2>¥<%= @ward.one_ldk_avg_rent%></h2>
-                  </div>
-                </div>
-              <% elsif true %>
-                <%= image_tag "2ldk.png", class: "bed-img"%>
-                <h2>¥<%= @ward.two_ldk_avg_rent%></h2>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
       <%# Overview %>
       <div class="overview-container" id="overview">
         <div class="row">
-          <h2 class = "bold text-center mb-3">Overview</h2>
+          <h2 class = "bold text-center mb-3 section-title">Overview</h2>
           <div class="col-6 my-1">
             <%# Embed the video %>
             <% if @ward.name == "koto ku" %>
@@ -232,7 +207,8 @@
         <%= column_chart Ward.pluck(:name, :safety).map{|name, safety| [name.capitalize, safety]},
                   dataset: { borderWidth: 3, fill: true,
                              backgroundColor: ward_names.map{|ward_name| ward_name == current_ward_name ? "rgba(255, 87, 51, 0.5)" : "rgba(128, 128, 128, 0.2)" },
-                             borderColor: "#FF5733" } %>
+                             borderColor: "#FF5733"
+                             }%>
       </div>
       <%# Rent Houses %>
       <div class="rentals">
