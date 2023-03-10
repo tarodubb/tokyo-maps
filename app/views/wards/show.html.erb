@@ -1,6 +1,6 @@
 <div class="show-container">
   <div class = "banner-wrapper">
-    <img class="img-wrapper" src = "<%= @ward_banner %>">
+    <%= image_tag(@ward.flag, class: "img-wrapper") %>
     <div class="ward-title">
       <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
       <h3>Population: <%=@ward.population %></h3>
