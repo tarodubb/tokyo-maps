@@ -66,6 +66,7 @@ wards.each do |en_name, jp_name|
       temp_ward.one_ldk_avg_rent = parsed_ward["one_ldk_avg_rent"]
       temp_ward.two_ldk_avg_rent = parsed_ward["two_ldk_avg_rent"]
       temp_ward.three_ldk_avg_rent = parsed_ward["three_ldk_avg_rent"]
+      temp_ward.pet_percentage = parsed_ward["pet_percentage"]
       temp_ward.summary = parsed_ward["summary"]
       temp_ward.summary = parsed_ward["summary"]
       temp_ward.points_of_interest = parsed_ward["points_of_interest"]
@@ -90,11 +91,12 @@ wards.each do |en_name, jp_name|
       feature["properties"]["one_ldk"] = temp_ward.one_ldk_avg_rent
       feature["properties"]["two_ldk"] = temp_ward.two_ldk_avg_rent
       feature["properties"]["three_ldk"] = temp_ward.three_ldk_avg_rent
+      feature["properties"]["pet"] = temp_ward.pet_percentage
       feature["properties"]["international_schools"] = temp_ward[:school_info].count
-      # feature["properties"]["transportation_rating"] = temp_ward.transportation_rating
-      # feature["properties"]["shopping_rating"] = temp_ward.shopping_rating
-      # feature["properties"]["entertainment_rating"] = temp_ward.entertainment_rating
-      # feature["properties"]["natural_disaster_safety_rating"] = temp_ward.natural_disaster_safety_rating
+      feature["properties"]["transportation_rating"] = temp_ward.transportation_rating
+      feature["properties"]["shopping_rating"] = temp_ward.shopping_rating
+      feature["properties"]["entertainment_rating"] = temp_ward.entertainment_rating
+      feature["properties"]["natural_disaster_safety_rating"] = temp_ward.natural_disaster_safety_rating
       feature["properties"]["safety"] = temp_ward.safety.to_f
     end
   end

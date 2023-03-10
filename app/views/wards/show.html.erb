@@ -7,353 +7,185 @@
       <h3>Population Density: <%=@ward.population_density %></h3>
     </div>
   </div>
-      <div class="map-box-landing">
-      <% if false %>
-        <div class="map-landing-container">
-          <div class="show-map-landing">
-            <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
+  <div class="map-box-landing">
+    <% if false %>
+      <div class="map-landing-container">
+        <div class="show-map-landing">
+          <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
               data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-              <div class="map-show-landing" data-map-show-target="globus"></div>
-            </div>
+            <div class="map-show-landing" data-map-show-target="globus"></div>
           </div>
-          <div class="show-map-landing-banner">
-            <h2><%=@ward.name.upcase %> </h2>
-            <div class="population">
-              <div class="pop d-flex">
-                <h5 class="text-center">Population of <%= @ward.name.capitalize %> : </h5>
-                <h5 class="text-center"><%= @ward.population %> people</h5>
-              </div>
-              <div class="density d-flex">
-                <h5 class="text-center">Population density in <%= @ward.name.capitalize %> : </h5>
-                <h5 class="text-center"><%= @ward.population_density %> persons per km²</h5>
-              </div>
+        </div>
+        <div class="show-map-landing-banner">
+          <h2><%=@ward.name.upcase %> </h2>
+          <div class="population">
+            <div class="pop d-flex">
+              <h5 class="text-center">Population of <%= @ward.name.capitalize %> : </h5>
+              <h5 class="text-center"><%= @ward.population %> people</h5>
+            </div>
+            <div class="density d-flex">
+              <h5 class="text-center">Population density in <%= @ward.name.capitalize %> : </h5>
+              <h5 class="text-center"><%= @ward.population_density %> persons per km²</h5>
             </div>
           </div>
         </div>
-      <% end %>
-    <div class= "ward-info-container">
-      <div class="menu-container">
-        <p><%= link_to "Ward Map", "#map", data: {controller: "scroll-to"}  %></p>
-        <p><%= link_to "Overview", "#overview", data: {controller: "scroll-to"}  %></p>
-        <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
-        <p><%= link_to "Sights", "#sights", data: {controller: "scroll-to"}  %></p>
-        <p><%= link_to "Reviews", "#reviews", data: {controller: "scroll-to"}  %></p>
-        <p><%= link_to "Schools", "#schools", data: {controller: "scroll-to"}  %></p>
-        <p><%= link_to "Rent", "#rent", data: {controller: "scroll-to"}  %></p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMDaygSdGrZZDt6NNnYtrFiBhCnME1Ptd-SJZUg0KUTbelCc0eLgq9yU5O_YBvwafQk4&usqp=CAU" alt="" data-toggle="modal" data-target="#modal2">
       </div>
-      <%# Main container for all the info %>
-      <div class="info-container">
-        <div class="map-box">
-          <div class="show-map">
-            <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
+    <% end %>
+  </div>
+  <div class= "ward-info-container">
+    <div class="menu-container">
+      <p><%= link_to "Ward Map", "#map", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Overview", "#overview", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Sights", "#sights", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Reviews", "#reviews", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Schools", "#schools", data: {controller: "scroll-to"}  %></p>
+      <p><%= link_to "Rent", "#rent", data: {controller: "scroll-to"}  %></p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMDaygSdGrZZDt6NNnYtrFiBhCnME1Ptd-SJZUg0KUTbelCc0eLgq9yU5O_YBvwafQk4&usqp=CAU" alt="" data-toggle="modal" data-target="#modal2">
+    </div>
+    <%# Main container for all the info %>
+    <div class="info-container">
+      <div class="map-box">
+        <div class="show-map">
+          <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
           data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-              <div class="map-show" data-map-show-target="globus"></div>
-            </div>
-          </div>
-          <div class="banner">
-            <div class="show-map-banner-content">
-              <h1><%= @ward.name.upcase %></h1>
-              <p><%= @ward.summary %></p>
-            </div>
-            <div class="user-selection">
-              <div class="card-selection rent">
-                <%# !!!  Tim will add the logic here !!! %>
-                <%# rent info %>
-                <h5 class="rent-title">Rent: <%= @ward.name.capitalize %> </h5>
-                <% if true %>
-                  <div class="rent">
-                    <%= image_tag "1ldk.png", class: "bed-img"%>
-                    <div class="ldk">
-                      <h4>¥<%= @ward.one_ldk_avg_rent%></h4>
-                    </div>
-                  </div>
-                <% elsif true %>
-                  <div class="rent">
-                    <%= image_tag "2ldk.png", class: "bed-img"%>
-                    <div class="ldk">
-                      <h4>¥<%= @ward.two_ldk_avg_rent%></h4>
-                    </div>
-                  </div>
-                <% else %>
-                  <div class="rent">
-                    <%= image_tag "3ldk.png", class: "bed-img"%>
-                    <div class="ldk">
-                      <h4>¥<%= @ward.three_ldk_avg_rent%></h4>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <div class="card-selection">
-                <h5 class="text-center">Crime rate: <%= @ward.name.capitalize %>: </h5>
-                <h2 class="text-center"><%= (@ward.safety.to_f * 100).round(2) %>%</h2>
-              </div>
-              <div class="card-selection">
-                <%# schools info %>
-                <h5 class="text-center">Number of international schools: </h5>
-                <h2 class="text-center"><%= @ward.school_info.count %></h2>
-              </div>
-            </div>
+            <div class="map-show" data-map-show-target="globus"></div>
           </div>
         </div>
-        <%# Based on your selection %>
-        <div class="selection-container">
-          <div class="row">
-            <h2 class="bold text-center mb-3 section-title">Based on your selections</h2>
-            <div class="col-4">
-              <div class="card selection rent">
-                <%# !!!  Tim will add the logic here !!! %>
-                <%# rent info %>
-                <h5 class="text-center mb-0">Rent price in <%= @ward.name.capitalize %>: </h5>
-                <% if true %>
-                  <div class="rent d-flex justify-content-around">
-                    <%= image_tag "1ldk.png", class: "bed-img"%>
-                    <div class="ldk">
-                      <h2>¥<%= @ward.one_ldk_avg_rent%></h2>
-                    </div>
+        <div class="banner">
+          <div class="show-map-banner-content">
+            <h1><%= @ward.name.upcase %></h1>
+            <p><%= @ward.summary %></p>
+          </div>
+          <div class="user-selection">
+            <div class="card-selection rent">
+              <%# !!!  Tim will add the logic here !!! %>
+              <%# rent info %>
+              <h5 class="rent-title">Rent: <%= @ward.name.capitalize %> </h5>
+              <% if true %>
+                <div class="rent">
+                  <%= image_tag "1ldk.png", class: "bed-img"%>
+                  <div class="ldk">
+                    <h4>¥<%= @ward.one_ldk_avg_rent%></h4>
                   </div>
-                <% elsif true %>
+                </div>
+              <% elsif true %>
+                <div class="rent">
                   <%= image_tag "2ldk.png", class: "bed-img"%>
-                  <h2>¥<%= @ward.two_ldk_avg_rent%></h2>
-                <% else %>
-                  <%= image_tag "3ldk.png", class: "bed-img"%>
-                  <h2>¥<%= @ward.three_ldk_avg_rent%></h2>
-                <% end %>
-              </div>
-            </div>
-            <%# safety info %>
-            <div class="col-4">
-              <div class="card selection">
-                <h5 class="text-center">Crime rate in <%= @ward.name.capitalize %>: </h5>
-                <h2 class="text-center"><%= (@ward.safety.to_f * 100).round(2) %>%</h2>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card selection">
-                <%# schools info %>
-                <h5 class="text-center">Number of international schools: </h5>
-                <h2 class="text-center"><%= @ward.school_info.count %></h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <%# Overview %>
-        <div class="overview-container" id="overview">
-          <div class="row">
-            <h2 class = "bold text-center mb-3 section-title">Overview</h2>
-            <div class="col-6 my-1">
-              <%# Embed the video %>
-              <% if @ward.name == "koto ku" %>
-                <iframe width="500" height="370" src="https://www.youtube.com/embed/8i9ltzhq80s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <% elsif @ward.name == "shibuya ku" %>
-                <iframe width="500" height="370" src="https://www.youtube.com/embed/Bh2Z1Hxb3es" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <% elsif @ward.name == "shinjuku ku" %>
-                <iframe width="500" height="370" src="https://www.youtube.com/embed/DjdUEyjx8GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <% elsif @ward.name == "minato ku" %>
-                <iframe width="500" height="370" src="https://www.youtube.com/embed/jbFSysHYYJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div class="ldk">
+                    <h4>¥<%= @ward.two_ldk_avg_rent%></h4>
+                  </div>
+                </div>
               <% else %>
+                <div class="rent">
+                  <%= image_tag "3ldk.png", class: "bed-img"%>
+                  <div class="ldk">
+                    <h4>¥<%= @ward.three_ldk_avg_rent%></h4>
+                  </div>
+                </div>
               <% end %>
             </div>
-            <div class="col-6">
-              <%# Weather and air quality %>
-              <div class="weather-aqi-container">
-                <div class="container weather-aqi d-flex justify-content-around">
-                  <div class="row">
-                    <div class="col-6">
-                      <%# Weather %>
-                      <div class="card weather my-1">
-                        <div class="card-body p-1">
-                          <h5 class="card-title text-center my-0">Weather in <%= @ward.name.capitalize %></h5>
-                          <div class="d-flex flex-column text-center mt-2 mb-2">
-                            <h6 class="display-4 mb-0 font-weight-bold"><%= @weather_temperature.round %>°C</h6>
-                            <span class="small" style="color: #868B94"><%= @weather_main %></span>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1">
-                              <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"><%= @weather_wind %> m/s
-                                </span></div>
-                              <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"><%= @weather_humidity %>%</span>
-                              </div>
+            <div class="card-selection">
+              <h5 class="text-center">Crime rate: <%= @ward.name.capitalize %>: </h5>
+              <h2 class="text-center"><%= (@ward.safety.to_f * 100).round(2) %>%</h2>
+            </div>
+            <div class="card-selection">
+              <%# schools info %>
+              <h5 class="text-center">Number of international schools: </h5>
+              <h2 class="text-center"><%= @ward.school_info.count %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%# Based on your selection %>
+      <div class="selection-container">
+        <div class="row">
+          <h2 class="bold text-center mb-3">Based on your selections</h2>
+          <div class="col-4">
+            <div class="card selection rent">
+              <%# !!!  Tim will add the logic here !!! %>
+              <%# rent info %>
+              <h5 class="text-center mb-0">Rent price in <%= @ward.name.capitalize %>: </h5>
+              <% if true %>
+                <div class="rent d-flex justify-content-around">
+                  <%= image_tag "1ldk.png", class: "bed-img"%>
+                  <div class="ldk">
+                    <h2>¥<%= @ward.one_ldk_avg_rent%></h2>
+                  </div>
+                </div>
+              <% elsif true %>
+                <%= image_tag "2ldk.png", class: "bed-img"%>
+                <h2>¥<%= @ward.two_ldk_avg_rent%></h2>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%# Overview %>
+      <div class="overview-container" id="overview">
+        <div class="row">
+          <h2 class = "bold text-center mb-3">Overview</h2>
+          <div class="col-6 my-1">
+            <%# Embed the video %>
+            <% if @ward.name == "koto ku" %>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/8i9ltzhq80s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <% elsif @ward.name == "shibuya ku" %>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/Bh2Z1Hxb3es" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <% elsif @ward.name == "shinjuku ku" %>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/DjdUEyjx8GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <% elsif @ward.name == "minato ku" %>
+              <iframe width="500" height="370" src="https://www.youtube.com/embed/jbFSysHYYJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <% else %>
+            <% end %>
+          </div>
+          <div class="col-6">
+            <%# Weather and air quality %>
+            <div class="weather-aqi-container">
+              <div class="container weather-aqi d-flex justify-content-around">
+                <div class="row">
+                  <div class="col-6">
+                    <%# Weather %>
+                    <div class="card weather my-1">
+                      <div class="card-body p-1">
+                        <h5 class="card-title text-center my-0">Weather in <%= @ward.name.capitalize %></h5>
+                        <div class="d-flex flex-column text-center mt-2 mb-2">
+                          <h6 class="display-4 mb-0 font-weight-bold"><%= @weather_temperature.round %>°C</h6>
+                          <span class="small" style="color: #868B94"><%= @weather_main %></span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <div class="flex-grow-1">
+                            <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"><%= @weather_wind %> m/s
+                              </span></div>
+                            <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"><%= @weather_humidity %>%</span>
                             </div>
                           </div>
-                          <div>
-                            <%= image_tag(@weather_image) %>
-                          </div>
+                        </div>
+                        <div>
+                          <%= image_tag(@weather_image) %>
                         </div>
                       </div>
                     </div>
-                    <%# Air quality %>
-                    <div class="col-6">
-                      <% if @air_quality_data %>
-                        <div class="card air-quality my-1">
-                          <h5 class="card-title text-center">Air quality in <%= @ward.name.capitalize %></h5>
-                          <%= image_tag("air-pollution.png") %>
-                          <div class="card-body">
-                            <div class="d-flex justify-content-evenly">
-                              <div class="aqi mb-3">
-                                <p class="card-text"><%= @air_quality_data['list'][0]['main']['aqi'] %></p>
-                              </div>
-                              <div class="description mb-3">
-                                <p class="card-text"><%= @air_quality_description %></p>
-                              </div>
+                  </div>
+                  <%# Air quality %>
+                  <div class="col-6">
+                    <% if @air_quality_data %>
+                      <div class="card air-quality my-1">
+                        <h5 class="card-title text-center">Air quality in <%= @ward.name.capitalize %></h5>
+                        <%= image_tag("air-pollution.png") %>
+                        <div class="card-body">
+                          <div class="d-flex justify-content-evenly">
+                            <div class="aqi mb-3">
+                              <p class="card-text"><%= @air_quality_data['list'][0]['main']['aqi'] %></p>
                             </div>
-                            <p class="card-text">PM 2.5 Pollution level: <%= @air_quality_data['list'][0]['components']['pm2_5'] %></p>
+                            <div class="description mb-3">
+                              <p class="card-text"><%= @air_quality_description %></p>
+                            </div>
                           </div>
+                          <p class="card-text">PM 2.5 Pollution level: <%= @air_quality_data['list'][0]['components']['pm2_5'] %></p>
                         </div>
-                      <% else %>
-                        <p>No air quality data available.</p>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <%# Population %>
-
-        <%# Places of interest cards  %>
-        <div class="sights-container" id="sights">
-          <h2 class = "bold text-center section-title">Sights in <%= @ward.name.capitalize %></h2>
-          <div class="row">
-            <div class="col-4 my-4">
-              <div class="card points">
-                <img class="card-img-top" src=<%= @point_of_interest_image1 %> alt="<%= @ward.points_of_interest[0] %>">
-                <div class="card-body">
-                  <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 my-4">
-              <div class="card points">
-                <img class="card-img-top" src=<%= @point_of_interest_image2 %> alt="<%= @ward.points_of_interest[1] %>">
-                <div class="card-body">
-                  <h5 class="card-title"><%= @ward.points_of_interest[1] %></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 my-4">
-              <div class="card points">
-                <img class="card-img-top" src=<%= @point_of_interest_image3 %> alt="<%= @ward.points_of_interest[2] %>">
-                <div class="card-body">
-                  <h5 class="card-title"><%= @ward.points_of_interest[2] %></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <%# Safety chart %>
-        <div class="safety-chart">
-          <h2 class="bold text-center section-title" id="safety">Crime rates in Tokyo</h2>
-          <% current_ward_name = @ward.name.capitalize %>
-          <% ward_names = Ward.pluck(:name).map(&:capitalize) %>
-          <%= column_chart Ward.pluck(:name, :safety).map{|name, safety| [name.capitalize, safety]},
-                  dataset: { borderWidth: 3, fill: true,
-                             backgroundColor: ward_names.map{|ward_name| ward_name == current_ward_name ? "rgba(255, 87, 51, 0.5)" : "rgba(128, 128, 128, 0.2)" },
-                             borderColor: "#FF5733" } %>
-        </div>
-        <%# Rent Houses %>
-        <div class="rentals">
-          <h2 class="rental-title section-title" id="rent">Locations Available right now for rent in <%= @ward.name.capitalize %></h2>
-          <div class="row">
-            <% @houses.each do |house| %>
-              <div class="col-6 d-flex justify-content-center mb-3">
-                <a href="https://www.japan-property.jp<%= house[:url]%>" class = "rent-link">
-                  <div class="rent-card">
-                    <div class="rent-img-wrapper overflow-hidden">
-                      <img src="<%= house[:image] %>" alt="" class = "rent-img">
-                    </div>
-                    <div class ="rent-detail">
-                      <h6> <strong><%= house[:name] %></strong> </h6>
-                      <p> <%= house[:price] %> </p>
-                      <p> <i class="fa-solid fa-location-dot"></i>  <%= house[:address] %> </p>
-                      <p> <i class="fa-solid fa-train"></i>  <%= house[:directions] %> </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <%# Schools  %>
-        <div class="schools">
-          <h2 class="schools-title section-title" id="schools">International Schools in <%= @ward.name.capitalize %></h2>
-          <div class="school-card-container">
-            <% @ward.school_info.first(3).each do |school| %>
-              <div class="school-card">
-                <div class="school-title">
-                  <h3><%= school["name"] %></h3>
-                </div>
-                <div class="school-body">
-                  <div class="school-body-content">
-                    <div class="phone-number">
-                      <i class="fa-solid fa-phone"></i>
-                      <p><%= school["phone"]%></p>
-                    </div>
-                    <div class="address">
-                      <i class="fa-solid fa-location-dot"></i>
-                      <p><%= school["address"]%></p>
-                    </div>
-                    <div class="train-lines">
-                      <i class="fa-solid fa-train"></i>
-                      <p><%= school["access"]%></p>
-                    </div>
-                  </div>
-                  <div class="school-link">
-                    <p><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></p>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <%# Reviews  %>
-        <div class="reviews">
-          <h2 class=" bold text-center section-title" id="reviews">Reviews of <%= @ward.name.capitalize %></h2>
-          <div class="review-cards">
-            <% if @ward.reviews.blank? %>
-              <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
-            <% else %>
-              <% @ward.reviews.last(3).each do |review| %>
-                <div class="card review">
-                  <%# if @review.user.photo.key %>
-                  <%# cl_image_tag @review.user.photo %>
-                  <%# else %>
-                  <%# end %>
-                  <div class="review-user">
-                    <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
-                    <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
-                    <p>Rating: <%= review.rating %>/5</p>
-                  </div>
-                  <div class="text-center">
-                    <p>"<%= review.content %>"</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-          <!-- Button trigger modal -->
-          <div class="button d-flex justify-content-center mb-4 mt-0">
-            <button type="button" class="btn green review my-3" data-toggle="modal" data-target="#modal1">
-              Leave a review
-            </button>
-          </div>
-          <!-- Modal -->
-          <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Leave a review</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
-                    <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
-                    <%= f.input :content, label: "Your review: " %>
-                    <div class="modal-footer">
-                      <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
+                      </div>
+                    <% else %>
+                      <p>No air quality data available.</p>
                     <% end %>
                   </div>
                 </div>
@@ -362,8 +194,159 @@
           </div>
         </div>
       </div>
+      <%# Places of interest cards  %>
+      <div class="sights-container" id="sights">
+        <h2 class = "bold text-center section-title">Sights in <%= @ward.name.capitalize %></h2>
+        <div class="row">
+          <div class="col-4 my-4">
+            <div class="card points">
+              <img class="card-img-top" src=<%= @point_of_interest_image1 %> alt="<%= @ward.points_of_interest[0] %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 my-4">
+            <div class="card points">
+              <img class="card-img-top" src=<%= @point_of_interest_image2 %> alt="<%= @ward.points_of_interest[1] %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= @ward.points_of_interest[1] %></h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 my-4">
+            <div class="card points">
+              <img class="card-img-top" src=<%= @point_of_interest_image3 %> alt="<%= @ward.points_of_interest[2] %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= @ward.points_of_interest[2] %></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%# Safety chart %>
+      <div class="safety-chart">
+        <h2 class="bold text-center section-title" id="safety">Crime rates in Tokyo</h2>
+        <% current_ward_name = @ward.name.capitalize %>
+        <% ward_names = Ward.pluck(:name).map(&:capitalize) %>
+        <%= column_chart Ward.pluck(:name, :safety).map{|name, safety| [name.capitalize, safety]},
+                  dataset: { borderWidth: 3, fill: true,
+                             backgroundColor: ward_names.map{|ward_name| ward_name == current_ward_name ? "rgba(255, 87, 51, 0.5)" : "rgba(128, 128, 128, 0.2)" },
+                             borderColor: "#FF5733" } %>
+      </div>
+      <%# Rent Houses %>
+      <div class="rentals">
+        <h2 class="rental-title section-title" id="rent">Locations Available right now for rent in <%= @ward.name.capitalize %></h2>
+        <div class="row">
+          <% @houses.each do |house| %>
+            <div class="col-6 d-flex justify-content-center mb-3">
+              <a href="https://www.japan-property.jp<%= house[:url]%>" class = "rent-link">
+                <div class="rent-card">
+                  <div class="rent-img-wrapper overflow-hidden">
+                    <img src="<%= house[:image] %>" alt="" class = "rent-img">
+                  </div>
+                  <div class ="rent-detail">
+                    <h6> <strong><%= house[:name] %></strong> </h6>
+                    <p> <%= house[:price] %> </p>
+                    <p> <i class="fa-solid fa-location-dot"></i>  <%= house[:address] %> </p>
+                    <p> <i class="fa-solid fa-train"></i>  <%= house[:directions] %> </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%# Schools  %>
+      <div class="schools">
+        <h2 class="schools-title section-title" id="schools">International Schools in <%= @ward.name.capitalize %></h2>
+        <div class="school-card-container">
+          <% @ward.school_info.first(3).each do |school| %>
+            <div class="school-card">
+              <div class="school-title">
+                <h3><%= school["name"] %></h3>
+              </div>
+              <div class="school-body">
+                <div class="school-body-content">
+                  <div class="phone-number">
+                    <i class="fa-solid fa-phone"></i>
+                    <p><%= school["phone"]%></p>
+                  </div>
+                  <div class="address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p><%= school["address"]%></p>
+                  </div>
+                  <div class="train-lines">
+                    <i class="fa-solid fa-train"></i>
+                    <p><%= school["access"]%></p>
+                  </div>
+                </div>
+                <div class="school-link">
+                  <p><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%# Reviews  %>
+      <div class="reviews">
+        <h2 class=" bold text-center section-title" id="reviews">Reviews of <%= @ward.name.capitalize %></h2>
+        <div class="review-cards">
+          <% if @ward.reviews.blank? %>
+            <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
+          <% else %>
+            <% @ward.reviews.last(3).each do |review| %>
+              <div class="card review">
+                <%# if @review.user.photo.key %>
+                <%# cl_image_tag @review.user.photo %>
+                <%# else %>
+                <%# end %>
+                <div class="review-user">
+                  <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
+                  <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
+                  <p>Rating: <%= review.rating %>/5</p>
+                </div>
+                <div class="text-center">
+                  <p>"<%= review.content %>"</p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <!-- Button trigger modal -->
+        <div class="button d-flex justify-content-center mb-4 mt-0">
+          <button type="button" class="btn green review my-3" data-toggle="modal" data-target="#modal1">
+            Leave a review
+          </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Leave a review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for [@ward, @review], html: { class: 'reviews' } do |f| %>
+                  <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}} %>
+                  <%= f.input :content, label: "Your review: " %>
+                  <div class="modal-footer">
+                    <%= f.button :submit, 'Post this review', class: 'btn green my-3' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <%# </div>
+</div> %>
   <%# Messages popup %>
   <!-- Modal -->
   <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -394,4 +377,3 @@
       </div>
     </div>
   </div>
-</div>

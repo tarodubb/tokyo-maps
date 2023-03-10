@@ -19,18 +19,24 @@ class GetAverage
       if category_max[:threeldk].nil? || feature["properties"]["three_ldk"] > category_max[:threeldk]
         category_max[:threeldk] = feature["properties"]["three_ldk"]
       end
+      if category_max[:pet].nil? || feature["properties"]["pet"] > category_max[:pet]
+        category_max[:pet] = feature["properties"]["pet"]
+      end
       if category_max[:international_schools].nil? || feature["properties"]["international_schools"] > category_max[:international_schools]
         category_max[:international_schools] = feature["properties"]["international_schools"]
+        p feature["properties"]["ward_en"]
+        p category_max[:international_schools]
+        p feature["properties"]["international_schools"]
       end
-      # if category_max[:shopping_rating].nil? || feature["properties"]["shopping_rating"] > category_max[:shopping_rating]
-      #   category_max[:shopping_rating] = feature["properties"]["shopping_rating"]
-      # end
-      # if category_max[:entertainment_rating].nil? || feature["properties"]["entertainment_rating"] > category_max[:entertainment_rating]
-      #   category_max[:entertainment_rating] = feature["properties"]["entertainment_rating"]
-      # end
-      # if category_max[:natural_disaster_safety_rating].nil? || feature["properties"]["natural_disaster_safety_rating"] > category_max[:natural_disaster_safety_rating]
-      #   category_max[:natural_disaster_safety_rating] = feature["properties"]["natural_disaster_safety_rating"]
-      # end
+      if category_max[:shopping_rating].nil? || feature["properties"]["shopping_rating"] > category_max[:shopping_rating]
+        category_max[:shopping_rating] = feature["properties"]["shopping_rating"]
+      end
+      if category_max[:entertainment_rating].nil? || feature["properties"]["entertainment_rating"] > category_max[:entertainment_rating]
+        category_max[:entertainment_rating] = feature["properties"]["entertainment_rating"]
+      end
+      if category_max[:natural_disaster_safety_rating].nil? || feature["properties"]["natural_disaster_safety_rating"] > category_max[:natural_disaster_safety_rating]
+        category_max[:natural_disaster_safety_rating] = feature["properties"]["natural_disaster_safety_rating"]
+      end
       if category_max[:safety].nil? || feature["properties"]["safety"] > category_max[:safety]
         category_max[:safety] = feature["properties"]["safety"]
       end
@@ -56,18 +62,21 @@ class GetAverage
       if category_min[:threeldk].nil? || feature["properties"]["three_ldk"] < category_min[:threeldk]
         category_min[:threeldk] = feature["properties"]["three_ldk"]
       end
+      if category_min[:pet].nil? || feature["properties"]["pet"] < category_min[:pet]
+        category_min[:pet] = feature["properties"]["pet"]
+      end
       if category_min[:international_schools].nil? || feature["properties"]["international_schools"] < category_min[:international_schools]
         category_min[:international_schools] = feature["properties"]["international_schools"]
       end
-      # if category_min[:shopping_rating].nil? || feature["properties"]["shopping_rating"] < category_min[:shopping_rating]
-      #   category_min[:shopping_rating] = feature["properties"]["shopping_rating"]
-      # end
-      # if category_min[:entertainment_rating].nil? || feature["properties"]["entertainment_rating"] < category_min[:entertainment_rating]
-      #   category_min[:entertainment_rating] = feature["properties"]["entertainment_rating"]
-      # end
-      # if category_min[:natural_disaster_safety_rating].nil? || feature["properties"]["natural_disaster_safety_rating"] < category_min[:natural_disaster_safety_rating]
-      #   category_min[:natural_disaster_safety_rating] = feature["properties"]["natural_disaster_safety_rating"]
-      # end
+      if category_min[:shopping_rating].nil? || feature["properties"]["shopping_rating"] < category_min[:shopping_rating]
+        category_min[:shopping_rating] = feature["properties"]["shopping_rating"]
+      end
+      if category_min[:entertainment_rating].nil? || feature["properties"]["entertainment_rating"] < category_min[:entertainment_rating]
+        category_min[:entertainment_rating] = feature["properties"]["entertainment_rating"]
+      end
+      if category_min[:natural_disaster_safety_rating].nil? || feature["properties"]["natural_disaster_safety_rating"] < category_min[:natural_disaster_safety_rating]
+        category_min[:natural_disaster_safety_rating] = feature["properties"]["natural_disaster_safety_rating"]
+      end
       if category_min[:safety].nil? || feature["properties"]["safety"] < category_min[:safety]
         category_min[:safety] = feature["properties"]["safety"]
       end
