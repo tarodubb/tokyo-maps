@@ -96,14 +96,15 @@
         "Samurai Museum"
       ],
       "historical_significance": "Shinjuku was originally a small rural village, but rapidly grew into a major transportation hub during the Meiji period. It was heavily damaged during World War II, but has since been rebuilt and modernized.",
-      "flag": "shinjukuflag.jpg",
+      "flag": "shinjukubanner.jpg",
       "transportation_rating": 8.60,
       "shopping_rating": 7.30,
       "entertainment_rating": 6.00,
       "security_rating": 5.90,
       "natural_disaster_safety_rating": 6.60,
       "housing_cost_satisfaction_rating": 5.40,
-      "safety": 0.0137
+      "safety": 0.0137,
+      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=657&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
     },
     {
       "name": "Bunkyo",
@@ -253,7 +254,7 @@
         "Meiji Shrine"
       ],
       "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
-      "flag": "shibuyaflag.jpg",
+       "flag": "shibuyaflag.jpg",
       "transportation_rating": 8.63,
       "shopping_rating": 8.13,
       "entertainment_rating": 8.25,
@@ -261,6 +262,7 @@
       "natural_disaster_safety_rating": 8.5,
       "housing_cost_satisfaction_rating": 5.75,
       "safety": 0.0147
+      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=666&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
     },
     {
       "name": "Nakano",
