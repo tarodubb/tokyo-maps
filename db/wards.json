@@ -254,14 +254,14 @@
         "Meiji Shrine"
       ],
       "historical_significance": "Shibuya has a long history as a center of youth culture and fashion in Tokyo. It was a hub of the 1960s counterculture movement and remains a popular destination for young people from around the world.",
-       "flag": "shibuyaflag.jpg",
+      "flag": "shibuyaflag.jpg",
       "transportation_rating": 8.63,
       "shopping_rating": 8.13,
       "entertainment_rating": 8.25,
       "security_rating": 7.63,
       "natural_disaster_safety_rating": 8.5,
       "housing_cost_satisfaction_rating": 5.75,
-      "safety": 0.0147
+      "safety": 0.0147,
       "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=666&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
     },
     {
