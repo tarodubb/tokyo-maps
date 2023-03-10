@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  background: linear-gradient(0deg, rgba(5,5,5,0) 57%, rgba(40,40,40,0.5326724439775911) 77%);
 }
 
 .banner-content {
@@ -32,19 +33,29 @@
   transition: opacity 2s ease-in-out;
 }
 
+#banner-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 85px;
+  color: white;
+  text-shadow: 3px 3px 5px #383838;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px #515151;
+}
+.banner-text p {
+  font-size: 20px;
+}
+
 .transition {
   -webkit-transition: opacity 2s ease-in-out;
   -o-transition: opacity 2s ease-in-out;
   -moz-transition: opacity 2s ease-in-out;
   transition: opacity 2s ease-in-out;
-}
-
-
-
-#banner-title {
-  color: white;
-  font-size: 76px;
-  text-shadow: 3px 3px 5px #383838;
 }
 
 #fly-to-tokyo {
