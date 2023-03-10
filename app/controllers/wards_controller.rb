@@ -20,6 +20,7 @@ class WardsController < ApplicationController
     @point_of_interest_image1 = get_point_of_interest_image1
     @point_of_interest_image2 = get_point_of_interest_image2
     @point_of_interest_image3 = get_point_of_interest_image3
+    @ward_banner = get_ward_banner
     # Cant change area to singular or it breaks the whole map_show_controller
     @areas = {
       name: @ward.name,
@@ -131,22 +132,21 @@ class WardsController < ApplicationController
     end
   end
 
-  def get_flag_image
+  def get_ward_banner
     case @ward.name
     when "shibuya ku"
       "shibuyaflag.jpg"
     when "koto ku"
-      "kotoflag.jpg"
+      "kotobanner.jpg"
     when "shinjuku ku"
-      "https://blog.japanwondertravel.com/wp-content/uploads/2022/03/kabukicho.jpg"
+      "shinjukubanner.jpg"
     when "minato ku"
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/0f/28/8c/roppongi-hills.jpg?w=1200&h=-1&s=1"
+      "minatobanner.jpg"
     end
   end
 
   def scraper
-    rent_url = "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=657&property_types[]=apartment"
-    # url = "https://www.lewagon.com"
+    rent_url = @ward.rent_url
     html = URI.open(rent_url)
     doc = Nokogiri::HTML.parse(html)
     items = doc.search('.item')
@@ -155,7 +155,8 @@ class WardsController < ApplicationController
       house = {}
       house[:name] = listing.search('.info h3').text.strip
       house[:price] = listing.search('.info p').text.strip
-      house[:address] = listing.search('.location span').text.strip
+      house[:address] = listing.search('.location span').text.strip.match(/(.+Tokyo)(\w.+)/)[1]
+      house[:directions] = listing.search('.location span').text.strip.match(/(.+Tokyo)(\w.+)/)[2]
       house[:image] = listing.search('.photo_label img').first[:src]
       house[:url] = listing.search('a').first['href']
       @houses << house

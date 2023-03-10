@@ -1,5 +1,5 @@
 <div class="home-container">
-<div id="info"></div>
+  <div id="info"></div>
   <div id="container" data-controller="map" data-map-areas-value="<%= @areas.to_json %>" data-map-user-value = "<%=@user_address.to_json%>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="landing-banner">
@@ -20,22 +20,24 @@
         </div>
       </div>
       <div class="banner-content">
-        <h1 id="banner-title">Tokyo Maps</h1>
+        <div class="banner-text">
+          <h1 id="banner-title">Tokyo Maps</h1>
+          <p>Discover your perfect Tokyo neighborhood now!</p>
+        </div>
         <button id="fly-to-tokyo" data-action="click->map#flyTokyo">Explore</button>
       </div>
+      <div class="gradient"></div>
       <div class="map-banner" data-map-target="globus"></div>
     </div>
-
     <div class="landing-info">
       <div class="row mt-3">
         <div class="col-4">
-         <div class="card-desc">
-          <div class="card-product-infos">
-            <p>Tokyo Maps is a page dedicated to providing visitors with comprehensive and detailed maps and information of Tokyo, Japan. As soon as you land on Tokyo, you are greeted with a stunning map of the city. The map is divided into 23 wards of the city, allowing visitors to quickly find the information they need.</p>
-          </div>
+          <div class="card-desc">
+            <div class="card-product-infos">
+              <p>Tokyo Maps is a page dedicated to providing visitors with comprehensive and detailed maps and information of Tokyo, Japan. As soon as you land on Tokyo, you are greeted with a stunning map of the city. The map is divided into 23 wards of the city, allowing visitors to quickly find the information they need.</p>
+            </div>
           </div>
         </div>
-
         <div class="col-4">
           <div class="card-desc">
             <div class="card-product-infos">
@@ -43,7 +45,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-4">
           <div class="card-desc">
             <div class="card-product-infos">
@@ -51,7 +52,7 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
-</div>
 </div>

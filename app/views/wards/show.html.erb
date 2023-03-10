@@ -1,27 +1,57 @@
 <div class="show-container">
-  <div class="banner-wrapper">
-  </div>
-
-  <div class= "ward-info-container">
-    <div class="menu-container">
-      <p><%= link_to "Ward Map", "#map", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Overview", "#overview", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Sights", "#sights", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Reviews", "#reviews", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Schools", "#schools", data: {controller: "scroll-to"}  %></p>
-      <p><%= link_to "Rent", "#rent", data: {controller: "scroll-to"}  %></p>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMDaygSdGrZZDt6NNnYtrFiBhCnME1Ptd-SJZUg0KUTbelCc0eLgq9yU5O_YBvwafQk4&usqp=CAU" alt="" data-toggle="modal" data-target="#modal2">
+  <div class = "banner-wrapper">
+    <img class="img-wrapper" src = "<%= @ward_banner %>">
+    <div class="ward-title">
+      <h2 class = "ward_name"> <%= @ward.name.upcase %></h2>
+      <h3>Population: <%=@ward.population %></h3>
+      <h3>Population Density: <%=@ward.population_density %></h3>
     </div>
-    <%# Main container for all the info %>
-    <div class="info-container">
-      <div class="map-box">
-        <div class="show-map">
-          <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
+  </div>
+      <div class="map-box-landing">
+      <% if false %>
+        <div class="map-landing-container">
+          <div class="show-map-landing">
+            <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
+              data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              <div class="map-show-landing" data-map-show-target="globus"></div>
+            </div>
+          </div>
+          <div class="show-map-landing-banner">
+            <h2><%=@ward.name.upcase %> </h2>
+            <div class="population">
+              <div class="pop d-flex">
+                <h5 class="text-center">Population of <%= @ward.name.capitalize %> : </h5>
+                <h5 class="text-center"><%= @ward.population %> people</h5>
+              </div>
+              <div class="density d-flex">
+                <h5 class="text-center">Population density in <%= @ward.name.capitalize %> : </h5>
+                <h5 class="text-center"><%= @ward.population_density %> persons per km²</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <div class= "ward-info-container">
+      <div class="menu-container">
+        <p><%= link_to "Ward Map", "#map", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Overview", "#overview", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Safety Info", "#safety", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Sights", "#sights", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Reviews", "#reviews", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Schools", "#schools", data: {controller: "scroll-to"}  %></p>
+        <p><%= link_to "Rent", "#rent", data: {controller: "scroll-to"}  %></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMDaygSdGrZZDt6NNnYtrFiBhCnME1Ptd-SJZUg0KUTbelCc0eLgq9yU5O_YBvwafQk4&usqp=CAU" alt="" data-toggle="modal" data-target="#modal2">
+      </div>
+      <%# Main container for all the info %>
+      <div class="info-container">
+        <div class="map-box">
+          <div class="show-map">
+            <div id="container" data-controller="map-show" data-map-show-areas-value="<%= @areas.to_json %>"
           data-map-show-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
             <div class="map-show" data-map-show-target="globus"></div>
           </div>
         </div>
+        
         <div class="banner">
           <div class="show-map-banner-content">
             <h1><%= @ward.name.upcase %></h1>
@@ -86,6 +116,20 @@
               <% elsif true %>
                 <%= image_tag "2ldk.png", class: "bed-img"%>
                 <h2>¥<%= @ward.two_ldk_avg_rent%></h2>
+        <%# Overview %>
+        <div class="overview-container" id="overview">
+          <div class="row">
+            <h2 class = "bold text-center mb-3 section-title">Overview</h2>
+            <div class="col-6 my-1">
+              <%# Embed the video %>
+              <% if @ward.name == "koto ku" %>
+                <iframe width="500" height="370" src="https://www.youtube.com/embed/8i9ltzhq80s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <% elsif @ward.name == "shibuya ku" %>
+                <iframe width="500" height="370" src="https://www.youtube.com/embed/Bh2Z1Hxb3es" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <% elsif @ward.name == "shinjuku ku" %>
+                <iframe width="500" height="370" src="https://www.youtube.com/embed/DjdUEyjx8GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <% elsif @ward.name == "minato ku" %>
+                <iframe width="500" height="370" src="https://www.youtube.com/embed/jbFSysHYYJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               <% else %>
                 <%= image_tag "3ldk.png", class: "bed-img"%>
                 <h2>¥<%= @ward.three_ldk_avg_rent%></h2>
@@ -180,27 +224,16 @@
             </div>
           </div>
         </div>
-      </div>
-      <%# Population %>
-      <div class="population-card">
-        <div class="pop">
-          <h5 class="text-center">Population of <%= @ward.name.capitalize %> </h5>
-          <h2 class="text-center"><%= @ward.population %> people</h2>
-        </div>
-        <div class="density">
-          <h5 class="text-center">Population density in <%= @ward.name.capitalize %> </h5>
-          <h2 class="text-center"><%= @ward.population_density %> persons per km²</h2>
-        </div>
-      </div>
-      <%# Places of interest cards  %>
-      <div class="sights-container" id="sights">
-        <h2 class = "bold text-center">Sights in <%= @ward.name.capitalize %></h2>
-        <div class="row">
-          <div class="col-4 my-4">
-            <div class="card points">
-              <img class="card-img-top" src=<%= @point_of_interest_image1 %> alt="<%= @ward.points_of_interest[0] %>">
-              <div class="card-body">
-                <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
+        <%# Places of interest cards  %>
+        <div class="sights-container" id="sights">
+          <h2 class = "bold text-center section-title">Sights in <%= @ward.name.capitalize %></h2>
+          <div class="row">
+            <div class="col-4 my-4">
+              <div class="card points">
+                <img class="card-img-top" src=<%= @point_of_interest_image1 %> alt="<%= @ward.points_of_interest[0] %>">
+                <div class="card-body">
+                  <h5 class="card-title"><%= @ward.points_of_interest[0] %></h5>
+                </div>
               </div>
             </div>
           </div>
@@ -221,34 +254,92 @@
             </div>
           </div>
         </div>
-      </div>
-      <%# Safety chart %>
-      <div class="safety-chart">
-        <h2 class="bold text-center" id="safety">Crime rates in Tokyo</h2>
-        <% current_ward_name = @ward.name.capitalize %>
-        <% ward_names = Ward.pluck(:name).map(&:capitalize) %>
-        <%= column_chart Ward.pluck(:name, :safety).map{|name, safety| [name.capitalize, safety]},
+        <%# Safety chart %>
+        <div class="safety-chart">
+          <h2 class="bold text-center section-title" id="safety">Crime rates in Tokyo</h2>
+          <% current_ward_name = @ward.name.capitalize %>
+          <% ward_names = Ward.pluck(:name).map(&:capitalize) %>
+          <%= column_chart Ward.pluck(:name, :safety).map{|name, safety| [name.capitalize, safety]},
                   dataset: { borderWidth: 3, fill: true,
                              backgroundColor: ward_names.map{|ward_name| ward_name == current_ward_name ? "rgba(255, 87, 51, 0.5)" : "rgba(128, 128, 128, 0.2)" },
                              borderColor: "#FF5733" } %>
-      </div>
-      <%# Reviews  %>
-      <div class="reviews">
-        <h2 class=" bold text-center" id="reviews">Reviews of <%= @ward.name.capitalize %></h2>
-        <div class="review-cards">
-          <% if @ward.reviews.blank? %>
-            <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
-          <% else %>
-            <% @ward.reviews.last(3).each do |review| %>
-              <div class="card review">
-                <%# if @review.user.photo.key %>
-                <%# cl_image_tag @review.user.photo %>
-                <%# else %>
-                <%# end %>
-                <div class="review-user">
-                  <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
-                  <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
-                  <p>Rating: <%= review.rating %>/5</p>
+        </div>
+        <%# Rent Houses %>
+        <div class="rentals">
+          <h2 class="rental-title section-title" id="rent">Locations Available right now for rent in <%= @ward.name.capitalize %></h2>
+          <div class="row">
+            <% @houses.each do |house| %>
+              <div class="col-6 d-flex justify-content-center mb-3">
+                <a href="https://www.japan-property.jp<%= house[:url]%>" class = "rent-link">
+                  <div class="rent-card">
+                    <div class="rent-img-wrapper overflow-hidden">
+                      <img src="<%= house[:image] %>" alt="" class = "rent-img">
+                    </div>
+                    <div class ="rent-detail">
+                      <h6> <strong><%= house[:name] %></strong> </h6>
+                      <p> <%= house[:price] %> </p>
+                      <p> <i class="fa-solid fa-location-dot"></i>  <%= house[:address] %> </p>
+                      <p> <i class="fa-solid fa-train"></i>  <%= house[:directions] %> </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%# Schools  %>
+        <div class="schools">
+          <h2 class="schools-title section-title" id="schools">International Schools in <%= @ward.name.capitalize %></h2>
+          <div class="school-card-container">
+            <% @ward.school_info.first(3).each do |school| %>
+              <div class="school-card">
+                <div class="school-title">
+                  <h3><%= school["name"] %></h3>
+                </div>
+                <div class="school-body">
+                  <div class="school-body-content">
+                    <div class="phone-number">
+                      <i class="fa-solid fa-phone"></i>
+                      <p><%= school["phone"]%></p>
+                    </div>
+                    <div class="address">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p><%= school["address"]%></p>
+                    </div>
+                    <div class="train-lines">
+                      <i class="fa-solid fa-train"></i>
+                      <p><%= school["access"]%></p>
+                    </div>
+                  </div>
+                  <div class="school-link">
+                    <p><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%# Reviews  %>
+        <div class="reviews">
+          <h2 class=" bold text-center section-title" id="reviews">Reviews of <%= @ward.name.capitalize %></h2>
+          <div class="review-cards">
+            <% if @ward.reviews.blank? %>
+              <p>Be the first to leave a review for <%= @ward.name.capitalize %></p>
+            <% else %>
+              <% @ward.reviews.last(3).each do |review| %>
+                <div class="card review">
+                  <%# if @review.user.photo.key %>
+                  <%# cl_image_tag @review.user.photo %>
+                  <%# else %>
+                  <%# end %>
+                  <div class="review-user">
+                    <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
+                    <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
+                    <p>Rating: <%= review.rating %>/5</p>
+                  </div>
+                  <div class="text-center">
+                    <p>"<%= review.content %>"</p>
+                  </div>
                 </div>
                 <div class="text-center">
                   <p>"<%= review.content %>"</p>
@@ -284,60 +375,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <%# Rent Houses %>
-      <div class="rentals">
-        <h2 class="rental-title" id="rent">Locations Avaliable right now for rent<%= @ward.name.capitalize %></h2>
-        <div class="row">
-          <% @houses.each do |house| %>
-            <div class="col-6 d-flex justify-content-center mb-3">
-              <a href="https://www.japan-property.jp<%= house[:url]%>">
-                <div class="rent-card">
-                  <div class="rent-img-wrapper overflow-hidden">
-                    <img src="<%= house[:image] %>" alt="" class = "rent-img">
-                  </div>
-                  <div class ="rent-detail">
-                    <p> <%= house[:name] %> </p>
-                    <p> <%= house[:price] %> </p>
-                    <p> <%= house[:address] %> </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <%# Schools  %>
-      <div class="schools">
-        <h2 class="schools-title" id="schools">International Schools in <%= @ward.name.capitalize %></h2>
-        <div class="school-card-container">
-          <% @ward.school_info.first(3).each do |school| %>
-            <div class="school-card">
-              <div class="school-title">
-                <h3><%= school["name"] %></h3>
-              </div>
-              <div class="school-body">
-                <div class="school-body-content">
-                  <div class="phone-number">
-                    <i class="fa-solid fa-phone"></i>
-                    <p><%= school["phone"]%></p>
-                  </div>
-                  <div class="address">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p><%= school["address"]%></p>
-                  </div>
-                  <div class="train-lines">
-                    <i class="fa-solid fa-train"></i>
-                    <p><%= school["access"]%></p>
-                  </div>
-                </div>
-                <div class="school-link">
-                  <p><%= link_to "Go to website", school["website"], target: "_blank", class: "btn btn-school"%></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
         </div>
       </div>
     </div>

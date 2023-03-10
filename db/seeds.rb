@@ -80,6 +80,8 @@ wards.each do |en_name, jp_name|
       # adding photos from google search results to each point of interest
       temp_ward.historical_significance = parsed_ward["historical_significance"]
       temp_ward.safety = parsed_ward["safety"]
+      temp_ward.rent_url = parsed_ward["rent_url"]
+      temp_ward.flag = parsed_ward["flag"]
     end
   end
 

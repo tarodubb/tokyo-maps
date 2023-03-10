@@ -2,6 +2,7 @@
   &.green {
     color: white;
     padding: 8px 24px;
+    margin-top: 24px;
     border-radius: 4px;
     background: #61A866;
     transition: background 0.3s ease;
@@ -13,7 +14,19 @@
   }
 }
 
+.btn.green:hover{
+  background: #61A866;
+  opacity: .8;
+  color: white;
+  transition: 0.3s ;
+}
+
 .btn.btn-school {
   background-color: rgba(174, 161, 161, 0.524);
   color:rgba(10, 10, 10, 0.766)
+}
+
+.btn.btn-school:hover {
+  background-color: rgba(104, 95, 95, 0.524);
+  transition: 0.3s ease;
 }

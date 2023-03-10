@@ -118,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_071105) do
     t.float "housing_cost_satisfaction_rating"
     t.jsonb "school_info"
     t.float "pet_percentage"
+    t.string "rent_url"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
