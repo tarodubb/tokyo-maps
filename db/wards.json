@@ -24,7 +24,9 @@
       "security_rating": 7.60,
       "natural_disaster_safety_rating": 6.80,
       "housing_cost_satisfaction_rating": 7.60,
-      "safety": 0.0284
+      "safety": 0.0284,
+      "rent_url": 654
+
     },
     {
       "name": "Chuo",
@@ -50,7 +52,8 @@
       "security_rating": 8.14,
       "natural_disaster_safety_rating": 7.43,
       "housing_cost_satisfaction_rating": 6.71,
-      "safety": 0.0104
+      "safety": 0.0104,
+      "rent_url": 655
     },
     {
       "name": "Minato",
@@ -77,7 +80,7 @@
       "natural_disaster_safety_rating": 6.33,
       "housing_cost_satisfaction_rating": 6.00,
       "safety": 0.0093,
-      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=656&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
+      "rent_url": 656
     },
     {
       "name": "Shinjuku",
@@ -104,7 +107,7 @@
       "natural_disaster_safety_rating": 6.60,
       "housing_cost_satisfaction_rating": 5.40,
       "safety": 0.0137,
-      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=657&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
+      "rent_url": 657
     },
     {
       "name": "Bunkyo",
@@ -130,7 +133,8 @@
       "security_rating": 8.45,
       "natural_disaster_safety_rating": 8.00,
       "housing_cost_satisfaction_rating": 6.45,
-      "safety": 0.0039
+      "safety": 0.0039,
+      "rent_url": 658
     },
     {
       "name": "Taito",
@@ -156,7 +160,8 @@
       "security_rating": 6.00,
       "natural_disaster_safety_rating": 6.20,
       "housing_cost_satisfaction_rating": 7.40,
-      "safety": 0.017
+      "safety": 0.017,
+      "rent_url": 659
     },
     {
       "name": "Sumida",
@@ -182,7 +187,8 @@
       "security_rating": 6.33,
       "natural_disaster_safety_rating": 3.50,
       "housing_cost_satisfaction_rating": 3.67,
-      "safety": 0.007
+      "safety": 0.007,
+      "rent_url": 660
     },
     {
       "name": "Koto",
@@ -209,7 +215,7 @@
       "natural_disaster_safety_rating": 6.13,
       "housing_cost_satisfaction_rating": 6.65,
       "safety": 0.0054,
-      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=661&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
+      "rent_url": 661
     },
     {
       "name": "Setagaya",
@@ -235,7 +241,8 @@
       "security_rating": 7.58,
       "natural_disaster_safety_rating": 8.08,
       "housing_cost_satisfaction_rating": 6.0,
-      "safety": 0.0045
+      "safety": 0.0045,
+      "rent_url": 665
     },
     {
       "name": "Shibuya",
@@ -262,7 +269,7 @@
       "natural_disaster_safety_rating": 8.5,
       "housing_cost_satisfaction_rating": 5.75,
       "safety": 0.0147,
-      "rent_url": "https://www.japan-property.jp/apartment-for-rent/Tokyo?cities=666&property_types[]=apartment&bedrooms[]=-1&bedrooms[]=1&bedrooms[]=2&bedrooms[]=3"
+      "rent_url": 666
     },
     {
       "name": "Nakano",
@@ -288,7 +295,8 @@
       "security_rating": 6.90,
       "natural_disaster_safety_rating": 5.90,
       "housing_cost_satisfaction_rating": 6.80,
-      "safety": 0.006
+      "safety": 0.006,
+      "rent_url": 667
     },
     {
       "name": "Suginami",
@@ -314,7 +322,8 @@
       "security_rating": 7.60,
       "natural_disaster_safety_rating": 6.80,
       "housing_cost_satisfaction_rating": 7.60,
-      "safety": 0.0044
+      "safety": 0.0044,
+      "rent_url": 668
     },
     {
       "name": "Toshima",
@@ -340,7 +349,8 @@
       "security_rating": 6.00,
       "natural_disaster_safety_rating": 5.660,
       "housing_cost_satisfaction_rating": 6.2,
-      "safety": 0.0107
+      "safety": 0.0107,
+      "rent_url": 669
     },
     {
       "name": "Shinagawa",
@@ -366,7 +376,8 @@
       "security_rating": 7.55,
       "natural_disaster_safety_rating": 7.18,
       "housing_cost_satisfaction_rating": 5.73,
-      "safety": 0.0049
+      "safety": 0.0049,
+      "rent_url": 662
     },
     {
       "name": "Meguro",
@@ -392,7 +403,8 @@
       "security_rating": 9.38,
       "natural_disaster_safety_rating": 9.00,
       "housing_cost_satisfaction_rating": 7.00,
-      "safety": 0.005
+      "safety": 0.005,
+      "rent_url": 663
     },
     {
       "name": "Ota",
@@ -418,7 +430,8 @@
       "security_rating": 6.63,
       "natural_disaster_safety_rating": 6.38,
       "housing_cost_satisfaction_rating": 5.58,
-      "safety": 0.0055
+      "safety": 0.0055,
+      "rent_url": 664
     },
     {
       "name": "Kita",
@@ -444,7 +457,8 @@
       "security_rating": 7.27,
       "natural_disaster_safety_rating": 7.18,
       "housing_cost_satisfaction_rating": 5.64,
-      "safety": 0.0062
+      "safety": 0.0062,
+      "rent_url": 670
     },
     {
       "name": "Arakawa",
@@ -470,7 +484,8 @@
       "security_rating": 7.36,
       "natural_disaster_safety_rating": 6.09,
       "housing_cost_satisfaction_rating": 5.91,
-      "safety": 0.0057
+      "safety": 0.0057,
+      "rent_url": 671
     },
     {
       "name": "Itabashi",
@@ -496,7 +511,8 @@
       "security_rating": 7.00,
       "natural_disaster_safety_rating": 7.95,
       "housing_cost_satisfaction_rating": 7.60,
-      "safety": 0.0052
+      "safety": 0.0052,
+      "rent_url": 672
     },
     {
       "name": "Nerima",
@@ -522,7 +538,8 @@
       "security_rating": 6.89,
       "natural_disaster_safety_rating": 7.22,
       "housing_cost_satisfaction_rating": 5.67,
-      "safety": 0.0045
+      "safety": 0.0045,
+      "rent_url": 673
     },
     {
       "name": "Adachi",
@@ -548,7 +565,8 @@
       "security_rating": 5.1,
       "natural_disaster_safety_rating": 4.71,
       "housing_cost_satisfaction_rating": 5.1,
-      "safety": 0.0052
+      "safety": 0.0052,
+      "rent_url": 674
     },
     {
       "name": "Katsushika",
@@ -574,7 +592,8 @@
       "security_rating": 6.46,
       "natural_disaster_safety_rating": 5.62,
       "housing_cost_satisfaction_rating": 6.23,
-      "safety": 0.0059
+      "safety": 0.0059,
+      "rent_url": 675
     },
     {
       "name": "Edogawa",
@@ -600,7 +619,8 @@
       "security_rating": 6.46,
       "natural_disaster_safety_rating": 5.62,
       "housing_cost_satisfaction_rating": 6.23,
-      "safety": 0.0054
+      "safety": 0.0054,
+      "rent_url": 676
     }
   ]
 }
